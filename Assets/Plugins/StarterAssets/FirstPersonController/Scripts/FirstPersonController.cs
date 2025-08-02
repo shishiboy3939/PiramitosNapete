@@ -114,7 +114,7 @@ namespace StarterAssets
 		{
 			JumpAndGravity();
 			GroundedCheck();
-			Move();
+			MoveFoward();
 		}
 
 		private void LateUpdate()
@@ -198,7 +198,15 @@ namespace StarterAssets
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 		}
 
-		private void JumpAndGravity()
+		private void MoveFoward()
+		{
+            Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
+            inputDirection = transform.forward;
+            _controller.Move(inputDirection.normalized * (MoveSpeed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+        }
+
+
+        private void JumpAndGravity()
 		{
 			if (Grounded)
 			{
