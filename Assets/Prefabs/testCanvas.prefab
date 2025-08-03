@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 1435360805522706796}
   - component: {fileID: 2483597150114804426}
   - component: {fileID: 4722162693540228319}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1435360805522706796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6286742812096093528}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000026166, y: -0.0000038146973}
-  m_SizeDelta: {x: 595, y: 335}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2483597150114804426
 CanvasRenderer:
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 887775927843246031}
   - component: {fileID: 5159042358030810720}
   - component: {fileID: 5137736980604818561}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: testCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ Canvas:
   m_GameObject: {fileID: 4528687388117545614}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 8009002584322420340}
   - component: {fileID: 2409006096667549064}
   - component: {fileID: 9096319334902499258}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: StrokeArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -268,9 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cf50478193a4546b194f050045e090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMaterial: {fileID: 0}
-  lineColor: {r: 0, g: 0, b: 0, a: 0}
-  lineWidth: 0.1
+  lineMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  lineColor: {r: 1, g: 0, b: 0, a: 1}
+  lineWidth: 0.01
+  MazeCubes: {fileID: 0}
 --- !u!222 &9096319334902499258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -290,13 +291,13 @@ GameObject:
   - component: {fileID: 7695852426868528976}
   - component: {fileID: 2876101897643410866}
   - component: {fileID: 710012734983149486}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7695852426868528976
 RectTransform:
   m_ObjectHideFlags: 0
