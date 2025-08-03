@@ -14,6 +14,10 @@ public class Stroke : MonoBehaviour
     [SerializeField] float lineWidth;
 
     [SerializeField] GameObject MazeCubes;
+    [SerializeField] private float worldCenterX;
+    [SerializeField] private float worldCenterY;
+    [SerializeField] private float blockSize = 4f;
+    [SerializeField] private float blockPixel = 300f;
 
     //追加　LineRdenerer型のリスト宣言
     List<LineRenderer> lineRenderers, lineRenderers3D;
@@ -132,7 +136,7 @@ public class Stroke : MonoBehaviour
     void _addPositionDataToLineRendererList3D()
     {
         //マウスのスクリーン座標から3Dモード時のワールド座標に変換
-        Vector3 worldPosition3D = new Vector3((Input.mousePosition.x-960f) / 10f, 0.5f, (Input.mousePosition.y - 540f) / 10f);
+        Vector3 worldPosition3D = new Vector3(worldCenterX + (Input.mousePosition.x-960f) / blockPixel * blockSize, 0.5f, worldCenterY + (Input.mousePosition.y - 540f) / blockPixel * blockSize);
 
         //ワールド座標をローカル座標に変換
         Vector3 localPosition3D = transform.InverseTransformPoint(worldPosition3D.x, worldPosition3D.y, -1.0f);
