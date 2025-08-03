@@ -6,10 +6,8 @@ using UnityEngine;
 public class SpeedUpItem : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] float sprintSpeed = 8.0f;
+    [SerializeField] SpeedController controller;
     [SerializeField] float waitSeconds = 10.0f;
-    private bool Triggered = false;
-    private float nowSpeed = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,22 +22,16 @@ public class SpeedUpItem : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == player.name && !Triggered)
+        if (col.gameObject.name == player.name)
         {
-            StartCoroutine(DelayCoroutine(col));
+            LaunchSpeedController();
+            Destroy(gameObject);
         }
     }
 
-    private IEnumerator DelayCoroutine(Collider col)
+    void LaunchSpeedController()
     {
-        Triggered = true;
-        FirstPersonController colObj = col.gameObject.GetComponent<FirstPersonController>();
-        nowSpeed = colObj.MoveSpeed;
-        colObj.MoveSpeed = sprintSpeed;
-        // 10•bŠÔ‘Ò‚Â
-        yield return new WaitForSeconds(waitSeconds);
-        // 10•bŒã‚É‘¬“x‚ð–ß‚·
-        colObj.MoveSpeed = nowSpeed;
-        Destroy(gameObject);
+        controller.isRunning = true;
+        controller.timer = waitSeconds;
     }
 }
