@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60168ab845a8e274b86beb45bbbcd46e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8631651935d95ca4688a564b510bc63c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -347,9 +347,10 @@ MonoBehaviour:
   lineColor: {r: 1, g: 0, b: 0, a: 1}
   lineWidth: 0.01
   MazeCubes: {fileID: 0}
-  worldCenterX: 4
-  worldCenterY: 4
-  blockSizeX: 4
+  worldCenterX: 16
+  worldCenterY: 16
+  blockSize: 4
+  blockPixel: 100
 --- !u!222 &8871057933174976118
 CanvasRenderer:
   m_ObjectHideFlags: 0

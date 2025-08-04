@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7862043219881869575}
   - component: {fileID: 562043654857814318}
   m_Layer: 0
-  m_Name: 33Map
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60168ab845a8e274b86beb45bbbcd46e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3e7f12de58f6cb498d319a0454ca093, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 1171432013871462621}
   - component: {fileID: 7532140821614326555}
   m_Layer: 0
-  m_Name: testCanvas33
+  m_Name: testCanvas66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,9 +347,10 @@ MonoBehaviour:
   lineColor: {r: 1, g: 0, b: 0, a: 1}
   lineWidth: 0.01
   MazeCubes: {fileID: 0}
-  worldCenterX: 4
-  worldCenterY: 4
-  blockSizeX: 4
+  worldCenterX: 14
+  worldCenterY: 10
+  blockSize: 4
+  blockPixel: 150
 --- !u!222 &8871057933174976118
 CanvasRenderer:
   m_ObjectHideFlags: 0
