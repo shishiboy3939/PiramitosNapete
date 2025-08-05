@@ -31,6 +31,7 @@ public class SpeedUpItem : MonoBehaviour
 
     void LaunchSpeedController()
     {
+        //SpeedControllerƒNƒ‰ƒX‚ÌSpeedTimer()‚ð“®‚©‚·
         controller.isRunning = true;
         controller.timer = waitSeconds;
     }

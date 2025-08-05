@@ -13,21 +13,20 @@ public class Stroke : MonoBehaviour
     [Range(0.01f, 0.5f)]
     [SerializeField] float lineWidth;
 
-    [SerializeField] GameObject MazeCubes;
+    [SerializeField] StrokeManager2D StrokeManager2D;
+    [SerializeField] StrokeManager3D StrokeManager3D;
     [SerializeField] private float worldCenterX;
     [SerializeField] private float worldCenterY;
     [SerializeField] private float blockSize = 4f;
     [SerializeField] private float blockPixel = 300f;
 
     //追加　LineRdenerer型のリスト宣言
-    List<LineRenderer> lineRenderers, lineRenderers3D;
+    //List<LineRenderer> lineRenderers, lineRenderers3D;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //追加　Listの初期化
-        lineRenderers = new List<LineRenderer>();
-        lineRenderers3D = new List<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -58,9 +57,9 @@ public class Stroke : MonoBehaviour
         //lineObjにLineRendereコンポーネント追加
         lineObj.AddComponent<LineRenderer>();
         //lineRendererリストにlineObjを追加
-        lineRenderers.Add(lineObj.GetComponent<LineRenderer>());
+        StrokeManager2D.lineRenderers2D.Add(lineObj.GetComponent<LineRenderer>());
         //lineObjを自身の子要素に設定
-        lineObj.transform.SetParent(transform);
+        lineObj.transform.SetParent(StrokeManager2D.transform);
 
         //lineObj初期化処理
         _initRenderers();
@@ -75,9 +74,9 @@ public class Stroke : MonoBehaviour
         //lineObjにLineRendereコンポーネント追加
         lineObj3D.AddComponent<LineRenderer>();
         //lineRendererリストにlineObjを追加
-        lineRenderers3D.Add(lineObj3D.GetComponent<LineRenderer>());
+        StrokeManager3D.lineRenderers3D.Add(lineObj3D.GetComponent<LineRenderer>());
         //lineObjを自身の子要素に設定
-        lineObj3D.transform.SetParent(MazeCubes.transform);
+        lineObj3D.transform.SetParent(StrokeManager3D.transform);
         //lineObj初期化処理
         _initRenderers3D();
     }
@@ -86,27 +85,27 @@ public class Stroke : MonoBehaviour
     void _initRenderers()
     {
         //線をつなぐ点を0に初期化
-        lineRenderers.Last().positionCount = 0;
+        StrokeManager2D.lineRenderers2D.Last().positionCount = 0;
         //マテリアルを初期化
-        lineRenderers.Last().material = lineMaterial;
+        StrokeManager2D.lineRenderers2D.Last().material = lineMaterial;
         //色の初期化
-        lineRenderers.Last().material.color = lineColor;
+        StrokeManager2D.lineRenderers2D.Last().material.color = lineColor;
         //太さの初期化
-        lineRenderers.Last().startWidth = lineWidth;
-        lineRenderers.Last().endWidth = lineWidth;
+        StrokeManager2D.lineRenderers2D.Last().startWidth = lineWidth;
+        StrokeManager2D.lineRenderers2D.Last().endWidth = lineWidth;
     }
 
     void _initRenderers3D()
     {
         //線をつなぐ点を0に初期化
-        lineRenderers3D.Last().positionCount = 0;
+        StrokeManager3D.lineRenderers3D.Last().positionCount = 0;
         //マテリアルを初期化
-        lineRenderers3D.Last().material = lineMaterial;
+        StrokeManager3D.lineRenderers3D.Last().material = lineMaterial;
         //色の初期化
-        lineRenderers3D.Last().material.color = lineColor;
+        StrokeManager3D.lineRenderers3D.Last().material.color = lineColor;
         //太さの初期化
-        lineRenderers3D.Last().startWidth = lineWidth*10;
-        lineRenderers3D.Last().endWidth = lineWidth*10;
+        StrokeManager3D.lineRenderers3D.Last().startWidth = lineWidth*10;
+        StrokeManager3D.lineRenderers3D.Last().endWidth = lineWidth*10;
     }
 
     void _addPositionDataToLineRendererList()
@@ -121,16 +120,16 @@ public class Stroke : MonoBehaviour
         Vector3 localPosition = transform.InverseTransformPoint(worldPosition.x, worldPosition.y, -1.0f);
 
         //lineRenderersの最後のlineObjのローカルポジションを上記のローカルポジションに設定
-        lineRenderers.Last().transform.localPosition = localPosition;
+        StrokeManager2D.lineRenderers2D.Last().transform.localPosition = localPosition;
 
         //lineObjの線と線をつなぐ点の数を更新
-        lineRenderers.Last().positionCount += 1;
+        StrokeManager2D.lineRenderers2D.Last().positionCount += 1;
 
         //LineRendererコンポーネントリストを更新
-        lineRenderers.Last().SetPosition(lineRenderers.Last().positionCount - 1, worldPosition);
+        StrokeManager2D.lineRenderers2D.Last().SetPosition(StrokeManager2D.lineRenderers2D.Last().positionCount - 1, worldPosition);
 
         //あとから描いた線が上に来るように調整
-        lineRenderers.Last().sortingOrder = lineRenderers.Count;
+        StrokeManager2D.lineRenderers2D.Last().sortingOrder = StrokeManager2D.lineRenderers2D.Count;
     }
 
     void _addPositionDataToLineRendererList3D()
@@ -142,15 +141,15 @@ public class Stroke : MonoBehaviour
         Vector3 localPosition3D = transform.InverseTransformPoint(worldPosition3D.x, worldPosition3D.y, -1.0f);
 
         //lineRenderersの最後のlineObjのローカルポジションを上記のローカルポジションに設定
-        lineRenderers3D.Last().transform.localPosition = localPosition3D;
+        StrokeManager3D.lineRenderers3D.Last().transform.localPosition = localPosition3D;
 
         //lineObjの線と線をつなぐ点の数を更新
-        lineRenderers3D.Last().positionCount += 1;
+        StrokeManager3D.lineRenderers3D.Last().positionCount += 1;
 
         //LineRendererコンポーネントリストを更新
-        lineRenderers3D.Last().SetPosition(lineRenderers3D.Last().positionCount - 1, worldPosition3D);
+        StrokeManager3D.lineRenderers3D.Last().SetPosition(StrokeManager3D.lineRenderers3D.Last().positionCount - 1, worldPosition3D);
 
         //あとから描いた線が上に来るように調整
-        lineRenderers3D.Last().sortingOrder = lineRenderers3D.Count;
+        StrokeManager3D.lineRenderers3D.Last().sortingOrder = StrokeManager3D.lineRenderers3D.Count;
     }
 }
