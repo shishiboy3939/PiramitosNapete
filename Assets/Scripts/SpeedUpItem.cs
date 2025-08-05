@@ -25,7 +25,8 @@ public class SpeedUpItem : MonoBehaviour
         if (col.gameObject.name == player.name)
         {
             LaunchSpeedController();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
 

@@ -17,6 +17,8 @@ public class ViewManager : MonoBehaviour
         public GameObject mazeCubes;
         public Vector3 playerPosition;
         public Vector3 playerRotation;
+        public float limitTime2D;
+        public float limitTime3D;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,5 +47,6 @@ public class ViewManager : MonoBehaviour
         StrokeManager3D.gameObject.SetActive(false);
         camera2D.SetActive(false);
         camera3D.SetActive(false);
+        GameManager.elapsedTime = 0;
     }
 }

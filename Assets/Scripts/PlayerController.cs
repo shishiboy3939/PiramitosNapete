@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void ChangeStages(int stage, int dim)
+    //ステージを変える
+    public void ChangeStages(int stage, int dim)
     {
         viewManager.InitializeStages();
         if(dim == 0)
@@ -74,7 +75,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             //3Dのとき
+            //ステージプレハブを全てアクティブに
             viewManager.Stages[stage].mazeCubes.SetActive(true);
+            foreach (Transform n in viewManager.Stages[stage].mazeCubes.transform)
+            {
+                n.gameObject.SetActive(true);
+            }
             //プレイヤーを指定座標に配置
             viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
             viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
