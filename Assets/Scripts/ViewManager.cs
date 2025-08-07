@@ -1,12 +1,25 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ViewManager : MonoBehaviour
 {
-    [SerializeField] GameObject mazeCanvas;
-    [SerializeField] GameObject mazeCubes;
-    [SerializeField] GameObject playerCapsule;
-    [SerializeField] GameObject camera2D;
-    [SerializeField] GameObject camera3D;
+    [SerializeField] public StageInfo[] Stages;
+    [SerializeField] public GameObject playerCapsule;
+    [SerializeField] public StrokeManager2D StrokeManager2D;
+    [SerializeField] public StrokeManager3D StrokeManager3D;
+    [SerializeField] public GameObject camera2D;
+    [SerializeField] public GameObject camera3D;
+
+    [System.Serializable]
+    public class StageInfo
+    {
+        public GameObject mazeCanvas;
+        public GameObject mazeCubes;
+        public Vector3 playerPosition;
+        public Vector3 playerRotation;
+        public float limitTime2D;
+        public float limitTime3D;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,21 +30,23 @@ public class ViewManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.gameMode == 0)
+        
+    }
+
+    public void InitializeStages()
+    {
+        //ステージのsetActiveを全部falseに
+        foreach(StageInfo s in Stages)
         {
-            mazeCanvas.SetActive(true);
-            mazeCubes.SetActive(false);
-            playerCapsule.SetActive(false);
-            camera2D.SetActive(true);
-            camera3D.SetActive(false);
+            s.mazeCanvas.SetActive(false);
+            s.mazeCubes.SetActive(false);
         }
-        else
-        {
-            mazeCanvas.SetActive(false);
-            mazeCubes.SetActive(true);
-            playerCapsule.SetActive(true);
-            camera2D.SetActive(false);
-            camera3D.SetActive(true);
-        }
+        playerCapsule.transform.position = Vector3.zero;
+        playerCapsule.SetActive(false);
+        StrokeManager2D.gameObject.SetActive(false);
+        StrokeManager3D.gameObject.SetActive(false);
+        camera2D.SetActive(false);
+        camera3D.SetActive(false);
+        GameManager.elapsedTime = 0;
     }
 }
