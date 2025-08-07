@@ -20,7 +20,12 @@ public class SpeedController : MonoBehaviour
 
     void SpeedTimer()
     {
-        if(!isRunning)
+        //GameManager.isWaiting‚Ì’l‚ğ‚»‚Ì‚Ü‚ÜFirstPersonController.isWaiting‚ÉŠi”[
+        //FirstPersonController“à‚Å‰½ŒÌ‚©GameManager‚ª“Ç‚İ‚ß‚È‚©‚Á‚½‚Ì‚ÅA‚±‚¤‚·‚é‚µ‚©–³‚©‚Á‚½
+        //‰½‚Å‚â...
+        player.isWaiting = GameManager.isWaiting;
+
+        if (!isRunning)
         {
             player.isSprinting = false;
             timer = 0;

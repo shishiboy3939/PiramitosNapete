@@ -3,7 +3,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
-public class PlayerController : MonoBehaviour
+public class StageChanger : MonoBehaviour
 {
     [SerializeField] ViewManager viewManager;
     private int _stage = 0;
@@ -17,37 +17,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckStageChange();
-    }
-
-    void CheckStageChange()
-    {
-        //スペースキーを押したらステージを切り替える
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //切り替える先のステージを決める
-            if (GameManager.now2Dor3D == 0)
-            {
-                //2Dのとき
-                _stage = GameManager.nowStage;
-                _2Dor3D = 1;
-            }
-            else
-            {
-                //3Dのとき
-                if (GameManager.nowStage == 2)
-                {
-                    _stage = 0;
-                }
-                else
-                {
-                    _stage++;
-                }
-                _2Dor3D = 0;
-            }
-            
-            ChangeStages(_stage, _2Dor3D);
-        }
+        
     }
 
     //ステージを変える
@@ -71,6 +41,7 @@ public class PlayerController : MonoBehaviour
             viewManager.StrokeManager3D.lineRenderers3D = new List<LineRenderer>();
             viewManager.StrokeManager2D.gameObject.SetActive(true);
             viewManager.camera2D.SetActive(true);
+            GameManager.elapsedTime = viewManager.Stages[stage].limitTime2D;
         }
         else
         {
@@ -87,6 +58,7 @@ public class PlayerController : MonoBehaviour
             viewManager.playerCapsule.SetActive(true);
             viewManager.StrokeManager3D.gameObject.SetActive(true);
             viewManager.camera3D.SetActive(true);
+            GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;
         }
         GameManager.nowStage = stage;
         GameManager.now2Dor3D = dim;
