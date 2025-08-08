@@ -1,15 +1,15 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
 public class Stroke : MonoBehaviour
 {
-    //ü‚ÌŞ¿
+    //ç·šã®æè³ª
     [SerializeField] Material lineMaterial;
-    //ü‚ÌF
+    //ç·šã®è‰²
     [SerializeField] Color lineColor;
-    //ü‚Ì‘¾‚³
+    //ç·šã®å¤ªã•
     [Range(0.01f, 0.5f)]
     [SerializeField] float lineWidth;
 
@@ -20,13 +20,13 @@ public class Stroke : MonoBehaviour
     [SerializeField] private float blockSize = 4f;
     [SerializeField] private float blockPixel = 300f;
 
-    //’Ç‰Á@LineRdenererŒ^‚ÌƒŠƒXƒgéŒ¾
+    //è¿½åŠ ã€€LineRdenererå‹ã®ãƒªã‚¹ãƒˆå®£è¨€
     //List<LineRenderer> lineRenderers, lineRenderers3D;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //’Ç‰Á@List‚Ì‰Šú‰»
+        //è¿½åŠ ã€€Listã®åˆæœŸåŒ–
     }
 
     // Update is called once per frame
@@ -34,12 +34,12 @@ public class Stroke : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //lineObj‚ğ¶¬‚µA‰Šú‰»‚·‚é
+            //lineObjã‚’ç”Ÿæˆã—ã€åˆæœŸåŒ–ã™ã‚‹
             _addLineObject();
             _addLineObject3D();
         }
 
-        //’Ç‰Á@ƒNƒŠƒbƒN’†iƒXƒgƒ[ƒN’†j
+        //è¿½åŠ ã€€ã‚¯ãƒªãƒƒã‚¯ä¸­ï¼ˆã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ä¸­ï¼‰
         if (Input.GetMouseButton(0))
         {
             _addPositionDataToLineRendererList();
@@ -47,109 +47,109 @@ public class Stroke : MonoBehaviour
         }
     }
 
-    //’Ç‰Á@ƒNƒŠƒbƒN‚µ‚½‚ç”­“®
+    //è¿½åŠ ã€€ã‚¯ãƒªãƒƒã‚¯ã—ãŸã‚‰ç™ºå‹•
     void _addLineObject()
     {
-        //‹ó‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒgì¬
+        //ç©ºã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆ
         GameObject lineObj = new GameObject();
-        //ƒIƒuƒWƒFƒNƒg‚Ì–¼‘O‚ğStroke‚É•ÏX
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åå‰ã‚’Strokeã«å¤‰æ›´
         lineObj.name = "Stroke";
-        //lineObj‚ÉLineRendereƒRƒ“ƒ|[ƒlƒ“ƒg’Ç‰Á
+        //lineObjã«LineRendereã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆè¿½åŠ 
         lineObj.AddComponent<LineRenderer>();
-        //lineRendererƒŠƒXƒg‚ÉlineObj‚ğ’Ç‰Á
+        //lineRendererãƒªã‚¹ãƒˆã«lineObjã‚’è¿½åŠ 
         StrokeManager2D.lineRenderers2D.Add(lineObj.GetComponent<LineRenderer>());
-        //lineObj‚ğ©g‚Ìq—v‘f‚Éİ’è
+        //lineObjã‚’è‡ªèº«ã®å­è¦ç´ ã«è¨­å®š
         lineObj.transform.SetParent(StrokeManager2D.transform);
 
-        //lineObj‰Šú‰»ˆ—
+        //lineObjåˆæœŸåŒ–å‡¦ç†
         _initRenderers();
     }
 
     void _addLineObject3D()
     {
-        //‹ó‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒgì¬
+        //ç©ºã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆ
         GameObject lineObj3D = new GameObject();
-        //ƒIƒuƒWƒFƒNƒg‚Ì–¼‘O‚ğStroke‚É•ÏX
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åå‰ã‚’Strokeã«å¤‰æ›´
         lineObj3D.name = "Stroke3D";
-        //lineObj‚ÉLineRendereƒRƒ“ƒ|[ƒlƒ“ƒg’Ç‰Á
+        //lineObjã«LineRendereã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆè¿½åŠ 
         lineObj3D.AddComponent<LineRenderer>();
-        //lineRendererƒŠƒXƒg‚ÉlineObj‚ğ’Ç‰Á
+        //lineRendererãƒªã‚¹ãƒˆã«lineObjã‚’è¿½åŠ 
         StrokeManager3D.lineRenderers3D.Add(lineObj3D.GetComponent<LineRenderer>());
-        //lineObj‚ğ©g‚Ìq—v‘f‚Éİ’è
+        //lineObjã‚’è‡ªèº«ã®å­è¦ç´ ã«è¨­å®š
         lineObj3D.transform.SetParent(StrokeManager3D.transform);
-        //lineObj‰Šú‰»ˆ—
+        //lineObjåˆæœŸåŒ–å‡¦ç†
         _initRenderers3D();
     }
 
-    //lineObj‰Šú‰»ˆ—
+    //lineObjåˆæœŸåŒ–å‡¦ç†
     void _initRenderers()
     {
-        //ü‚ğ‚Â‚È‚®“_‚ğ0‚É‰Šú‰»
+        //ç·šã‚’ã¤ãªãç‚¹ã‚’0ã«åˆæœŸåŒ–
         StrokeManager2D.lineRenderers2D.Last().positionCount = 0;
-        //ƒ}ƒeƒŠƒAƒ‹‚ğ‰Šú‰»
+        //ãƒãƒ†ãƒªã‚¢ãƒ«ã‚’åˆæœŸåŒ–
         StrokeManager2D.lineRenderers2D.Last().material = lineMaterial;
-        //F‚Ì‰Šú‰»
+        //è‰²ã®åˆæœŸåŒ–
         StrokeManager2D.lineRenderers2D.Last().material.color = lineColor;
-        //‘¾‚³‚Ì‰Šú‰»
+        //å¤ªã•ã®åˆæœŸåŒ–
         StrokeManager2D.lineRenderers2D.Last().startWidth = lineWidth;
         StrokeManager2D.lineRenderers2D.Last().endWidth = lineWidth;
     }
 
     void _initRenderers3D()
     {
-        //ü‚ğ‚Â‚È‚®“_‚ğ0‚É‰Šú‰»
+        //ç·šã‚’ã¤ãªãç‚¹ã‚’0ã«åˆæœŸåŒ–
         StrokeManager3D.lineRenderers3D.Last().positionCount = 0;
-        //ƒ}ƒeƒŠƒAƒ‹‚ğ‰Šú‰»
+        //ãƒãƒ†ãƒªã‚¢ãƒ«ã‚’åˆæœŸåŒ–
         StrokeManager3D.lineRenderers3D.Last().material = lineMaterial;
-        //F‚Ì‰Šú‰»
+        //è‰²ã®åˆæœŸåŒ–
         StrokeManager3D.lineRenderers3D.Last().material.color = lineColor;
-        //‘¾‚³‚Ì‰Šú‰»
+        //å¤ªã•ã®åˆæœŸåŒ–
         StrokeManager3D.lineRenderers3D.Last().startWidth = lineWidth*10;
         StrokeManager3D.lineRenderers3D.Last().endWidth = lineWidth*10;
     }
 
     void _addPositionDataToLineRendererList()
     {
-        //ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚ª‚ ‚éƒXƒNƒŠ[ƒ“À•W‚ğæ“¾
+        //ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ã‚¿ãŒã‚ã‚‹ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã‚’å–å¾—
         Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f);
 
-        //ƒXƒNƒŠ[ƒ“À•W‚ğƒ[ƒ‹ƒhÀ•W‚É•ÏŠ·
+        //ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã‚’ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã«å¤‰æ›
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        //ƒ[ƒ‹ƒhÀ•W‚ğƒ[ƒJƒ‹À•W‚É•ÏŠ·
+        //ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ãƒ­ãƒ¼ã‚«ãƒ«åº§æ¨™ã«å¤‰æ›
         Vector3 localPosition = transform.InverseTransformPoint(worldPosition.x, worldPosition.y, -1.0f);
 
-        //lineRenderers‚ÌÅŒã‚ÌlineObj‚Ìƒ[ƒJƒ‹ƒ|ƒWƒVƒ‡ƒ“‚ğã‹L‚Ìƒ[ƒJƒ‹ƒ|ƒWƒVƒ‡ƒ“‚Éİ’è
+        //lineRenderersã®æœ€å¾Œã®lineObjã®ãƒ­ãƒ¼ã‚«ãƒ«ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’ä¸Šè¨˜ã®ãƒ­ãƒ¼ã‚«ãƒ«ãƒã‚¸ã‚·ãƒ§ãƒ³ã«è¨­å®š
         StrokeManager2D.lineRenderers2D.Last().transform.localPosition = localPosition;
 
-        //lineObj‚Ìü‚Æü‚ğ‚Â‚È‚®“_‚Ì”‚ğXV
+        //lineObjã®ç·šã¨ç·šã‚’ã¤ãªãç‚¹ã®æ•°ã‚’æ›´æ–°
         StrokeManager2D.lineRenderers2D.Last().positionCount += 1;
 
-        //LineRendererƒRƒ“ƒ|[ƒlƒ“ƒgƒŠƒXƒg‚ğXV
+        //LineRendererã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒªã‚¹ãƒˆã‚’æ›´æ–°
         StrokeManager2D.lineRenderers2D.Last().SetPosition(StrokeManager2D.lineRenderers2D.Last().positionCount - 1, worldPosition);
 
-        //‚ ‚Æ‚©‚ç•`‚¢‚½ü‚ªã‚É—ˆ‚é‚æ‚¤‚É’²®
+        //ã‚ã¨ã‹ã‚‰æã„ãŸç·šãŒä¸Šã«æ¥ã‚‹ã‚ˆã†ã«èª¿æ•´
         StrokeManager2D.lineRenderers2D.Last().sortingOrder = StrokeManager2D.lineRenderers2D.Count;
     }
 
     void _addPositionDataToLineRendererList3D()
     {
-        //ƒ}ƒEƒX‚ÌƒXƒNƒŠ[ƒ“À•W‚©‚ç3Dƒ‚[ƒh‚Ìƒ[ƒ‹ƒhÀ•W‚É•ÏŠ·
+        //ãƒã‚¦ã‚¹ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã‹ã‚‰3Dãƒ¢ãƒ¼ãƒ‰æ™‚ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã«å¤‰æ›
         Vector3 worldPosition3D = new Vector3(worldCenterX + (Input.mousePosition.x-960f) / blockPixel * blockSize, 0.5f, worldCenterY + (Input.mousePosition.y - 540f) / blockPixel * blockSize);
 
-        //ƒ[ƒ‹ƒhÀ•W‚ğƒ[ƒJƒ‹À•W‚É•ÏŠ·
+        //ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ãƒ­ãƒ¼ã‚«ãƒ«åº§æ¨™ã«å¤‰æ›
         Vector3 localPosition3D = transform.InverseTransformPoint(worldPosition3D.x, worldPosition3D.y, -1.0f);
 
-        //lineRenderers‚ÌÅŒã‚ÌlineObj‚Ìƒ[ƒJƒ‹ƒ|ƒWƒVƒ‡ƒ“‚ğã‹L‚Ìƒ[ƒJƒ‹ƒ|ƒWƒVƒ‡ƒ“‚Éİ’è
+        //lineRenderersã®æœ€å¾Œã®lineObjã®ãƒ­ãƒ¼ã‚«ãƒ«ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’ä¸Šè¨˜ã®ãƒ­ãƒ¼ã‚«ãƒ«ãƒã‚¸ã‚·ãƒ§ãƒ³ã«è¨­å®š
         StrokeManager3D.lineRenderers3D.Last().transform.localPosition = localPosition3D;
 
-        //lineObj‚Ìü‚Æü‚ğ‚Â‚È‚®“_‚Ì”‚ğXV
+        //lineObjã®ç·šã¨ç·šã‚’ã¤ãªãç‚¹ã®æ•°ã‚’æ›´æ–°
         StrokeManager3D.lineRenderers3D.Last().positionCount += 1;
 
-        //LineRendererƒRƒ“ƒ|[ƒlƒ“ƒgƒŠƒXƒg‚ğXV
+        //LineRendererã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒªã‚¹ãƒˆã‚’æ›´æ–°
         StrokeManager3D.lineRenderers3D.Last().SetPosition(StrokeManager3D.lineRenderers3D.Last().positionCount - 1, worldPosition3D);
 
-        //‚ ‚Æ‚©‚ç•`‚¢‚½ü‚ªã‚É—ˆ‚é‚æ‚¤‚É’²®
+        //ã‚ã¨ã‹ã‚‰æã„ãŸç·šãŒä¸Šã«æ¥ã‚‹ã‚ˆã†ã«èª¿æ•´
         StrokeManager3D.lineRenderers3D.Last().sortingOrder = StrokeManager3D.lineRenderers3D.Count;
     }
 }

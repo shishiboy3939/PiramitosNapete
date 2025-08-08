@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
@@ -20,15 +20,15 @@ public class StageChanger : MonoBehaviour
         
     }
 
-    //ƒXƒe[ƒW‚ğ•Ï‚¦‚é
+    //ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¤‰ãˆã‚‹
     public void ChangeStages(int stage, int dim)
     {
         viewManager.InitializeStages();
         if(dim == 0)
         {
-            //2D‚Ì‚Æ‚«
+            //2Dã®ã¨ã
             viewManager.Stages[stage].mazeCanvas.SetActive(true);
-            //ü‚ğ‘S•”Á‚·
+            //ç·šã‚’å…¨éƒ¨æ¶ˆã™
             foreach (Transform n in viewManager.StrokeManager2D.transform)
             {
                 Destroy(n.gameObject);
@@ -45,14 +45,17 @@ public class StageChanger : MonoBehaviour
         }
         else
         {
-            //3D‚Ì‚Æ‚«
-            //ƒXƒe[ƒWƒvƒŒƒnƒu‚ğ‘S‚ÄƒAƒNƒeƒBƒu‚É
+            //3Dã®ã¨ã
             viewManager.Stages[stage].mazeCubes.SetActive(true);
+            //3Dã‚¹ãƒ†ãƒ¼ã‚¸ã®ç·šã‚’ã‚¹ãƒ†ãƒ¼ã‚¸æ¨™é«˜ã«æ²¿ã£ãŸé«˜ã•ã«
+            //æ¨™é«˜ã‚’æ¸¬ã‚ŠãŸã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã¯Groundã‚¿ã‚°ã‚’ä»˜ã‘ã¦ï¼ï¼ï¼
+            viewManager.StrokeManager3D.SetupStrokeHeight(viewManager, stage);
+            //ã‚¹ãƒ†ãƒ¼ã‚¸ãƒ—ãƒ¬ãƒãƒ–ã‚’å…¨ã¦ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«
             foreach (Transform n in viewManager.Stages[stage].mazeCubes.transform)
             {
                 n.gameObject.SetActive(true);
             }
-            //ƒvƒŒƒCƒ„[‚ğw’èÀ•W‚É”z’u
+            //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’æŒ‡å®šåº§æ¨™ã«é…ç½®
             viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
             viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
             viewManager.playerCapsule.SetActive(true);
