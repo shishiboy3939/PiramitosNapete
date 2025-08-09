@@ -53,9 +53,10 @@ namespace StarterAssets
 		public float BottomClamp = -90.0f;
 
 		public bool isSprinting = false;
+        public bool isWaiting = false;
 
-		// cinemachine
-		private float _cinemachineTargetPitch;
+        // cinemachine
+        private float _cinemachineTargetPitch;
 
 		// player
 		private float _speed;
@@ -134,39 +135,46 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
-			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold)
+            // if there is an input
+            //操作停止モードじゃなければ動く
+            if (!isWaiting)
 			{
-				//Don't multiply mouse input by Time.deltaTime
-				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+				if (_input.look.sqrMagnitude >= _threshold)
+				{
+					//Don't multiply mouse input by Time.deltaTime
+					float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-				// clamp our pitch rotation
-				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+					_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
+					_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
-				// Update Cinemachine camera target pitch
-				//CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+					// clamp our pitch rotation
+					_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-				// rotate the player left and right
-				transform.Rotate(Vector3.up * _rotationVelocity);
+					// Update Cinemachine camera target pitch
+					//CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+
+					// rotate the player left and right
+					transform.Rotate(Vector3.up * _rotationVelocity);
+				}
 			}
 		}
 
 		private void MoveFoward()
 		{
-			//前に進むだけ
-            Vector3 inputDirection = transform.forward;
-			if(!isSprinting)
-			{
-				_speed = MoveSpeed;
+            //前に進むだけ
+            //操作停止モードじゃなければ動く
+            if (!isWaiting) {
+                Vector3 inputDirection = transform.forward;
+                if (!isSprinting)
+                {
+                    _speed = MoveSpeed;
+                }
+                else
+                {
+                    _speed = SprintSpeed;
+                }
+                _controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
             }
-			else
-			{
-				_speed = SprintSpeed;
-            }
-            _controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
         }
 
 

@@ -48,5 +48,6 @@ public class ViewManager : MonoBehaviour
         camera2D.SetActive(false);
         camera3D.SetActive(false);
         GameManager.elapsedTime = 0;
+        GameManager.isWaiting = false;
     }
 }

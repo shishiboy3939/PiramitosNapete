@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
-public class PlayerController : MonoBehaviour
+public class StageChanger : MonoBehaviour
 {
     [SerializeField] ViewManager viewManager;
     private int _stage = 0;
@@ -17,48 +17,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckStageChange();
+        
     }
 
-    void CheckStageChange()
-    {
-        //ƒXƒy[ƒXƒL[‚ğ‰Ÿ‚µ‚½‚çƒXƒe[ƒW‚ğØ‚è‘Ö‚¦‚é
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //Ø‚è‘Ö‚¦‚éæ‚ÌƒXƒe[ƒW‚ğŒˆ‚ß‚é
-            if (GameManager.now2Dor3D == 0)
-            {
-                //2D‚Ì‚Æ‚«
-                _stage = GameManager.nowStage;
-                _2Dor3D = 1;
-            }
-            else
-            {
-                //3D‚Ì‚Æ‚«
-                if (GameManager.nowStage == 2)
-                {
-                    _stage = 0;
-                }
-                else
-                {
-                    _stage++;
-                }
-                _2Dor3D = 0;
-            }
-            
-            ChangeStages(_stage, _2Dor3D);
-        }
-    }
-
-    //ƒXƒe[ƒW‚ğ•Ï‚¦‚é
+    //ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¤‰ãˆã‚‹
     public void ChangeStages(int stage, int dim)
     {
         viewManager.InitializeStages();
         if(dim == 0)
         {
-            //2D‚Ì‚Æ‚«
+            //2Dã®ã¨ã
             viewManager.Stages[stage].mazeCanvas.SetActive(true);
-            //ü‚ğ‘S•”Á‚·
+            //ç·šã‚’å…¨éƒ¨æ¶ˆã™
             foreach (Transform n in viewManager.StrokeManager2D.transform)
             {
                 Destroy(n.gameObject);
@@ -71,22 +41,27 @@ public class PlayerController : MonoBehaviour
             viewManager.StrokeManager3D.lineRenderers3D = new List<LineRenderer>();
             viewManager.StrokeManager2D.gameObject.SetActive(true);
             viewManager.camera2D.SetActive(true);
+            GameManager.elapsedTime = viewManager.Stages[stage].limitTime2D;
         }
         else
         {
-            //3D‚Ì‚Æ‚«
-            //ƒXƒe[ƒWƒvƒŒƒnƒu‚ğ‘S‚ÄƒAƒNƒeƒBƒu‚É
+            //3Dã®ã¨ã
             viewManager.Stages[stage].mazeCubes.SetActive(true);
+            //3Dã‚¹ãƒ†ãƒ¼ã‚¸ã®ç·šã‚’ã‚¹ãƒ†ãƒ¼ã‚¸æ¨™é«˜ã«æ²¿ã£ãŸé«˜ã•ã«
+            //æ¨™é«˜ã‚’æ¸¬ã‚ŠãŸã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã¯Groundã‚¿ã‚°ã‚’ä»˜ã‘ã¦ï¼ï¼ï¼
+            viewManager.StrokeManager3D.SetupStrokeHeight(viewManager, stage);
+            //ã‚¹ãƒ†ãƒ¼ã‚¸ãƒ—ãƒ¬ãƒãƒ–ã‚’å…¨ã¦ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«
             foreach (Transform n in viewManager.Stages[stage].mazeCubes.transform)
             {
                 n.gameObject.SetActive(true);
             }
-            //ƒvƒŒƒCƒ„[‚ğw’èÀ•W‚É”z’u
+            //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’æŒ‡å®šåº§æ¨™ã«é…ç½®
             viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
             viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
             viewManager.playerCapsule.SetActive(true);
             viewManager.StrokeManager3D.gameObject.SetActive(true);
             viewManager.camera3D.SetActive(true);
+            GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;
         }
         GameManager.nowStage = stage;
         GameManager.now2Dor3D = dim;
