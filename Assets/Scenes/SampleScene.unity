@@ -289,8 +289,8 @@ MonoBehaviour:
     mazeCubes: {fileID: 3032310730093878729}
     playerPosition: {x: 0, y: 0, z: 0}
     playerRotation: {x: 0, y: 0, z: 0}
-    limitTime2D: 5
-    limitTime3D: 10
+    limitTime2D: 20
+    limitTime3D: 30
   - mazeCanvas: {fileID: 7698245545084709370}
     mazeCubes: {fileID: 6557015702591108246}
     playerPosition: {x: 4, y: 0, z: 0}
@@ -1834,7 +1834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303788614323813487, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7742178242988549806, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_IsActive
