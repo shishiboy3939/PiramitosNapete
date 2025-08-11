@@ -348,8 +348,8 @@ MonoBehaviour:
   lineWidth: 0.01
   StrokeManager2D: {fileID: 0}
   StrokeManager3D: {fileID: 0}
-  worldCenterX: 4
-  worldCenterY: 4
+  worldCenterX: 0
+  worldCenterY: 0
   blockSize: 4
   blockPixel: 150
 --- !u!222 &8871057933174976118

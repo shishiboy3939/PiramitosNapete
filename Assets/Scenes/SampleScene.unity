@@ -287,10 +287,10 @@ MonoBehaviour:
   Stages:
   - mazeCanvas: {fileID: 1065765197}
     mazeCubes: {fileID: 3032310730093878729}
-    playerPosition: {x: 0, y: 0, z: 0}
-    playerRotation: {x: 0, y: 0, z: 0}
-    limitTime2D: 20
-    limitTime3D: 30
+    playerPosition: {x: -9, y: 0, z: -5}
+    playerRotation: {x: 0, y: 45, z: 0}
+    limitTime2D: 10
+    limitTime3D: 60
   - mazeCanvas: {fileID: 7698245545084709370}
     mazeCubes: {fileID: 6557015702591108246}
     playerPosition: {x: 4, y: 0, z: 0}
@@ -326,6 +326,11 @@ Transform:
 --- !u!1 &188619146 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1664865560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &188619148 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 1664865560}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &388236147
@@ -1062,7 +1067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1070,7 +1075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1078,15 +1083,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1670,6 +1675,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4625464577161644239, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 188619148}
+    - target: {fileID: 4753823936277438899, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 4753823936277438899, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: clearOrOverManager
+      value: 
+      objectReference: {fileID: 2104347920}
     - target: {fileID: 5303788614323813487, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: m_Name
       value: MazeCubes66
@@ -1706,6 +1723,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6772218489514990960, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 6772218489514990960, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: clearOrOverManager
+      value: 
+      objectReference: {fileID: 2104347920}
     - target: {fileID: 7097868440747241611, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: m_LocalScale.x
       value: 28
@@ -1828,6 +1853,10 @@ PrefabInstance:
       propertyPath: clearOrOverManager
       value: 
       objectReference: {fileID: 2104347920}
+    - target: {fileID: 4225753788427666471, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 188619148}
     - target: {fileID: 5303788614323813487, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_Name
       value: MazeCubes33
@@ -1836,6 +1865,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190027224702191128, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 7190027224702191128, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: clearOrOverManager
+      value: 
+      objectReference: {fileID: 2104347920}
     - target: {fileID: 7742178242988549806, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_IsActive
       value: 1

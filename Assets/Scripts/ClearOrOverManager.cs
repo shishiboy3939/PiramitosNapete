@@ -61,7 +61,7 @@ public class ClearOrOverManager : MonoBehaviour
         
     }
 
-    void GameOver()
+    public void GameOver()
     {
         //同じステージの2D画面に戻る
         stageChanger.ChangeStages(GameManager.nowStage, 0);
