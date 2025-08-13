@@ -805,10 +805,10 @@ MonoBehaviour:
   lineWidth: 0.01
   StrokeManager2D: {fileID: 0}
   StrokeManager3D: {fileID: 0}
-  worldCenterX: 0
-  worldCenterY: 0
+  worldCenterX: -0.3
+  worldCenterY: 4
   blockSize: 4
-  blockPixel: 150
+  blockPixel: 125
 --- !u!222 &8871057933174976118
 CanvasRenderer:
   m_ObjectHideFlags: 0

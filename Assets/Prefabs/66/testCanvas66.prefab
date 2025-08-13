@@ -619,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1329026171070925204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -881,10 +881,10 @@ MonoBehaviour:
   lineWidth: 0.01
   StrokeManager2D: {fileID: 0}
   StrokeManager3D: {fileID: 0}
-  worldCenterX: 14
-  worldCenterY: 10
+  worldCenterX: 12
+  worldCenterY: 12
   blockSize: 4
-  blockPixel: 150
+  blockPixel: 65
 --- !u!222 &8871057933174976118
 CanvasRenderer:
   m_ObjectHideFlags: 0

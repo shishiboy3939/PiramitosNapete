@@ -289,19 +289,19 @@ MonoBehaviour:
     mazeCubes: {fileID: 3032310730093878729}
     playerPosition: {x: -9, y: 0, z: -5}
     playerRotation: {x: 0, y: 45, z: 0}
-    limitTime2D: 10
-    limitTime3D: 60
+    limitTime2D: 5
+    limitTime3D: 30
   - mazeCanvas: {fileID: 7698245545084709370}
     mazeCubes: {fileID: 6557015702591108246}
-    playerPosition: {x: 4, y: 0, z: 0}
+    playerPosition: {x: -4.5, y: 1, z: 5}
     playerRotation: {x: 0, y: 0, z: 0}
-    limitTime2D: 5
-    limitTime3D: 15
+    limitTime2D: 15
+    limitTime3D: 120
   - mazeCanvas: {fileID: 413905966}
     mazeCubes: {fileID: 1480194926704790408}
     playerPosition: {x: 4, y: 0, z: 0}
     playerRotation: {x: 0, y: 0, z: 0}
-    limitTime2D: 5
+    limitTime2D: 15
     limitTime3D: 30
   playerCapsule: {fileID: 188619146}
   StrokeManager2D: {fileID: 606890699}
@@ -1067,11 +1067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1947,10 +1947,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 562043654857814318, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e3e7f12de58f6cb498d319a0454ca093, type: 3}
     - target: {fileID: 1329026171070925204, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2034,26 +2030,6 @@ PrefabInstance:
     - target: {fileID: 5079940866051021149, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: m_Name
       value: testCanvas66
-      objectReference: {fileID: 0}
-    - target: {fileID: 5079940866051021149, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
-      propertyPath: MazeCubes
-      value: 
-      objectReference: {fileID: 6557015702591108246}
-    - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
-      propertyPath: blockPixel
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
-      propertyPath: worldCenterX
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
-      propertyPath: worldCenterY
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: StrokeManager2D
