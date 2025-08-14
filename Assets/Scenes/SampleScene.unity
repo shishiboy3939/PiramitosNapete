@@ -2012,6 +2012,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
+      propertyPath: worldCenterX
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: StrokeManager2D
       value: 
       objectReference: {fileID: 606890699}
