@@ -287,15 +287,15 @@ MonoBehaviour:
   Stages:
   - mazeCanvas: {fileID: 1065765197}
     mazeCubes: {fileID: 3032310730093878729}
-    playerPosition: {x: -9, y: 0, z: -5}
-    playerRotation: {x: 0, y: 45, z: 0}
-    limitTime2D: 5
+    playerPosition: {x: 3, y: 0.5, z: -5}
+    playerRotation: {x: 0, y: 0, z: 0}
+    limitTime2D: 10
     limitTime3D: 30
   - mazeCanvas: {fileID: 7698245545084709370}
     mazeCubes: {fileID: 6557015702591108246}
-    playerPosition: {x: -4.5, y: 1, z: 5}
+    playerPosition: {x: 14, y: 2, z: -6}
     playerRotation: {x: 0, y: 0, z: 0}
-    limitTime2D: 15
+    limitTime2D: 20
     limitTime3D: 120
   - mazeCanvas: {fileID: 413905966}
     mazeCubes: {fileID: 1480194926704790408}
@@ -1059,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_RootOrder
@@ -1067,15 +1067,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1785,18 +1785,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 214048755254233776, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1102469619739376016, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 188619146}
-    - target: {fileID: 1102469619739376016, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1511071102}
     - target: {fileID: 2022240507113594997, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
       value: 
@@ -1845,14 +1833,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3378151267578443892, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 188619146}
-    - target: {fileID: 3378151267578443892, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: clearOrOverManager
-      value: 
-      objectReference: {fileID: 2104347920}
     - target: {fileID: 4225753788427666471, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: target
       value: 
@@ -1873,10 +1853,6 @@ PrefabInstance:
       propertyPath: clearOrOverManager
       value: 
       objectReference: {fileID: 2104347920}
-    - target: {fileID: 7742178242988549806, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2031,6 +2007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: testCanvas66
       objectReference: {fileID: 0}
+    - target: {fileID: 5079940866051021149, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: StrokeManager2D
       value: 
@@ -2113,6 +2093,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3940828042923238643, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 3940828042923238643, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: clearOrOverManager
+      value: 
+      objectReference: {fileID: 2104347920}
     - target: {fileID: 6574083684067364749, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: player
       value: 
