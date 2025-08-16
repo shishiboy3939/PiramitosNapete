@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
@@ -25,7 +26,13 @@ public class StrokeManager3D : MonoBehaviour
     public void SetupStrokeHeight(ViewManager viewManager, int stage)
     {
         //Groundタグのオブジェクトだけアクティブに
-        foreach (Transform n in viewManager.Stages[stage].mazeCubes.transform)
+        // 親を含む子オブジェクトを再帰的に取得
+        // trueを指定しないと非アクティブなオブジェクトを取得できないことに注意
+        var parentAndChildren = viewManager.Stages[stage].mazeCubes.transform.GetComponentsInChildren<Transform>(true);
+        var children = new Transform[parentAndChildren.Length - 1];
+        // 親を除く子オブジェクトを結果にコピー
+        Array.Copy(parentAndChildren, 1, children, 0, children.Length);
+        foreach (Transform n in children)
         {
             if (n.gameObject.tag == "Ground")
             {

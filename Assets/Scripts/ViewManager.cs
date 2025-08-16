@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class ViewManager : MonoBehaviour
@@ -35,8 +35,8 @@ public class ViewManager : MonoBehaviour
 
     public void InitializeStages()
     {
-        //ƒXƒe[ƒW‚ÌsetActive‚ğ‘S•”false‚É
-        foreach(StageInfo s in Stages)
+        //ã‚¹ãƒ†ãƒ¼ã‚¸ã®setActiveã‚’å…¨éƒ¨falseã«
+        foreach (StageInfo s in Stages)
         {
             s.mazeCanvas.SetActive(false);
             s.mazeCubes.SetActive(false);

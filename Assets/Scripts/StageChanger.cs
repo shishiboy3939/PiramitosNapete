@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
@@ -51,7 +52,13 @@ public class StageChanger : MonoBehaviour
             //標高を測りたいオブジェクトにはGroundタグを付けて！！！
             viewManager.StrokeManager3D.SetupStrokeHeight(viewManager, stage);
             //ステージプレハブを全てアクティブに
-            foreach (Transform n in viewManager.Stages[stage].mazeCubes.transform)
+            // 親を含む子オブジェクトを再帰的に取得
+            // trueを指定しないと非アクティブなオブジェクトを取得できないことに注意
+            var parentAndChildren = viewManager.Stages[stage].mazeCubes.transform.GetComponentsInChildren<Transform>(true);
+            var children = new Transform[parentAndChildren.Length - 1];
+            // 親を除く子オブジェクトを結果にコピー
+            Array.Copy(parentAndChildren, 1, children, 0, children.Length);
+            foreach (Transform n in children)
             {
                 n.gameObject.SetActive(true);
             }
