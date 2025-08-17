@@ -13,13 +13,13 @@ public class Stroke : MonoBehaviour
     [Range(0.01f, 0.5f)]
     [SerializeField] float lineWidth;
 
-    [SerializeField] StrokeManager2D StrokeManager2D;
-    [SerializeField] StrokeManager3D StrokeManager3D;
-    [SerializeField] private float worldCenterX;
-    [SerializeField] private float worldCenterY;
-    [SerializeField] private float blockSize = 4f;
-    [SerializeField] private float blockPixel = 300f;
-    [SerializeField] GameObject map;
+    [Tooltip("ヒエラルキー上のStrokeManager2D"), SerializeField] StrokeManager2D StrokeManager2D;
+    [Tooltip("ヒエラルキー上のStrokeManager3D"), SerializeField] StrokeManager3D StrokeManager3D;
+    [Tooltip("3Dステージの中央X座標"), SerializeField] private float worldCenterX;
+    [Tooltip("3Dステージの中央Z座標"), SerializeField] private float worldCenterZ;
+    [Tooltip("3Dステージのブロックのサイズ"), SerializeField] private float blockSize = 4f;
+    [Tooltip("2Dマップの1ブロックあたりのピクセル数"), SerializeField] private float blockPixel = 300f;
+    [Tooltip("マップ画像のGameObject"), SerializeField] GameObject map;
 
     private bool isDrawing = false;
     private float mouseX, mouseY;
@@ -166,7 +166,7 @@ public class Stroke : MonoBehaviour
     void _addPositionDataToLineRendererList3D()
     {
         //マウスのスクリーン座標から3Dモード時のワールド座標に変換
-        Vector3 worldPosition3D = new Vector3(worldCenterX + (mouseX - scrCenterW - mapX) / blockPixel * blockSize, 0.5f, worldCenterY + (mouseY - scrCenterH - mapY) / blockPixel * blockSize);
+        Vector3 worldPosition3D = new Vector3(worldCenterX + (mouseX - scrCenterW - mapX) / blockPixel * blockSize, 0.5f, worldCenterZ + (mouseY - scrCenterH - mapY) / blockPixel * blockSize);
 
         //ワールド座標をローカル座標に変換
         Vector3 localPosition3D = transform.InverseTransformPoint(worldPosition3D.x, worldPosition3D.y, -1.0f);

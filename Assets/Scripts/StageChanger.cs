@@ -7,8 +7,6 @@ using static UnityEditor.PlayerSettings;
 public class StageChanger : MonoBehaviour
 {
     [SerializeField] ViewManager viewManager;
-    private int _stage = 0;
-    private int _2Dor3D = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

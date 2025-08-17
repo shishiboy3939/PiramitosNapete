@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -25,34 +25,38 @@ public class ClearOrOverManager : MonoBehaviour
 
     void checkElapsedTime()
     {
-        //GameManager.isWaiting‚ªfalse‚Ì‚Æ‚«AŒo‰ßŠÔ‚ğŒv‘ª‚µ‚ÄƒNƒŠƒA‚©ƒQ[ƒ€ƒI[ƒo[‚©”»’è‚·‚é
+        //GameManager.isWaitingãŒfalseã®ã¨ãã€çµŒéæ™‚é–“ã‚’è¨ˆæ¸¬ã—ã¦æ™‚é–“åˆ‡ã‚Œã‹åˆ¤å®šã™ã‚‹
         if (!GameManager.isWaiting)
         {
             if (GameManager.now2Dor3D == 0)
             {
-                //2D‚Ì‚Æ‚«
+                //2Dã®ã¨ã
                 if (GameManager.elapsedTime <= 0)
                 {
-                    //§ŒÀŠÔ‚ğ’´‚¦‚½‚ç3DƒXƒe[ƒW‚ÖˆÚ“®
+                    //åˆ¶é™æ™‚é–“ã‚’è¶…ãˆãŸã‚‰3Dã‚¹ãƒ†ãƒ¼ã‚¸ã¸ç§»å‹•
                     stageChanger.ChangeStages(GameManager.nowStage, 1);
                 }
             }
             else
             {
-                //3D‚Ì‚Æ‚«
+                //3Dã®ã¨ã
                 if (GameManager.elapsedTime <= 0)
                 {
-                    //§ŒÀŠÔ‚ğ’´‚¦‚½‚çƒQ[ƒ€ƒI[ƒo[
+                    //åˆ¶é™æ™‚é–“ã‚’è¶…ãˆãŸã‚‰ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼
                     GameOver();
                 }
             }
-            GameManager.elapsedTime -= Time.deltaTime;
+            //ãƒãƒ¼ã‚ºçŠ¶æ…‹ã˜ã‚ƒãªã‘ã‚Œã°ã‚¿ã‚¤ãƒãƒ¼ã‚’å‹•ã‹ã™
+            if(!GameManager.isPausing)
+            {
+                GameManager.elapsedTime -= Time.deltaTime;
+            }
         }
     }
 
     public void StageClear()
     {
-        //ƒNƒŠƒA‰‰o‚ÌƒRƒ‹[ƒ`ƒ“‚ğÀs
+        //ã‚¯ãƒªã‚¢æ¼”å‡ºã®ã‚³ãƒ«ãƒ¼ãƒãƒ³ã‚’å®Ÿè¡Œ
         if(!clearStarted)
         {
             StartCoroutine(ClearEffect());
@@ -63,19 +67,19 @@ public class ClearOrOverManager : MonoBehaviour
 
     public void GameOver()
     {
-        //“¯‚¶ƒXƒe[ƒW‚Ì2D‰æ–Ê‚É–ß‚é
+        //åŒã˜ã‚¹ãƒ†ãƒ¼ã‚¸ã®2Dç”»é¢ã«æˆ»ã‚‹
         stageChanger.ChangeStages(GameManager.nowStage, 0);
     }
 
     public IEnumerator ClearEffect() {
-        //ƒNƒŠƒA‰æ‘œ•\¦
+        //ã‚¯ãƒªã‚¢ç”»åƒè¡¨ç¤º
         GameManager.isWaiting = true;
         yield return new WaitForSeconds(1);
         var image = clearImage.GetComponent<Image>();
         image.DOFade(1, 2);
         yield return new WaitForSeconds(5);
 
-        //Ÿ‚ÌƒXƒe[ƒW‚Ì2D‰æ–Ê‚Éi‚Ş
+        //æ¬¡ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã®2Dç”»é¢ã«é€²ã‚€
         if (GameManager.nowStage == 2)
         {
             _stage = 0;
@@ -86,8 +90,10 @@ public class ClearOrOverManager : MonoBehaviour
         }
         _2Dor3D = 0;
         stageChanger.ChangeStages(_stage, _2Dor3D);
-        //‰Šú‰»
+        //åˆæœŸåŒ–
         image.DOFade(0, 0);
         clearStarted = false;
     }
+
+    
 }

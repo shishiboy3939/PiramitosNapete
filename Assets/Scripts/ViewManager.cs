@@ -13,12 +13,16 @@ public class ViewManager : MonoBehaviour
     [System.Serializable]
     public class StageInfo
     {
+        [Header("2Dステージと3Dステージ")]
         public GameObject mazeCanvas;
         public GameObject mazeCubes;
+        [Header("プレイヤーの初期位置・角度")]
         public Vector3 playerPosition;
         public Vector3 playerRotation;
+        [Header("制限時間（秒）")]
         public float limitTime2D;
         public float limitTime3D;
+        private ResetObject[] resetObjects;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
