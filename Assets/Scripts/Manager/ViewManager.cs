@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ViewManager : MonoBehaviour
@@ -13,12 +13,17 @@ public class ViewManager : MonoBehaviour
     [System.Serializable]
     public class StageInfo
     {
+        [Header("2Dステージと3Dステージ")]
         public GameObject mazeCanvas;
         public GameObject mazeCubes;
+        [Header("プレイヤーの初期位置・角度")]
         public Vector3 playerPosition;
         public Vector3 playerRotation;
+        [Header("制限時間（秒）")]
         public float limitTime2D;
         public float limitTime3D;
+        [Header("動くオブジェクトなど")]
+        public ResetObject[] resetObjects;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,13 +38,20 @@ public class ViewManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 全ステージのGameObjectのsetActiveを全部falseにする
+    /// </summary>
     public void InitializeStages()
     {
-        //�X�e�[�W��setActive��S��false��
-        foreach(StageInfo s in Stages)
+        //ステージのsetActiveを全部falseに
+        foreach (StageInfo s in Stages)
         {
             s.mazeCanvas.SetActive(false);
             s.mazeCubes.SetActive(false);
+            foreach (ResetObject r in s.resetObjects)
+            {
+                r.gameObject.SetActive(false);
+            }
         }
         playerCapsule.transform.position = Vector3.zero;
         playerCapsule.SetActive(false);

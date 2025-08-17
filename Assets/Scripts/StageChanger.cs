@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
@@ -6,8 +7,6 @@ using static UnityEditor.PlayerSettings;
 public class StageChanger : MonoBehaviour
 {
     [SerializeField] ViewManager viewManager;
-    private int _stage = 0;
-    private int _2Dor3D = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +19,11 @@ public class StageChanger : MonoBehaviour
         
     }
 
-    //ステージを変える
+    /// <summary>
+    /// ステージを変える
+    /// </summary>
+    /// <param name="stage">変える先のステージの番号</param>
+    /// <param name="dim">2Dか3Dか（0だと2D、1だと3D）</param>
     public void ChangeStages(int stage, int dim)
     {
         viewManager.InitializeStages();
@@ -51,7 +54,13 @@ public class StageChanger : MonoBehaviour
             //標高を測りたいオブジェクトにはGroundタグを付けて！！！
             viewManager.StrokeManager3D.SetupStrokeHeight(viewManager, stage);
             //ステージプレハブを全てアクティブに
-            foreach (Transform n in viewManager.Stages[stage].mazeCubes.transform)
+            // 親を含む子オブジェクトを再帰的に取得
+            // trueを指定しないと非アクティブなオブジェクトを取得できないことに注意
+            var parentAndChildren = viewManager.Stages[stage].mazeCubes.transform.GetComponentsInChildren<Transform>(true);
+            var children = new Transform[parentAndChildren.Length - 1];
+            // 親を除く子オブジェクトを結果にコピー
+            Array.Copy(parentAndChildren, 1, children, 0, children.Length);
+            foreach (Transform n in children)
             {
                 n.gameObject.SetActive(true);
             }
@@ -59,6 +68,12 @@ public class StageChanger : MonoBehaviour
             viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
             viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
             viewManager.playerCapsule.SetActive(true);
+            //位置のリセットが必要なGameObjectの位置をリセット
+            foreach (ResetObject r in viewManager.Stages[stage].resetObjects)
+            {
+                r.ResetPosition();
+                r.gameObject.SetActive(true);
+            }
             viewManager.StrokeManager3D.gameObject.SetActive(true);
             viewManager.camera3D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;

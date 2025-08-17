@@ -13,12 +13,18 @@ public class Stroke : MonoBehaviour
     [Range(0.01f, 0.5f)]
     [SerializeField] float lineWidth;
 
-    [SerializeField] StrokeManager2D StrokeManager2D;
-    [SerializeField] StrokeManager3D StrokeManager3D;
-    [SerializeField] private float worldCenterX;
-    [SerializeField] private float worldCenterY;
-    [SerializeField] private float blockSize = 4f;
-    [SerializeField] private float blockPixel = 300f;
+    [Tooltip("ヒエラルキー上のStrokeManager2D"), SerializeField] StrokeManager2D StrokeManager2D;
+    [Tooltip("ヒエラルキー上のStrokeManager3D"), SerializeField] StrokeManager3D StrokeManager3D;
+    [Tooltip("3Dステージの中央X座標"), SerializeField] private float worldCenterX;
+    [Tooltip("3Dステージの中央Z座標"), SerializeField] private float worldCenterZ;
+    [Tooltip("3Dステージのブロックのサイズ"), SerializeField] private float blockSize = 4f;
+    [Tooltip("2Dマップの1ブロックあたりのピクセル数"), SerializeField] private float blockPixel = 300f;
+    [Tooltip("マップ画像のGameObject"), SerializeField] GameObject map;
+
+    private bool isDrawing = false;
+    private float mouseX, mouseY;
+    private float mapX, mapY, mapW, mapH;
+    private int scrCenterW, scrCenterH;
 
     //追加　LineRdenerer型のリスト宣言
     //List<LineRenderer> lineRenderers, lineRenderers3D;
@@ -26,25 +32,50 @@ public class Stroke : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //追加　Listの初期化
+        //マップ画像の座標とサイズを取得
+        mapX = map.GetComponent<RectTransform>().anchoredPosition.x;
+        mapY = map.GetComponent<RectTransform>().anchoredPosition.y;
+        mapW = map.GetComponent<RectTransform>().sizeDelta.x;
+        mapH = map.GetComponent<RectTransform>().sizeDelta.y;
+        scrCenterW = Screen.width / 2;
+        scrCenterH = Screen.height / 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //マウスが2Dマップ内にあるとき
+        if(CheckMousePosition())
         {
-            //lineObjを生成し、初期化する
-            _addLineObject();
-            _addLineObject3D();
+            //クリックされた瞬間
+            if (Input.GetMouseButtonDown(0))
+            {
+                //lineObjを生成し、初期化する
+                _addLineObject();
+                _addLineObject3D();
+                isDrawing = true;
+            }
+            //クリック中（ストローク中）
+            if (Input.GetMouseButton(0))
+            {
+                if(isDrawing)
+                {
+                    _addPositionDataToLineRendererList();
+                    _addPositionDataToLineRendererList3D();
+                }
+            }
+            else
+            {
+                isDrawing = false;
+            }
+        }
+        else
+        {
+            isDrawing = false;
         }
 
-        //追加　クリック中（ストローク中）
-        if (Input.GetMouseButton(0))
-        {
-            _addPositionDataToLineRendererList();
-            _addPositionDataToLineRendererList3D();
-        }
+        //Debug.Log(mapX+" "+mapY+" "+ mapW + " " + mapH + " " + mouseX + " " + mouseY);
+        Debug.Log(CheckMousePosition());
     }
 
     //追加　クリックしたら発動
@@ -135,7 +166,7 @@ public class Stroke : MonoBehaviour
     void _addPositionDataToLineRendererList3D()
     {
         //マウスのスクリーン座標から3Dモード時のワールド座標に変換
-        Vector3 worldPosition3D = new Vector3(worldCenterX + (Input.mousePosition.x-960f) / blockPixel * blockSize, 0.5f, worldCenterY + (Input.mousePosition.y - 540f) / blockPixel * blockSize);
+        Vector3 worldPosition3D = new Vector3(worldCenterX + (mouseX - scrCenterW - mapX) / blockPixel * blockSize, 0.5f, worldCenterZ + (mouseY - scrCenterH - mapY) / blockPixel * blockSize);
 
         //ワールド座標をローカル座標に変換
         Vector3 localPosition3D = transform.InverseTransformPoint(worldPosition3D.x, worldPosition3D.y, -1.0f);
@@ -151,5 +182,24 @@ public class Stroke : MonoBehaviour
 
         //あとから描いた線が上に来るように調整
         StrokeManager3D.lineRenderers3D.Last().sortingOrder = StrokeManager3D.lineRenderers3D.Count;
+    }
+
+    //マウス座標が2Dマップの中かどうか
+    bool CheckMousePosition()
+    {
+        Vector3 m = Input.mousePosition;
+        mouseX = m.x;
+        mouseY = m.y;
+        if (mouseX - scrCenterW - mapX < mapW / 2 &&
+            mouseX - scrCenterW - mapX > -mapW / 2 &&
+            mouseY - scrCenterH - mapY < mapH / 2 &&
+            mouseY - scrCenterH - mapY > -mapH / 2)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
