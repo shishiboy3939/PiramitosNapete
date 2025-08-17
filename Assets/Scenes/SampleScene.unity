@@ -255,6 +255,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24175155}
   m_CullTransparentMesh: 1
+--- !u!1 &54543546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8309086243241872787, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+  m_PrefabInstance: {fileID: 7094289184706988126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &54543553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54543546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94539555
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,18 +308,22 @@ MonoBehaviour:
     playerRotation: {x: 0, y: 0, z: 0}
     limitTime2D: 5
     limitTime3D: 30
+    resetObjects:
+    - {fileID: 54543553}
   - mazeCanvas: {fileID: 7698245545084709370}
     mazeCubes: {fileID: 6557015702591108246}
     playerPosition: {x: 14, y: 2, z: -6}
     playerRotation: {x: 0, y: 0, z: 0}
     limitTime2D: 20
     limitTime3D: 120
+    resetObjects: []
   - mazeCanvas: {fileID: 413905966}
     mazeCubes: {fileID: 1480194926704790408}
     playerPosition: {x: 4, y: 0, z: 0}
     playerRotation: {x: 0, y: 0, z: 0}
     limitTime2D: 15
     limitTime3D: 30
+    resetObjects: []
   playerCapsule: {fileID: 188619146}
   StrokeManager2D: {fileID: 606890699}
   StrokeManager3D: {fileID: 655152242}
@@ -1711,6 +1732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowPause: 1
+  stageChanger: {fileID: 1433027017}
 --- !u!4 &1804077136
 Transform:
   m_ObjectHideFlags: 0
@@ -2261,7 +2283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6622711201256506477, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_Speed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7190027224702191128, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
@@ -2285,7 +2307,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3808650572134696143, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       insertIndex: 0
       addedObject: {fileID: 404392917}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8309086243241872787, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 54543553}
   m_SourcePrefab: {fileID: 100100000, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
 --- !u!1001 &7626097978769035595
 PrefabInstance:

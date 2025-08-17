@@ -19,7 +19,11 @@ public class StageChanger : MonoBehaviour
         
     }
 
-    //ステージを変える
+    /// <summary>
+    /// ステージを変える
+    /// </summary>
+    /// <param name="stage">変える先のステージの番号</param>
+    /// <param name="dim">2Dか3Dか（0だと2D、1だと3D）</param>
     public void ChangeStages(int stage, int dim)
     {
         viewManager.InitializeStages();
@@ -64,6 +68,12 @@ public class StageChanger : MonoBehaviour
             viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
             viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
             viewManager.playerCapsule.SetActive(true);
+            //位置のリセットが必要なGameObjectの位置をリセット
+            foreach (ResetObject r in viewManager.Stages[stage].resetObjects)
+            {
+                r.ResetPosition();
+                r.gameObject.SetActive(true);
+            }
             viewManager.StrokeManager3D.gameObject.SetActive(true);
             viewManager.camera3D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;

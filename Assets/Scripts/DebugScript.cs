@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
+using static UnityEngine.CullingGroup;
 
 public class DebugScript : MonoBehaviour
 {
     [Tooltip("Pキーでポーズするかどうか"), SerializeField] private bool allowPause = true;
+    [Tooltip("Pキーでポーズするかどうか"), SerializeField] private StageChanger stageChanger;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +16,7 @@ public class DebugScript : MonoBehaviour
     void Update()
     {
         checkPause();
+        checkRestart();
     }
 
     void checkPause()
@@ -24,5 +27,14 @@ public class DebugScript : MonoBehaviour
             GameManager.isPausing = !GameManager.isPausing;
         }
 
+    }
+
+    void checkRestart()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //Rキーの入力でリセット
+            stageChanger.ChangeStages(GameManager.nowStage, GameManager.now2Dor3D);
+        }
     }
 }

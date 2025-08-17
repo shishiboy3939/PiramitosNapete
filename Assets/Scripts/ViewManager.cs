@@ -22,7 +22,8 @@ public class ViewManager : MonoBehaviour
         [Header("制限時間（秒）")]
         public float limitTime2D;
         public float limitTime3D;
-        private ResetObject[] resetObjects;
+        [Header("動くオブジェクトなど")]
+        public ResetObject[] resetObjects;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +38,9 @@ public class ViewManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 全ステージのGameObjectのsetActiveを全部falseにする
+    /// </summary>
     public void InitializeStages()
     {
         //ステージのsetActiveを全部falseに
@@ -44,6 +48,10 @@ public class ViewManager : MonoBehaviour
         {
             s.mazeCanvas.SetActive(false);
             s.mazeCubes.SetActive(false);
+            foreach (ResetObject r in s.resetObjects)
+            {
+                r.gameObject.SetActive(false);
+            }
         }
         playerCapsule.transform.position = Vector3.zero;
         playerCapsule.SetActive(false);

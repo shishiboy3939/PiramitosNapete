@@ -2,12 +2,13 @@
 
 public class ResetObject : MonoBehaviour
 {
-    [Tooltip("このオブジェクトの初期座標"), SerializeField] private Vector3 restartPosition;
-    [Tooltip("このオブジェクトの初期角度"), SerializeField] private Vector3 restartRotation;
+    private Vector3 _initialPosition; // 初期位置
+    private Vector3 _initialRotation; // 初期回転
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _initialPosition = transform.position;
+        _initialRotation = transform.localEulerAngles;
     }
 
     // Update is called once per frame
@@ -16,8 +17,10 @@ public class ResetObject : MonoBehaviour
         
     }
 
-    void ResetPosition()
+    //初期位置にリセット
+    public void ResetPosition()
     {
-
+        gameObject.transform.position = _initialPosition;
+        gameObject.transform.localEulerAngles = _initialRotation;
     }
 }
