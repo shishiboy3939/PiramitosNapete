@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MK.Toon;
+using System;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class StageChanger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ChangeStages(0, 0);
+        GotoTitle();
     }
 
     // Update is called once per frame
@@ -32,21 +33,12 @@ public class StageChanger : MonoBehaviour
             //2Dのとき
             viewManager.Stages[stage].mazeCanvas.SetActive(true);
             //線を全部消す
-            foreach (Transform n in viewManager.StrokeManager2D.transform)
-            {
-                Destroy(n.gameObject);
-            }
-            viewManager.StrokeManager2D.lineRenderers2D = new List<LineRenderer>();
-            foreach (Transform n in viewManager.StrokeManager3D.transform)
-            {
-                Destroy(n.gameObject);
-            }
-            viewManager.StrokeManager3D.lineRenderers3D = new List<LineRenderer>();
+            DestroyLines();
             viewManager.StrokeManager2D.gameObject.SetActive(true);
             viewManager.camera2D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime2D;
         }
-        else
+        else if (dim == 1)
         {
             //3Dのとき
             viewManager.Stages[stage].mazeCubes.SetActive(true);
@@ -80,5 +72,37 @@ public class StageChanger : MonoBehaviour
         }
         GameManager.nowStage = stage;
         GameManager.now2Dor3D = dim;
+        GameManager.isWaiting = false;
+    }
+
+    /// <summary>
+    /// 初期化してタイトル画面に戻る
+    /// </summary>
+    public void GotoTitle()
+    {
+        viewManager.InitializeStages();
+        //線を全部消す
+        DestroyLines();
+        viewManager.titleScreen.SetActive(true);
+        viewManager.camera2D.SetActive(true);
+        GameManager.elapsedTime = 0;
+        GameManager.nowStage = 0;
+        GameManager.now2Dor3D = 0;
+        GameManager.isWaiting = true;
+    }
+
+    //線を全部消す
+    void DestroyLines()
+    {
+        foreach (Transform n in viewManager.StrokeManager2D.transform)
+        {
+            Destroy(n.gameObject);
+        }
+        viewManager.StrokeManager2D.lineRenderers2D = new List<LineRenderer>();
+        foreach (Transform n in viewManager.StrokeManager3D.transform)
+        {
+            Destroy(n.gameObject);
+        }
+        viewManager.StrokeManager3D.lineRenderers3D = new List<LineRenderer>();
     }
 }

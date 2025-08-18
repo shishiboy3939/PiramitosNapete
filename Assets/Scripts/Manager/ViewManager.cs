@@ -5,6 +5,7 @@ public class ViewManager : MonoBehaviour
 {
     [SerializeField] public StageInfo[] Stages;
     [SerializeField] public GameObject playerCapsule;
+    [SerializeField] public GameObject titleScreen;
     [SerializeField] public StrokeManager2D StrokeManager2D;
     [SerializeField] public StrokeManager3D StrokeManager3D;
     [SerializeField] public GameObject camera2D;
@@ -53,6 +54,7 @@ public class ViewManager : MonoBehaviour
                 r.gameObject.SetActive(false);
             }
         }
+        titleScreen.SetActive(false);
         playerCapsule.transform.position = Vector3.zero;
         playerCapsule.SetActive(false);
         StrokeManager2D.gameObject.SetActive(false);

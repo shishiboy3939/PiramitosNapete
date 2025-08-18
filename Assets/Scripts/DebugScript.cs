@@ -5,7 +5,9 @@ using static UnityEngine.CullingGroup;
 public class DebugScript : MonoBehaviour
 {
     [Tooltip("Pキーでポーズするかどうか"), SerializeField] private bool allowPause = true;
-    [Tooltip("Pキーでポーズするかどうか"), SerializeField] private StageChanger stageChanger;
+    [Tooltip("Rキーでリスタートするかどうか"), SerializeField] private bool allowRestart = true;
+    [Tooltip("Tキーでタイトル画面に戻るどうか"), SerializeField] private bool allowQuickTitle = true;
+    [Tooltip("ヒエラルキー上のStageChanger"), SerializeField] private StageChanger stageChanger;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,7 @@ public class DebugScript : MonoBehaviour
     {
         checkPause();
         checkRestart();
+        checkQuickTitle();
     }
 
     void checkPause()
@@ -31,10 +34,20 @@ public class DebugScript : MonoBehaviour
 
     void checkRestart()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && allowRestart)
         {
             //Rキーの入力でリセット
             stageChanger.ChangeStages(GameManager.nowStage, GameManager.now2Dor3D);
         }
+    }
+
+    void checkQuickTitle()
+    {
+        if (Input.GetKeyDown(KeyCode.T) && allowQuickTitle)
+        {
+            //Tキーの入力でタイトル画面へ
+            stageChanger.GotoTitle();
+        }
+
     }
 }

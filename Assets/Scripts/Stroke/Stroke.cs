@@ -74,8 +74,6 @@ public class Stroke : MonoBehaviour
             isDrawing = false;
         }
 
-        //Debug.Log(mapX+" "+mapY+" "+ mapW + " " + mapH + " " + mouseX + " " + mouseY);
-        Debug.Log(CheckMousePosition());
     }
 
     //追加　クリックしたら発動
