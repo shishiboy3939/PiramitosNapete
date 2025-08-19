@@ -298,7 +298,7 @@ MonoBehaviour:
   Stages:
   - mazeCanvas: {fileID: 1065765197}
     mazeCubes: {fileID: 3032310730093878729}
-    playerPosition: {x: 3, y: 0.5, z: -5}
+    playerPosition: {x: -3, y: 0.5, z: -5}
     playerRotation: {x: 0, y: 0, z: 0}
     limitTime2D: 5
     limitTime3D: 30
