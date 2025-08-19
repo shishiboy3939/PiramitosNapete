@@ -1662,15 +1662,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.375
+      value: 3.375
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2105,10 +2105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1274242969434688379, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
+    - target: {fileID: 1577992773369854097, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 1750347108}
     - target: {fileID: 2022240507113594997, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
       value: 
@@ -2157,6 +2157,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2563184799154917524, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 1750347108}
     - target: {fileID: 4225753788427666471, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: target
       value: 
@@ -2164,14 +2168,6 @@ PrefabInstance:
     - target: {fileID: 5303788614323813487, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_Name
       value: MazeCubes33
-      objectReference: {fileID: 0}
-    - target: {fileID: 6210523376124403174, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622711201256506477, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_Speed
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6927644171978621580, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
@@ -2185,10 +2181,14 @@ PrefabInstance:
       propertyPath: clearOrOverManager
       value: 
       objectReference: {fileID: 2104347920}
-    - target: {fileID: 8305888696332509528, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
+    - target: {fileID: 9199350490836480343, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 9199350490836480343, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1511071102}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
