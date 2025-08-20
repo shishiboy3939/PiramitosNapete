@@ -16,13 +16,13 @@ public class DiceItem : MonoBehaviour
         
     }
 
+    //プレイヤーと衝突したら、制限時間を追加
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == player.name)
         {
             AddElapsedTime(addTime);
             gameObject.SetActive(false);
-            //Destroy(gameObject);
         }
     }
 
