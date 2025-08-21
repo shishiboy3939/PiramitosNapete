@@ -7,7 +7,10 @@ public class ToggleAutoForwardOnJump : MonoBehaviour
     [SerializeField] FirstPersonController fpc;
     bool wasGrounded;
 
-    void Awake(){ if(!fpc) fpc = GetComponent<FirstPersonController>(); }
+    void Awake()
+    {
+        if (!fpc) fpc = GetComponent<FirstPersonController>();
+    }
 
     void Update()
     {

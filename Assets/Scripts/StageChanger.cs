@@ -1,4 +1,5 @@
 ﻿using MK.Toon;
+using StarterAssets;
 using System;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -8,6 +9,7 @@ using static UnityEditor.PlayerSettings;
 public class StageChanger : MonoBehaviour
 {
     [SerializeField] ViewManager viewManager;
+    [SerializeField] FirstPersonController fpc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +30,7 @@ public class StageChanger : MonoBehaviour
     public void ChangeStages(int stage, int dim)
     {
         viewManager.InitializeStages();
-        if(dim == 0)
+        if (dim == 0)
         {
             //2Dのとき
             viewManager.Stages[stage].mazeCanvas.SetActive(true);
@@ -69,10 +71,11 @@ public class StageChanger : MonoBehaviour
             viewManager.StrokeManager3D.gameObject.SetActive(true);
             viewManager.camera3D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;
+            fpc.Grounded = true;
         }
-        GameManager.nowStage = stage;
-        GameManager.now2Dor3D = dim;
-        GameManager.isWaiting = false;
+            GameManager.nowStage = stage;
+            GameManager.now2Dor3D = dim;
+            GameManager.isWaiting = false;
     }
 
     /// <summary>
