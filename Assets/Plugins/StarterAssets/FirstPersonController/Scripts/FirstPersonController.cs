@@ -54,9 +54,10 @@ namespace StarterAssets
 
 		public bool isSprinting = false;
         public bool isWaiting = false;
-
+		public bool autoForward = true;
+		
         // cinemachine
-        private float _cinemachineTargetPitch;
+		private float _cinemachineTargetPitch;
 
 		// player
 		private float _speed;
@@ -161,21 +162,21 @@ namespace StarterAssets
 
 		private void MoveFoward()
 		{
-            //前に進むだけ
-            //操作停止モードじゃなければ動く
-            if (!isWaiting) {
-                Vector3 inputDirection = transform.forward;
-                if (!isSprinting)
-                {
-                    _speed = MoveSpeed;
-                }
-                else
-                {
-                    _speed = SprintSpeed;
-                }
-                _controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
-            }
-        }
+			//前に進むだけ
+			//操作停止モードじゃなければ動く
+			if (!isWaiting)
+			{
+				if (!isWaiting)
+				{
+					Vector3 horizontal = autoForward ? transform.forward : Vector3.zero;
+					float s = isSprinting ? SprintSpeed : MoveSpeed;
+					_controller.Move(horizontal.normalized * (s * Time.deltaTime)
+									+ new Vector3(0f, _verticalVelocity, 0f) * Time.deltaTime);
+
+				}
+			}
+		}
+		public void ToggleAutoForward() => autoForward = !autoForward;
 
 
         private void JumpAndGravity()

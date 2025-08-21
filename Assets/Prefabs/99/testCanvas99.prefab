@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1968374386213464824}
   - component: {fileID: 6868056507107055948}
   m_Layer: 0
-  m_Name: background
+  m_Name: BackgroundColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 2332946728940755579}
   - component: {fileID: 6579885610608482940}
   m_Layer: 0
-  m_Name: background (1)
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,7 +380,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 23.312988, y: -7.937378}
-  m_SizeDelta: {x: 650.37, y: 650.38}
+  m_SizeDelta: {x: 650, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7862043219881869575
 CanvasRenderer:
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 7228082499227618940}
   - component: {fileID: 4591494744730507080}
   m_Layer: 0
-  m_Name: background (2)
+  m_Name: TextBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1423,11 +1423,11 @@ MonoBehaviour:
   lineWidth: 0.01
   StrokeManager2D: {fileID: 0}
   StrokeManager3D: {fileID: 0}
-  worldCenterX: 16
-  worldCenterZ: 0
-  blockSize: 4
-  blockPixel: 100
-  map: {fileID: 0}
+  worldCenterX: 19
+  worldCenterZ: 17
+  blockSize: 10
+  blockPixel: 120
+  map: {fileID: 2323669082848741037}
 --- !u!222 &8871057933174976118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,6 @@ GameObject:
   - component: {fileID: 202788465937017546}
   - component: {fileID: 7018361929266144394}
   - component: {fileID: 7080181817099453409}
-  - component: {fileID: 8720646606079075004}
   m_Layer: 0
   m_Name: sphinx
   m_TagString: Untagged
@@ -1560,28 +1559,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &8720646606079075004
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7107228054075590197}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eee2ab09cbd204c75be8d224ccd105a0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7617123534844973781
 GameObject:
   m_ObjectHideFlags: 0
