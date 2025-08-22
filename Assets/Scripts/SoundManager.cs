@@ -10,7 +10,18 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip Stage03BGM;
     [SerializeField] public AudioClip MapBGM;
     [SerializeField] public AudioSource BgmSource, SeSource;
-
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void PlaySoundEffect(AudioClip sound)
     {
         SeSource.PlayOneShot(sound);

@@ -73,15 +73,15 @@ public class StageChanger : MonoBehaviour
             viewManager.camera3D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;
             fpc.Grounded = true;
-            if (GameManager.nowStage == 1)
+            if (GameManager.nowStage == 0)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage01BGM);
             }
-            else if (GameManager.nowStage == 2)
+            else if (GameManager.nowStage == 1)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage02BGM);
             }
-            else if (GameManager.nowStage == 3)
+            else if (GameManager.nowStage == 2)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage03BGM);
             }
