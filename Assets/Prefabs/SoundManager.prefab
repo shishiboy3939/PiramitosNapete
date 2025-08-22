@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -139,6 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 170727485310993638}
   - component: {fileID: 5016725873961082823}
+  - component: {fileID: 7796351659149258824}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b48f324747b9845a28e7b1656261a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE_SceneMove: {fileID: 8300000, guid: 8140f07ac995a49189c7170f49fce710, type: 3}
+  SE_SceneMovie: {fileID: 8300000, guid: 8140f07ac995a49189c7170f49fce710, type: 3}
   TitleBGM: {fileID: 8300000, guid: 879d4e3ae3fcb483982f2e655363c5f2, type: 3}
   Stage01BGM: {fileID: 8300000, guid: 1e0edab4709614766acbe7924b2ed521, type: 3}
   Stage02BGM: {fileID: 8300000, guid: e37a6a47b590d4abcab5c23be3e445d1, type: 3}
@@ -183,6 +184,14 @@ MonoBehaviour:
   MapBGM: {fileID: 8300000, guid: ed04c9b7dfd5ffe489ec445433e0f066, type: 3}
   BgmSource: {fileID: 5332873187045054439}
   SeSource: {fileID: 5872933162331619286}
+--- !u!81 &7796351659149258824
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041659249912376173}
+  m_Enabled: 1
 --- !u!1 &8838935397204987106
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,10 +236,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

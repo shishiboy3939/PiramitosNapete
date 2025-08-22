@@ -39,6 +39,7 @@ public class StageChanger : MonoBehaviour
             viewManager.StrokeManager2D.gameObject.SetActive(true);
             viewManager.camera2D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime2D;
+            SoundManager.Instance.PlayBgm(SoundManager.Instance.MapBGM);
         }
         else if (dim == 1)
         {
@@ -72,6 +73,19 @@ public class StageChanger : MonoBehaviour
             viewManager.camera3D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;
             fpc.Grounded = true;
+            if (GameManager.nowStage == 1)
+            {
+                SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage01BGM);
+            }
+            else if (GameManager.nowStage == 2)
+            {
+                SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage02BGM);
+            }
+            else if (GameManager.nowStage == 3)
+            {
+                SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage03BGM);
+            }
+            
         }
             GameManager.nowStage = stage;
             GameManager.now2Dor3D = dim;
@@ -92,6 +106,7 @@ public class StageChanger : MonoBehaviour
         GameManager.nowStage = 0;
         GameManager.now2Dor3D = 0;
         GameManager.isWaiting = true;
+        SoundManager.Instance.PlayBgm(SoundManager.Instance.TitleBGM);
     }
 
     //線を全部消す
