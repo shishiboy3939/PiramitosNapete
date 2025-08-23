@@ -1,4 +1,5 @@
-﻿using MK.Toon;
+﻿using Microsoft.Unity.VisualStudio.Editor;
+using MK.Toon;
 using StarterAssets;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,25 @@ using static UnityEditor.PlayerSettings;
 
 public class StageChanger : MonoBehaviour
 {
+    public static StageChanger Instance;
     [SerializeField] ViewManager viewManager;
     [SerializeField] FirstPersonController fpc;
+    public bool tutorialOn2D;
+    public bool tutorialOn3D;
+    [SerializeField] Tutorialmanager tutorialmanager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         GotoTitle();
@@ -40,6 +57,10 @@ public class StageChanger : MonoBehaviour
             viewManager.camera2D.SetActive(true);
             GameManager.elapsedTime = viewManager.Stages[stage].limitTime2D;
             SoundManager.Instance.PlayBgm(SoundManager.Instance.MapBGM);
+            if (tutorialOn2D)
+            {
+                tutorialmanager.CallTutorial();
+            }
         }
         else if (dim == 1)
         {
@@ -76,6 +97,10 @@ public class StageChanger : MonoBehaviour
             if (GameManager.nowStage == 0)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage01BGM);
+                if (tutorialOn3D)
+                {
+                    tutorialmanager.CallTutorial();
+                }
             }
             else if (GameManager.nowStage == 1)
             {
@@ -107,6 +132,7 @@ public class StageChanger : MonoBehaviour
         GameManager.now2Dor3D = 0;
         GameManager.isWaiting = true;
         SoundManager.Instance.PlayBgm(SoundManager.Instance.TitleBGM);
+        tutorialmanager.Reset();
     }
 
     //線を全部消す
