@@ -1,13 +1,7 @@
-using Microsoft.Unity.VisualStudio.Editor;
-using MK.Toon;
-using StarterAssets;
-using System;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.AI;
 
 public class Tutorialmanager : MonoBehaviour
 {
@@ -56,6 +50,7 @@ public class Tutorialmanager : MonoBehaviour
             GameManager.isPausing = false;
             GameManager.isWaiting = false;
             StageChanger.Instance.tutorialOn3D = false;
+            StageChanger.Instance.ResumeAllAgents();
         }
     }
     public void Reset()
@@ -68,7 +63,7 @@ public class Tutorialmanager : MonoBehaviour
         }
         NextButton.SetActive(false);
         TutorialPanel.DOFade(0f, 0f);
-        currentPage=0;
+        currentPage = 0;
     }
 
 }

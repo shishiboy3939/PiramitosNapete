@@ -1188,8 +1188,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewManager: {fileID: 94539556}
   fpc: {fileID: 188619149}
-  tutorialOn: 0
+  tutorialOn2D: 0
+  tutorialOn3D: 0
   tutorialmanager: {fileID: 343103397}
+  agents:
+  - {fileID: 1716138178}
+  - {fileID: 6557015702591108249}
+  - {fileID: 9061051686948929249}
+  - {fileID: 1985464451}
 --- !u!4 &1433027018
 Transform:
   m_ObjectHideFlags: 0
@@ -1394,6 +1400,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 1664865560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1716138178 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6622711201256506477, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+  m_PrefabInstance: {fileID: 7094289184706988126}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744106422
 GameObject:
@@ -1732,6 +1743,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+--- !u!195 &1985464451 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6475717615322142251, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+  m_PrefabInstance: {fileID: 9061051686948929247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2104347919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1926,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 926791745}
     m_Modifications:
+    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
+      propertyPath: agents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
+      propertyPath: 'agents.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1716138178}
+    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
+      propertyPath: 'agents.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6557015702591108249}
+    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
+      propertyPath: 'agents.Array.data[2]'
+      value: 
+      objectReference: {fileID: 9061051686948929249}
+    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
+      propertyPath: 'agents.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1985464451}
     - target: {fileID: 3128076220509894740, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
       propertyPath: m_Name
       value: TutorialManager
@@ -2249,6 +2285,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &6557015702591108249 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 5444387507108923303, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+  m_PrefabInstance: {fileID: 6557015702591108245}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7094289184706988126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2400,6 +2441,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7000336438505141632, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312558136448395569, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312558136448395569, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312558136448395569, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312558136448395569, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
+      propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8938396505602898916, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
@@ -2646,6 +2703,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &9061051686948929249 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6221291716921204391, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+  m_PrefabInstance: {fileID: 9061051686948929247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
