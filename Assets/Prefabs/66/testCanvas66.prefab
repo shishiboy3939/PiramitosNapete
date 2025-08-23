@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 9020027531153511753}
   - component: {fileID: 9176069375449785419}
   m_Layer: 0
-  m_Name: Shoes
+  m_Name: Dice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275.4, y: -9.2}
+  m_AnchoredPosition: {x: 310.00003, y: -82.999985}
   m_SizeDelta: {x: 37.9677, y: 39.0961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9020027531153511753
@@ -184,7 +184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308, y: 65.000015}
+  m_AnchoredPosition: {x: 308, y: -6.9999847}
   m_SizeDelta: {x: 70.9929, y: 48.793}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8917335027620319908
@@ -1053,7 +1053,7 @@ GameObject:
   - component: {fileID: 7292650106546718213}
   - component: {fileID: 4715883343681877941}
   m_Layer: 0
-  m_Name: ExitArch (1)
+  m_Name: Ankh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

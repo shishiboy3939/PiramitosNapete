@@ -314,12 +314,13 @@ MonoBehaviour:
     - {fileID: 6557015702591108247}
   - mazeCanvas: {fileID: 413905966}
     mazeCubes: {fileID: 1480194926704790408}
-    playerPosition: {x: 3, y: 0.5, z: 41}
+    playerPosition: {x: 19, y: 0.5, z: -7}
     playerRotation: {x: 0, y: 180, z: 0}
     limitTime2D: 10
     limitTime3D: 60
     resetObjects:
     - {fileID: 9061051686948929248}
+    - {fileID: 1853049587}
   playerCapsule: {fileID: 188619146}
   titleScreen: {fileID: 8279800080553146426}
   StrokeManager2D: {fileID: 606890699}
@@ -1321,9 +1322,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCapsule
       objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1331,7 +1336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1632,6 +1637,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853049587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3225345951739172336, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+  m_PrefabInstance: {fileID: 9061051686948929247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1919908452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2486,6 +2502,14 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1511071102}
+    - target: {fileID: 7155972117249469831, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 7155972117249469831, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: clearOrOverManager
+      value: 
+      objectReference: {fileID: 2104347920}
     - target: {fileID: 7159618696147008958, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -28,6 +28,6 @@ public class DiceItem : MonoBehaviour
 
     void AddElapsedTime(float t)
     {
-        GameManager.elapsedTime += t;
+        GameManager.elapsedTime -= t;
     }
 }
