@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.AI;
+using StarterAssets;
 
 public class Tutorialmanager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Tutorialmanager : MonoBehaviour
     [SerializeField] private List<GameObject> TutorialPage;
     private int currentPage;
     [SerializeField] private GameObject NextButton;
+    [SerializeField] FirstPersonController fpc;
 
     private void Start()
     {
@@ -51,6 +53,7 @@ public class Tutorialmanager : MonoBehaviour
             GameManager.isWaiting = false;
             StageChanger.Instance.tutorialOn3D = false;
             StageChanger.Instance.ResumeAllAgents();
+            fpc.ToggleAutoForward(); 
         }
     }
     public void Reset()

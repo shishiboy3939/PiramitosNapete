@@ -1193,9 +1193,6 @@ MonoBehaviour:
   tutorialmanager: {fileID: 343103397}
   agents:
   - {fileID: 1716138178}
-  - {fileID: 6557015702591108249}
-  - {fileID: 9061051686948929249}
-  - {fileID: 1985464451}
 --- !u!4 &1433027018
 Transform:
   m_ObjectHideFlags: 0
@@ -1926,6 +1923,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 926791745}
     m_Modifications:
+    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
+      propertyPath: fpc
+      value: 
+      objectReference: {fileID: 188619149}
     - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
       propertyPath: agents.Array.size
       value: 4

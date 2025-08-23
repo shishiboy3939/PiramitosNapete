@@ -102,6 +102,7 @@ public class StageChanger : MonoBehaviour
                 {
                     tutorialmanager.CallTutorial();
                     StopAllAgents();
+                    fpc.ToggleAutoForward(); 
                 }
             }
             else if (GameManager.nowStage == 1)
