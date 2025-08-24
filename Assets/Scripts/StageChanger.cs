@@ -87,9 +87,9 @@ public class StageChanger : MonoBehaviour
             }
             
         }
-            GameManager.nowStage = stage;
-            GameManager.now2Dor3D = dim;
-            GameManager.isWaiting = false;
+        GameManager.nowStage = stage;
+        GameManager.now2Dor3D = dim;
+        GameManager.isWaiting = false;
     }
 
     /// <summary>

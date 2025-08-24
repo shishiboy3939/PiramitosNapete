@@ -9,7 +9,6 @@ public class ClearOrOverManager : MonoBehaviour
     [SerializeField] ViewManager viewManager;
     [SerializeField] StageChanger stageChanger;
     [SerializeField] GameObject clearImage;
-    [SerializeField] NavMeshAgent navMeshAgent;
     private int _stage = 0;
     private int _2Dor3D = 0;
     private bool clearStarted = false;
@@ -76,8 +75,6 @@ public class ClearOrOverManager : MonoBehaviour
     public IEnumerator ClearEffect() {
         //クリア画像表示
         GameManager.isWaiting = true;
-        //敵のsetActiveをfalseに
-        navMeshAgent.gameObject.SetActive(false);
         yield return new WaitForSeconds(1);
         var image = clearImage.GetComponent<Image>();
         image.DOFade(1, 2);
