@@ -282,6 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3952705840045878886}
   - component: {fileID: 4050218854927387204}
+  - component: {fileID: 3460389369964714850}
   m_Layer: 0
   m_Name: UI-ClockHands
   m_TagString: Untagged
@@ -296,7 +297,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967025535172725543}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -317,6 +318,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967025535172725543}
   m_CullTransparentMesh: 1
+--- !u!114 &3460389369964714850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967025535172725543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fcff384c1336747801c84cd7e73650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewManager: {fileID: 0}
 --- !u!1 &1048574017145972268
 GameObject:
   m_ObjectHideFlags: 0
