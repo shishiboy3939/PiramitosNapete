@@ -139,7 +139,6 @@ GameObject:
   m_Component:
   - component: {fileID: 170727485310993638}
   - component: {fileID: 5016725873961082823}
-  - component: {fileID: 7796351659149258824}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -184,14 +183,6 @@ MonoBehaviour:
   MapBGM: {fileID: 8300000, guid: ed04c9b7dfd5ffe489ec445433e0f066, type: 3}
   BgmSource: {fileID: 5332873187045054439}
   SeSource: {fileID: 5872933162331619286}
---- !u!81 &7796351659149258824
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4041659249912376173}
-  m_Enabled: 1
 --- !u!1 &8838935397204987106
 GameObject:
   m_ObjectHideFlags: 0

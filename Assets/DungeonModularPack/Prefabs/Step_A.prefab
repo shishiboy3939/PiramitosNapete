@@ -55,11 +55,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f63d02294ea68c14aae7768c670bfe03, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5b1651f57925a41cdb80620bcfd4edb4, type: 2}
+      objectReference: {fileID: 2100000, guid: 9e976c0f107f72942998df177142475e, type: 2}
     - target: {fileID: -7511558181221131132, guid: f63d02294ea68c14aae7768c670bfe03, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5805a6eb309d2a74094d879e20004be2, type: 2}
+      objectReference: {fileID: 2100000, guid: dfba02ec8f897af4b805605360326b0f, type: 2}
     - target: {fileID: 919132149155446097, guid: f63d02294ea68c14aae7768c670bfe03, type: 3}
       propertyPath: m_Name
       value: Step_A
