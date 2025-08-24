@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 5478113613260045866}
   - component: {fileID: 7972912915269281215}
   - component: {fileID: 2782936351482800842}
+  - component: {fileID: 8187684030791109308}
   m_Layer: 0
   m_Name: UI-Ring
   m_TagString: Untagged
@@ -1127,6 +1128,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8187684030791109308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676417912555042251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfef6aa676cf9a54ab8bc1037dd2f367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountMap: {fileID: 5623654223624960011}
 --- !u!1 &6192718496863398369
 GameObject:
   m_ObjectHideFlags: 0
