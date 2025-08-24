@@ -28,24 +28,24 @@ public class Tutorialmanager : MonoBehaviour
     {
         TutorialPage[currentPage].SetActive(false);
         currentPage++;
-        if (currentPage < 3)
+        if (currentPage < 9)
         {
             TutorialPage[currentPage].SetActive(true);
         }
-        if (currentPage == 3)
+        if (currentPage == 9)
         {
             TutorialPanel.DOFade(0f, 1f);
             NextButton.SetActive(false);
             StageChanger.Instance.tutorialOn2D = false;
             GameManager.isPausing = false;
         }
-        if (currentPage < 6 && currentPage > 3)
+        if (currentPage < 17 && currentPage > 9)
         {
             TutorialPage[currentPage].SetActive(true);
             StageChanger.Instance.tutorialOn3D = true;
             GameManager.isWaiting = true;
         }
-        if (currentPage == 6)
+        if (currentPage == 17)
         {
             TutorialPanel.DOFade(0f, 1f);
             NextButton.SetActive(false);
