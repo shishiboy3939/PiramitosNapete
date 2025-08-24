@@ -1729,6 +1729,7 @@ MonoBehaviour:
   viewManager: {fileID: 94539556}
   stageChanger: {fileID: 1433027017}
   clearImage: {fileID: 388236147}
+  navMeshAgentController: {fileID: 0}
 --- !u!4 &2104347921
 Transform:
   m_ObjectHideFlags: 0
@@ -2203,7 +2204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303788614323813487, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7190027224702191128, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player

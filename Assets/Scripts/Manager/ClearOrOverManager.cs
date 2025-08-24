@@ -8,6 +8,7 @@ public class ClearOrOverManager : MonoBehaviour
     [SerializeField] ViewManager viewManager;
     [SerializeField] StageChanger stageChanger;
     [SerializeField] GameObject clearImage;
+    [SerializeField] NavMeshAgentController navMeshAgentController;
     private int _stage = 0;
     private int _2Dor3D = 0;
     private bool clearStarted = false;
