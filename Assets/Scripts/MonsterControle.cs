@@ -23,7 +23,9 @@ public class MonsterControle : MonoBehaviour
         ViewManager.Instance.camera3D.SetActive(false);
         ViewManager.Instance.killCamera.SetActive(true);
         GameManager.isWaiting = true;
-        yield return new WaitForSeconds(3);
+        SoundManager.Instance.FootStepStop();
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_EatSoul);
+        yield return new WaitForSeconds(2);
         ViewManager.Instance.killCamera.SetActive(false);
         if (agent != null) agent.isStopped = false;
         clearOrOverManager.GameOver();

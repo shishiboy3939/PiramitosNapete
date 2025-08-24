@@ -91,16 +91,22 @@ public class StageChanger : MonoBehaviour
                 {
                     tutorialmanager.CallTutorial();
                     StopAllAgents();
-                    fpc.ToggleAutoForward(); 
+                    fpc.ToggleAutoForward();
+                }
+                else
+                {
+                    SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
                 }
             }
             else if (GameManager.nowStage == 1)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage02BGM);
+                SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             }
             else if (GameManager.nowStage == 2)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage03BGM);
+                SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             }
 
         }

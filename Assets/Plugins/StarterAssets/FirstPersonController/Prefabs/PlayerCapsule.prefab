@@ -325,7 +325,6 @@ GameObject:
   - component: {fileID: 8616685848737228376}
   - component: {fileID: 2063284951338791650}
   - component: {fileID: 5251256338787255641}
-  - component: {fileID: 7867310096717015699}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -568,11 +567,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpc: {fileID: 8616685848737228371}
---- !u!81 &7867310096717015699
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
