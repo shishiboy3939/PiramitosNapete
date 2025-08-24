@@ -319,7 +319,7 @@ Terrain:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3570505059520459783}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 7f3a3093c537f034b9836aeebd532dea, type: 2}
   m_TreeDistance: 5000
@@ -418,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6366087625578169421
 Transform:
   m_ObjectHideFlags: 0
@@ -471,12 +471,12 @@ GameObject:
   - component: {fileID: 5984818190593630874}
   - component: {fileID: 6540378473138965409}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: KillCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2290581356357019462
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,10 +1033,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Height: 5
+  m_Radius: 1.7
+  m_Height: 7
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.45}
 --- !u!195 &6622711201256506477
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1073,6 +1073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   clearOrOverManager: {fileID: 0}
+  agent: {fileID: 6622711201256506477}
 --- !u!114 &3136604523666611482
 MonoBehaviour:
   m_ObjectHideFlags: 0

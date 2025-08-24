@@ -327,6 +327,7 @@ MonoBehaviour:
   StrokeManager3D: {fileID: 655152242}
   camera2D: {fileID: 1254915741}
   camera3D: {fileID: 1750347104}
+  killCamera: {fileID: 1137044102}
 --- !u!4 &94539557
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,6 +1007,11 @@ RectTransform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5079940866051021149, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
   m_PrefabInstance: {fileID: 2415161032618059952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1137044102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4918964074719511407, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+  m_PrefabInstance: {fileID: 7094289184706988126}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1254915741 stripped
 GameObject:
