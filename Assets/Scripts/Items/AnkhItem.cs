@@ -5,6 +5,7 @@ public class AnkhItem : MonoBehaviour
 {
     [Tooltip("ヒエラルキー上のPlayerCapsuleオブジェクト"), SerializeField] GameObject player;
     [Tooltip("ヒエラルキー上のStageChanger"), SerializeField] private StageChanger stageChanger;
+    [Tooltip("ヒエラルキー上のStageChanger"), SerializeField] private ViewManager viewManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,17 +24,18 @@ public class AnkhItem : MonoBehaviour
         if (col.gameObject.name == player.name)
         {
             AnkhRestart();
-            //リスタートしたら、自身のsetActiveをfalseにして、リスタート後に再度現れないようにする
-            //ただこの処理だと、1ステージにアンクを1つしか配置できない
-            //もしアンクを複数配置したいなら、また処理を考えないといけない
-            gameObject.SetActive(false);
         }
     }
 
-    //ただ今のステージをリスタートするだけ
+    //プレイヤーの位置を初期値にして、制限時間は満タンにする
     void AnkhRestart()
     {
-        stageChanger.ChangeStages(GameManager.nowStage, GameManager.now2Dor3D);
+        viewManager.playerCapsule.SetActive(false);
+        viewManager.playerCapsule.transform.position = viewManager.Stages[GameManager.nowStage].playerPosition;
+        viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[GameManager.nowStage].playerRotation;
+        viewManager.playerCapsule.SetActive(true);
+        GameManager.elapsedTime = viewManager.Stages[GameManager.nowStage].limitTime3D;
+        //リスタートしたら、自身のsetActiveをfalseにして、リスタート後に再度現れないようにする
+        gameObject.SetActive(false);
     }
-
 }

@@ -1,9 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class GoalItem : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] ClearOrOverManager clearOrOverManager;
+    [SerializeField] NavMeshAgent navMeshAgent;
+    [SerializeField] NavMeshAgentController navMeshAgentController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,9 +21,13 @@ public class GoalItem : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        //�v���C���[�ƐڐG�����ꍇ
+        //プレイヤーと接触した場合
         if (col.gameObject.name == player.name)
         {
+            //敵のsetActiveをfalseに
+            navMeshAgent.gameObject.SetActive(false);
+            navMeshAgentController.gameObject.SetActive(false);
+            //クリア画面を呼び出し
             clearOrOverManager.StageClear();
         }
     }

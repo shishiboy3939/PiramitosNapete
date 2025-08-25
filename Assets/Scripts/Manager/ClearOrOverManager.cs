@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 using DG.Tweening;
 
 public class ClearOrOverManager : MonoBehaviour
