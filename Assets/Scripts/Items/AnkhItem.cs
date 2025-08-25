@@ -25,7 +25,7 @@ public class AnkhItem : MonoBehaviour
     {
         if (col.gameObject.name == player.name)
         {
-            AnkhRestart();
+            StartCoroutine(AnkhEmote());
         }
     }
     IEnumerator AnkhEmote()
