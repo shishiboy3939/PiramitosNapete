@@ -11,7 +11,7 @@ public class ViewManager : MonoBehaviour
     [SerializeField] public StrokeManager3D StrokeManager3D;
     [SerializeField] public GameObject camera2D;
     [SerializeField] public GameObject camera3D;
-    [SerializeField] public GameObject killCamera;
+    [SerializeField] public List<GameObject> killCamera;
 
     [System.Serializable]
     public class StageInfo
