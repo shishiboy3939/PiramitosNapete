@@ -16,6 +16,8 @@ public class StageChanger : MonoBehaviour
     public bool tutorialOn3D;
     [SerializeField] Tutorialmanager tutorialmanager;
     [SerializeField] private List<NavMeshAgent> agents;
+    public List<GameObject> goalItem;
+    [SerializeField] private List<GameObject> allItem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -108,6 +110,10 @@ public class StageChanger : MonoBehaviour
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage03BGM);
                 SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             }
+            foreach (var i in allItem)
+            {
+                i.SetActive(true);
+            }
 
         }
         GameManager.nowStage = stage;
@@ -131,6 +137,14 @@ public class StageChanger : MonoBehaviour
         GameManager.isWaiting = true;
         SoundManager.Instance.PlayBgm(SoundManager.Instance.TitleBGM);
         tutorialmanager.Reset();
+        foreach (var g in goalItem)
+        {
+            g.SetActive(false);
+        }
+        foreach (var a in allItem)
+        {
+            a.SetActive(false);
+        }
     }
 
     //線を全部消す

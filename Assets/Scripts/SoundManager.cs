@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip SE_SceneMovie;
     [SerializeField] public AudioClip SE_FootStep;
     [SerializeField] public AudioClip SE_EatSoul;
+    [SerializeField] public AudioClip SE_breakDice;
+    [SerializeField] public AudioClip SE_AppearKey;
     [SerializeField] public AudioClip TitleBGM;
     [SerializeField] public AudioClip Stage01BGM;
     [SerializeField] public AudioClip Stage02BGM;

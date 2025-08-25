@@ -21,9 +21,11 @@ public class GoalItem : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        Debug.Log("ゴールに接触");
         //プレイヤーと接触した場合
-        if (col.gameObject.name == player.name)
+        if (col.gameObject == player)
         {
+            Debug.Log("ステージクリア");
             //敵のsetActiveをfalseに
             navMeshAgent.gameObject.SetActive(false);
             navMeshAgentController.gameObject.SetActive(false);

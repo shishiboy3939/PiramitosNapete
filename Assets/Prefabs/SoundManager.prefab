@@ -178,6 +178,8 @@ MonoBehaviour:
   SE_SceneMovie: {fileID: 8300000, guid: 8140f07ac995a49189c7170f49fce710, type: 3}
   SE_FootStep: {fileID: 8300000, guid: 01b7f4252f918d64a9c1b883847bc6da, type: 3}
   SE_EatSoul: {fileID: 8300000, guid: 5cebce68f0d0bfc48ae003fa3f10583a, type: 3}
+  SE_breakDice: {fileID: 8300000, guid: 7043c53a753887e40a57d7daf10f7569, type: 3}
+  SE_AppearKey: {fileID: 8300000, guid: 8423652ef6ec7b34c8a1830bffc9cf44, type: 3}
   TitleBGM: {fileID: 8300000, guid: 879d4e3ae3fcb483982f2e655363c5f2, type: 3}
   Stage01BGM: {fileID: 8300000, guid: 1e0edab4709614766acbe7924b2ed521, type: 3}
   Stage02BGM: {fileID: 8300000, guid: e37a6a47b590d4abcab5c23be3e445d1, type: 3}
@@ -185,7 +187,10 @@ MonoBehaviour:
   MapBGM: {fileID: 8300000, guid: ed04c9b7dfd5ffe489ec445433e0f066, type: 3}
   BgmSource: {fileID: 5332873187045054439}
   SeSource: {fileID: 5872933162331619286}
-  FootStepSource: {fileID: 0}
+  FootStepSource:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8838935397204987106
 GameObject:
   m_ObjectHideFlags: 0
