@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ViewManager : MonoBehaviour
 {
+    public static ViewManager Instance;
     [SerializeField] public StageInfo[] Stages;
     [SerializeField] public GameObject playerCapsule;
     [SerializeField] public GameObject titleScreen;
@@ -10,6 +11,7 @@ public class ViewManager : MonoBehaviour
     [SerializeField] public StrokeManager3D StrokeManager3D;
     [SerializeField] public GameObject camera2D;
     [SerializeField] public GameObject camera3D;
+    [SerializeField] public GameObject killCamera;
 
     [System.Serializable]
     public class StageInfo
@@ -26,8 +28,18 @@ public class ViewManager : MonoBehaviour
         [Header("動くオブジェクトなど")]
         public ResetObject[] resetObjects;
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         

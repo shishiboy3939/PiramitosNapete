@@ -70,17 +70,6 @@ public class StageChanger : MonoBehaviour
             //3Dステージの線をステージ標高に沿った高さに
             //標高を測りたいオブジェクトにはGroundタグを付けて！！！
             viewManager.StrokeManager3D.SetupStrokeHeight(viewManager, stage);
-            //ステージプレハブを全てアクティブに
-            // 親を含む子オブジェクトを再帰的に取得
-            // trueを指定しないと非アクティブなオブジェクトを取得できないことに注意
-            var parentAndChildren = viewManager.Stages[stage].mazeCubes.transform.GetComponentsInChildren<Transform>(true);
-            var children = new Transform[parentAndChildren.Length - 1];
-            // 親を除く子オブジェクトを結果にコピー
-            Array.Copy(parentAndChildren, 1, children, 0, children.Length);
-            foreach (Transform n in children)
-            {
-                n.gameObject.SetActive(true);
-            }
             //プレイヤーを指定座標に配置
             viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
             viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
@@ -102,16 +91,22 @@ public class StageChanger : MonoBehaviour
                 {
                     tutorialmanager.CallTutorial();
                     StopAllAgents();
-                    fpc.ToggleAutoForward(); 
+                    fpc.ToggleAutoForward();
+                }
+                else
+                {
+                    SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
                 }
             }
             else if (GameManager.nowStage == 1)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage02BGM);
+                SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             }
             else if (GameManager.nowStage == 2)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage03BGM);
+                SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             }
 
         }
