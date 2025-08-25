@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class AnkhItem : MonoBehaviour
@@ -6,6 +7,7 @@ public class AnkhItem : MonoBehaviour
     [Tooltip("ヒエラルキー上のPlayerCapsuleオブジェクト"), SerializeField] GameObject player;
     [Tooltip("ヒエラルキー上のStageChanger"), SerializeField] private StageChanger stageChanger;
     [Tooltip("ヒエラルキー上のStageChanger"), SerializeField] private ViewManager viewManager;
+    [SerializeField] GameObject spotLight;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +27,14 @@ public class AnkhItem : MonoBehaviour
         {
             AnkhRestart();
         }
+    }
+    IEnumerator AnkhEmote()
+    {
+        spotLight.SetActive(true);
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_AppearKey);
+        yield return new WaitForSeconds(1);
+        AnkhRestart();
+        spotLight.SetActive(false);
     }
 
     //プレイヤーの位置を初期値にして、制限時間は満タンにする
