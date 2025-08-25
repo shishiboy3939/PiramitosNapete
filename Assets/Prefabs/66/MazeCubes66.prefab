@@ -28153,7 +28153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.72
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28161,19 +28161,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28181,11 +28181,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4811144639770879245, guid: 6007153565b151a4ea66d351862d7736, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926670525054286878, guid: 6007153565b151a4ea66d351862d7736, type: 3}
+      propertyPath: resetPosition.x
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926670525054286878, guid: 6007153565b151a4ea66d351862d7736, type: 3}
+      propertyPath: resetPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926670525054286878, guid: 6007153565b151a4ea66d351862d7736, type: 3}
+      propertyPath: resetPosition.z
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926670525054286878, guid: 6007153565b151a4ea66d351862d7736, type: 3}
+      propertyPath: resetRotation.y
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

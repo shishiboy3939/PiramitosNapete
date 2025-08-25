@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
@@ -11,7 +11,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip Stage02BGM;
     [SerializeField] public AudioClip Stage03BGM;
     [SerializeField] public AudioClip MapBGM;
-    [SerializeField] public AudioSource BgmSource, SeSource, FootStepSource;
+    [SerializeField] public AudioSource BgmSource, SeSource;
+    [SerializeField] public List<AudioSource> FootStepSource;
     private void Awake()
     {
         if (Instance == null)
@@ -35,11 +36,11 @@ public class SoundManager : MonoBehaviour
     }
     public void FootStepPlay(AudioClip footstep)
     {
-        FootStepSource.clip = footstep;
-        FootStepSource.Play();
+        FootStepSource[GameManager.nowStage].clip = footstep;
+        FootStepSource[GameManager.nowStage].Play();
     }
     public void FootStepStop()
     {
-        FootStepSource.Stop();
+        FootStepSource[GameManager.nowStage].Stop();
     }
 }
