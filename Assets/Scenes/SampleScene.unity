@@ -1266,6 +1266,8 @@ MonoBehaviour:
   allItem:
   - {fileID: 487146681}
   - {fileID: 1003653040}
+  - {fileID: 6557015702591108247}
+  - {fileID: 9061051686948929250}
 --- !u!4 &1433027018
 Transform:
   m_ObjectHideFlags: 0
@@ -2068,6 +2070,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitleScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2411395603152392470, guid: 634cf7ada444afa43ad715b6528240c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106782754756569312, guid: 634cf7ada444afa43ad715b6528240c5, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2317,6 +2323,11 @@ PrefabInstance:
 --- !u!1 &6557015702591108246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5303788614323813487, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+  m_PrefabInstance: {fileID: 6557015702591108245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6557015702591108247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6913767075700193410, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
   m_PrefabInstance: {fileID: 6557015702591108245}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7094289184706988126
@@ -2720,6 +2731,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: viewManager
+      value: 
+      objectReference: {fileID: 94539556}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: stageChanger
+      value: 
+      objectReference: {fileID: 1433027017}
     - target: {fileID: 3049988362557068003, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: m_Name
       value: MazeCubes99
@@ -2797,6 +2820,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &9061051686948929250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8652452274489540362, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+  m_PrefabInstance: {fileID: 9061051686948929247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
