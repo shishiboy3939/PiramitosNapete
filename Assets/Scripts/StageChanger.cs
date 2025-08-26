@@ -1,11 +1,8 @@
-﻿using Microsoft.Unity.VisualStudio.Editor;
-using MK.Toon;
+﻿using MK.Toon;
 using StarterAssets;
 using System;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 using UnityEngine.AI;
 public class StageChanger : MonoBehaviour
 {

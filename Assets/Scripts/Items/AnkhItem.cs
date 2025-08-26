@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
-using static UnityEditor.Timeline.Actions.MenuPriority;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
 public class AnkhItem : MonoBehaviour
 {

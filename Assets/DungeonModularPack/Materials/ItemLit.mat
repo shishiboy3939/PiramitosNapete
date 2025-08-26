@@ -12,6 +12,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ENABLEBRIGHTNESS_ON
+  - _ENABLESHADOW_ON
   - _SHADERFADING_NONE
   - _SHADERSPACE_UV
   - _TEXTURELAYER1SHEETTOGGLE_ON
@@ -246,7 +248,7 @@ Material:
     - _EnableAddHue: 0
     - _EnableAlphaTint: 0
     - _EnableBlackTint: 0
-    - _EnableBrightness: 0
+    - _EnableBrightness: 1
     - _EnableBurn: 0
     - _EnableCamouflage: 0
     - _EnableCheckerboard: 0
@@ -281,7 +283,7 @@ Material:
     - _EnableRecolorRGBYCP: 0
     - _EnableSaturation: 0
     - _EnableScreenTiling: 0
-    - _EnableShadow: 0
+    - _EnableShadow: 1
     - _EnableSharpen: 0
     - _EnableShiftHue: 0
     - _EnableShifting: 0
@@ -429,7 +431,7 @@ Material:
     - _ScreenWidthUnits: 10
     - _ShaderFading: 0
     - _ShaderSpace: 0
-    - _ShadowClip: 0.5
+    - _ShadowClip: 0.76
     - _ShadowFade: 1
     - _SharpenFactor: 4
     - _SharpenFade: 1
