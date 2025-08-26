@@ -359,10 +359,10 @@ GameObject:
   - component: {fileID: 8659803222665096745}
   - component: {fileID: 5729166636065448332}
   - component: {fileID: 7522948693904037190}
-  - component: {fileID: 2939592871455574003}
   - component: {fileID: 8954775464661268449}
   - component: {fileID: 4608428724639802873}
   - component: {fileID: 7979354797665134116}
+  - component: {fileID: 49049525285139076}
   m_Layer: 0
   m_Name: dice
   m_TagString: Untagged
@@ -443,27 +443,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2939592871455574003
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8315366243297932435}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 120, y: 50, z: 120}
-  m_Center: {x: -2.3227024, y: 1.9496571, z: -2.4137235}
 --- !u!114 &8954775464661268449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,3 +492,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!135 &49049525285139076
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315366243297932435}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 40
+  m_Center: {x: -2.75, y: 1.9496571, z: -2.278084}

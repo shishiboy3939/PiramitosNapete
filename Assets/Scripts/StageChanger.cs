@@ -49,6 +49,10 @@ public class StageChanger : MonoBehaviour
         viewManager.InitializeStages();
         if (dim == 0)
         {
+                foreach (var g in goalItem)
+            {
+                g.SetActive(false);
+            }
             //2Dのとき
             viewManager.Stages[stage].mazeCanvas.SetActive(true);
             //線を全部消す
@@ -61,6 +65,7 @@ public class StageChanger : MonoBehaviour
             {
                 tutorialmanager.CallTutorial();
             }
+            SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Appear2DMap);
         }
         else if (dim == 1)
         {
@@ -134,13 +139,14 @@ public class StageChanger : MonoBehaviour
         GameManager.isWaiting = true;
         SoundManager.Instance.PlayBgm(SoundManager.Instance.TitleBGM);
         tutorialmanager.Reset();
+        //途中離席を鑑みて念のためゴールとアイテムを初期状態に
         foreach (var g in goalItem)
         {
             g.SetActive(false);
         }
         foreach (var a in allItem)
         {
-            a.SetActive(false);
+            a.SetActive(true);
         }
     }
 

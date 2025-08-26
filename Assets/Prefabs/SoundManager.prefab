@@ -185,8 +185,8 @@ MonoBehaviour:
   Stage02BGM: {fileID: 8300000, guid: e37a6a47b590d4abcab5c23be3e445d1, type: 3}
   Stage03BGM: {fileID: 8300000, guid: fa648ece8384c4f289e5e8d5518da30b, type: 3}
   MapBGM: {fileID: 8300000, guid: ed04c9b7dfd5ffe489ec445433e0f066, type: 3}
-  BgmSource: {fileID: 5332873187045054439}
-  SeSource: {fileID: 5872933162331619286}
+  BgmSource: {fileID: 5872933162331619286}
+  SeSource: {fileID: 5332873187045054439}
   FootStepSource:
   - {fileID: 0}
   - {fileID: 0}
