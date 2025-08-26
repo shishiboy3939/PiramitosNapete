@@ -4,7 +4,6 @@ using UnityEngine.AI;
 public class GoalItem : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] ClearOrOverManager clearOrOverManager;
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] NavMeshAgentController navMeshAgentController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,7 +29,7 @@ public class GoalItem : MonoBehaviour
             navMeshAgent.gameObject.SetActive(false);
             navMeshAgentController.gameObject.SetActive(false);
             //クリア画面を呼び出し
-            clearOrOverManager.StageClear();
+            ClearOrOverManager.Instance.StageClear();
         }
     }
 

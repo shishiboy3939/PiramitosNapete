@@ -9,13 +9,26 @@ public class ClearOrOverManager : MonoBehaviour
     [SerializeField] ViewManager viewManager;
     [SerializeField] StageChanger stageChanger;
     [SerializeField] GameObject clearImage;
+    public static ClearOrOverManager Instance;
     private int _stage = 0;
     private int _2Dor3D = 0;
     private bool clearStarted = false;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -48,7 +61,7 @@ public class ClearOrOverManager : MonoBehaviour
                 }
             }
             //ポーズ状態じゃなければタイマーを動かす
-            if(!GameManager.isPausing)
+            if (!GameManager.isPausing)
             {
                 GameManager.elapsedTime -= Time.deltaTime;
             }
@@ -58,12 +71,12 @@ public class ClearOrOverManager : MonoBehaviour
     public void StageClear()
     {
         //クリア演出のコルーチンを実行
-        if(!clearStarted)
+        if (!clearStarted)
         {
             StartCoroutine(ClearEffect());
             clearStarted = true;
         }
-        
+
     }
 
     public void GameOver()
@@ -72,17 +85,19 @@ public class ClearOrOverManager : MonoBehaviour
         stageChanger.ChangeStages(GameManager.nowStage, 0);
     }
 
-    public IEnumerator ClearEffect() {
+    public IEnumerator ClearEffect()
+    {
         //クリア画像表示
         GameManager.isWaiting = true;
         yield return new WaitForSeconds(1);
         var image = clearImage.GetComponent<Image>();
         image.DOFade(1, 2);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
         //次のステージの2D画面に進む
         if (GameManager.nowStage == 2)
         {
+            VideoManager.Instance.EndingPlay();
             _stage = 0;
         }
         else
@@ -95,6 +110,16 @@ public class ClearOrOverManager : MonoBehaviour
         image.DOFade(0, 0);
         clearStarted = false;
     }
+    public IEnumerator BlackOut()
+    {
+        var image = clearImage.GetComponent<Image>();
+        image.DOFade(1, 0);
+        StageChanger.Instance.GotoTitle();
+        yield return new WaitForSeconds(1);
+        SoundManager.Instance.PlayBgm(SoundManager.Instance.TitleBGM);
+        image.DOFade(0, 2);
+    }
 
+    
     
 }

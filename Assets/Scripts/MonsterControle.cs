@@ -5,7 +5,6 @@ using UnityEngine.AI;
 public class MonsterControle : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] ClearOrOverManager clearOrOverManager;
     [SerializeField] NavMeshAgent agent; 
     void OnTriggerEnter(Collider col)
     {
@@ -28,6 +27,6 @@ public class MonsterControle : MonoBehaviour
         yield return new WaitForSeconds(2);
         ViewManager.Instance.killCamera[GameManager.nowStage].SetActive(false);
         if (agent != null) agent.isStopped = false;
-        clearOrOverManager.GameOver();
+        ClearOrOverManager.Instance.GameOver();
     }
 }

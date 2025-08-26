@@ -37,6 +37,10 @@ public class SoundManager : MonoBehaviour
         BgmSource.clip = bgm;
         BgmSource.Play();
     }
+    public void StopBgm()
+    {
+        BgmSource.Stop();
+    }
     public void FootStepPlay(AudioClip footstep)
     {
         FootStepSource[GameManager.nowStage].clip = footstep;
