@@ -242,11 +242,11 @@ Material:
     - _DirectionalDistortionRandomDirection: 0.1
     - _DirectionalDistortionRotation: 0
     - _DirectionalDistortionWidth: 0.5
-    - _DirectionalGlowFadeFade: 30.13
+    - _DirectionalGlowFadeFade: 30
     - _DirectionalGlowFadeInvert: 0
     - _DirectionalGlowFadeNoiseFactor: 4.87
-    - _DirectionalGlowFadeRotation: 180
-    - _DirectionalGlowFadeWidth: 0.6
+    - _DirectionalGlowFadeRotation: 189
+    - _DirectionalGlowFadeWidth: 0.7
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EmissionToggle: 0
@@ -594,7 +594,7 @@ Material:
     - _DirectionalDistortionDistortion: {r: 0, g: 0.1, b: 0, a: 0}
     - _DirectionalDistortionDistortionScale: {r: 1, g: 1, b: 0, a: 0}
     - _DirectionalDistortionNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
-    - _DirectionalGlowFadeEdgeColor: {r: 11.98431, g: 0.6901961, b: 0.6901961, a: 0}
+    - _DirectionalGlowFadeEdgeColor: {r: 9.673019, g: 0, b: 0, a: 0}
     - _DirectionalGlowFadeNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionTint: {r: 2.996078, g: 0.1568628, b: 0.1568628, a: 0}

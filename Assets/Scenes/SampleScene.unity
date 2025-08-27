@@ -2604,9 +2604,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 188619146}
-    - target: {fileID: 317036218288698276, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: reduceAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1480960762676397777, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
@@ -2616,14 +2616,6 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1511071102}
-    - target: {fileID: 2022240507113594997, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 188619146}
-    - target: {fileID: 2022240507113594997, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: clearOrOverManager
-      value: 
-      objectReference: {fileID: 2104347920}
     - target: {fileID: 2149644746177441949, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2664,10 +2656,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2596381620126137399, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: c85a072d1a81a4287be5cdcd95a09b8e, type: 2}
     - target: {fileID: 4154503289122102971, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
       value: 
@@ -2692,30 +2680,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 188619146}
-    - target: {fileID: 7190027224702191128, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: clearOrOverManager
-      value: 
-      objectReference: {fileID: 2104347920}
-    - target: {fileID: 7247576512996212659, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: c85a072d1a81a4287be5cdcd95a09b8e, type: 2}
     - target: {fileID: 8158975765151909873, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 94539556}
-    - target: {fileID: 8296226993751563085, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: c85a072d1a81a4287be5cdcd95a09b8e, type: 2}
     - target: {fileID: 8697625336321615063, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 188619146}
-    - target: {fileID: 8697625336321615063, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
-      propertyPath: clearOrOverManager
-      value: 
-      objectReference: {fileID: 2104347920}
     - target: {fileID: 8797341998027148451, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: targetCamera
       value: 
