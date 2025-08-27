@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using static UnityEngine.CullingGroup;
+using UnityEngine.AI;
+using System.Collections.Generic;
+using Mono.Cecil.Cil;
 
 public class DebugScript : MonoBehaviour
 {
@@ -8,10 +11,11 @@ public class DebugScript : MonoBehaviour
     [Tooltip("Rキーでリスタートするかどうか"), SerializeField] private bool allowRestart = true;
     [Tooltip("Tキーでタイトル画面に戻るどうか"), SerializeField] private bool allowQuickTitle = true;
     [Tooltip("ヒエラルキー上のStageChanger"), SerializeField] private StageChanger stageChanger;
+    [SerializeField] List<NavMeshAgent> agents; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,6 +24,7 @@ public class DebugScript : MonoBehaviour
         checkPause();
         checkRestart();
         checkQuickTitle();
+        stopNavAgent();
     }
 
     void checkPause()
@@ -47,6 +52,17 @@ public class DebugScript : MonoBehaviour
         {
             //Tキーの入力でタイトル画面へ
             stageChanger.GotoTitle();
+        }
+
+    }
+    void stopNavAgent()
+    {
+        if (Input.GetKeyDown(KeyCode.N) && allowQuickTitle)
+        {
+            foreach (var agent in agents)
+            {
+                if (agent != null)agent.isStopped = true;
+            }
         }
 
     }

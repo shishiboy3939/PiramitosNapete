@@ -210,7 +210,7 @@ Material:
     - _DirectionalDistortionInvert: 0
     - _DirectionalDistortionNoiseFactor: 0.2
     - _DirectionalDistortionRandomDirection: 0.5
-    - _DirectionalDistortionRotation: 180
+    - _DirectionalDistortionRotation: 0
     - _DirectionalDistortionWidth: 2
     - _DirectionalGlowFadeFade: 2.2
     - _DirectionalGlowFadeInvert: 0
@@ -365,6 +365,7 @@ Material:
     - _PingPongGlowContrast: 1
     - _PingPongGlowFade: 1
     - _PingPongGlowFrequency: 3
+    - _PixelOutlineAlphaLimit: 0.5
     - _PixelOutlineFade: 1
     - _PixelOutlineOutlineOnlyToggle: 0
     - _PixelOutlineTextureToggle: 0
@@ -664,3 +665,4 @@ Material:
     - _WorldTilingOffset: {r: 0, g: 0, b: 0, a: 0}
     - _WorldTilingScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

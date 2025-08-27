@@ -182,7 +182,7 @@ Material:
     - _CamouflageDensityA: 0.4
     - _CamouflageDensityB: 0.4
     - _CamouflageFade: 1
-    - _CamouflageSmoothnessA: 0.2
+    - _CamouflageSmoothnessA: 0.94
     - _CamouflageSmoothnessB: 0.2
     - _CheckerboardDarken: 0.5
     - _CheckerboardTiling: 1
@@ -365,6 +365,7 @@ Material:
     - _PingPongGlowContrast: 1
     - _PingPongGlowFade: 1
     - _PingPongGlowFrequency: 3
+    - _PixelOutlineAlphaLimit: 0.5
     - _PixelOutlineFade: 1
     - _PixelOutlineOutlineOnlyToggle: 0
     - _PixelOutlineTextureToggle: 0
@@ -664,3 +665,4 @@ Material:
     - _WorldTilingOffset: {r: 0, g: 0, b: 0, a: 0}
     - _WorldTilingScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

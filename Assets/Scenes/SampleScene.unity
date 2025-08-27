@@ -775,6 +775,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3928299853277830601, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
   m_PrefabInstance: {fileID: 7094289184706988126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &532212878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6374570604300853202, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+  m_PrefabInstance: {fileID: 7094289184706988126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577446420
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +969,11 @@ MonoBehaviour:
 --- !u!82 &717462777 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1327717457937828794, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+  m_PrefabInstance: {fileID: 6557015702591108245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &717462780 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 8304416615023424370, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
   m_PrefabInstance: {fileID: 6557015702591108245}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &739478887 stripped
@@ -1433,6 +1443,7 @@ MonoBehaviour:
   - {fileID: 1995499207}
   - {fileID: 1704744566}
   - {fileID: 861432242}
+  - {fileID: 532212878}
 --- !u!4 &1433027018
 Transform:
   m_ObjectHideFlags: 0
@@ -1912,6 +1923,10 @@ MonoBehaviour:
   allowRestart: 1
   allowQuickTitle: 1
   stageChanger: {fileID: 1433027017}
+  agents:
+  - {fileID: 1716138178}
+  - {fileID: 717462780}
+  - {fileID: 9061051686948929256}
 --- !u!4 &1804077136
 Transform:
   m_ObjectHideFlags: 0
@@ -2585,6 +2600,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
     - target: {fileID: 317036218288698276, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2657,6 +2676,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 188619148}
+    - target: {fileID: 4289106122330549352, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 1750347108}
     - target: {fileID: 5303788614323813487, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_Name
       value: MazeCubes33
@@ -3070,6 +3093,11 @@ MonoBehaviour:
 --- !u!1 &9061051686948929250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8652452274489540362, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+  m_PrefabInstance: {fileID: 9061051686948929247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &9061051686948929256 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 1727094874715477450, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
   m_PrefabInstance: {fileID: 9061051686948929247}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

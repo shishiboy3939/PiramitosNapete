@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82228d48c2a8a6e47b6d9280b70c388e, type: 2}
+  - {fileID: 2100000, guid: baaa86b5be7334bc29f4081ec20f48e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,9 +191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  stageChanger: {fileID: 0}
-  viewManager: {fileID: 0}
   spotLight: {fileID: 8493035947826222874}
+  reduceAmount: 1
+  targetRenderer: {fileID: 2500863028227918922}
 --- !u!114 &8347358435157814919
 MonoBehaviour:
   m_ObjectHideFlags: 0
