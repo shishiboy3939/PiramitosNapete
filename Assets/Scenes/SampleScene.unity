@@ -945,6 +945,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4334570283346939565, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
   m_PrefabInstance: {fileID: 9061051686948929247}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &709135998 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5872933162331619286, guid: 80da072e291262b4897617b6b3b762b7, type: 3}
+  m_PrefabInstance: {fileID: 451543496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &717462776 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 238932003863374341, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
@@ -1331,9 +1336,9 @@ VideoPlayer:
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 0
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 709135998}
   m_DirectAudioVolumes:
   - 1
   m_Url: 

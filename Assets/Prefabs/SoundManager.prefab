@@ -181,11 +181,11 @@ MonoBehaviour:
   SE_breakDice: {fileID: 8300000, guid: 7043c53a753887e40a57d7daf10f7569, type: 3}
   SE_AppearKey: {fileID: 8300000, guid: 8423652ef6ec7b34c8a1830bffc9cf44, type: 3}
   SE_Appear2DMap: {fileID: 8300000, guid: a4b05afe206eb8243989ec657aa2c3d3, type: 3}
-  TitleBGM: {fileID: 8300000, guid: 879d4e3ae3fcb483982f2e655363c5f2, type: 3}
+  TitleBGM: {fileID: 8300000, guid: 2ffefe26cf4a3f646bdb40fcbb38a3bc, type: 3}
   Stage01BGM: {fileID: 8300000, guid: 1e0edab4709614766acbe7924b2ed521, type: 3}
   Stage02BGM: {fileID: 8300000, guid: e37a6a47b590d4abcab5c23be3e445d1, type: 3}
   Stage03BGM: {fileID: 8300000, guid: fa648ece8384c4f289e5e8d5518da30b, type: 3}
-  MapBGM: {fileID: 8300000, guid: ed04c9b7dfd5ffe489ec445433e0f066, type: 3}
+  MapBGM: {fileID: 8300000, guid: 39659a0972bea444c8dd50f3c87dd034, type: 3}
   BgmSource: {fileID: 5872933162331619286}
   SeSource: {fileID: 5332873187045054439}
   FootStepSource:
