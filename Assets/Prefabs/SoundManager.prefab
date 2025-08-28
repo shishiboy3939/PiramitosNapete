@@ -182,7 +182,7 @@ MonoBehaviour:
   SE_Respawn: {fileID: 8300000, guid: 8423652ef6ec7b34c8a1830bffc9cf44, type: 3}
   SE_Appear2DMap: {fileID: 8300000, guid: a4b05afe206eb8243989ec657aa2c3d3, type: 3}
   SE_GetAnk: {fileID: 8300000, guid: 2a50111cd7bd348e9911c959f8d5045b, type: 3}
-  SE_Warp: {fileID: 8300000, guid: 73a498c83abd84a129ec7dbbfc055a65, type: 3}
+  SE_SpeedUp: {fileID: 8300000, guid: 383a8463b847d2a4082f1ad55b3322c8, type: 3}
   TitleBGM: {fileID: 8300000, guid: 2ffefe26cf4a3f646bdb40fcbb38a3bc, type: 3}
   Stage01BGM: {fileID: 8300000, guid: 1e0edab4709614766acbe7924b2ed521, type: 3}
   Stage02BGM: {fileID: 8300000, guid: e37a6a47b590d4abcab5c23be3e445d1, type: 3}

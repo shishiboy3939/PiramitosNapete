@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ViewManager : MonoBehaviour
 {
@@ -12,6 +15,7 @@ public class ViewManager : MonoBehaviour
     [SerializeField] public GameObject camera2D;
     [SerializeField] public GameObject camera3D;
     [SerializeField] public List<GameObject> killCamera;
+    [SerializeField] public GameObject SpeedUp;
 
     [System.Serializable]
     public class StageInfo

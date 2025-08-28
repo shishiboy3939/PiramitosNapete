@@ -2,6 +2,8 @@
 using Unity.VisualScripting;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class SpeedUpItem : MonoBehaviour
 {
@@ -24,16 +26,19 @@ public class SpeedUpItem : MonoBehaviour
     {
         if (col.gameObject.name == player.name)
         {
-            LaunchSpeedController();
+            StartCoroutine(SpeedUp());
             gameObject.SetActive(false);
-            //Destroy(gameObject);
         }
     }
-
-    void LaunchSpeedController()
+    IEnumerator SpeedUp()
     {
-        //SpeedControllerクラスのSpeedTimer()を動かす
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_SpeedUp);
         controller.isRunning = true;
         controller.timer = waitSeconds;
+        var image =  ViewManager.Instance.SpeedUp.GetComponent<Image>();
+        image.DOFade(1, 2);
+        yield return new WaitForSeconds(2);
+        ViewManager.Instance.SpeedUp.gameObject.SetActive(false);
     }
+
 }

@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip SE_Respawn;
     [SerializeField] public AudioClip SE_Appear2DMap;
     [SerializeField] public AudioClip SE_GetAnk;
-    [SerializeField] public AudioClip SE_Warp;
+    [SerializeField] public AudioClip SE_SpeedUp;
     [SerializeField] public AudioClip TitleBGM;
     [SerializeField] public AudioClip Stage01BGM;
     [SerializeField] public AudioClip Stage02BGM;
