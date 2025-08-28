@@ -457,8 +457,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2304743565847672422}
+  m_Children: []
   m_Father: {fileID: 7093153766823960529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -748,11 +747,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7131648528606436233}
+  m_Father: {fileID: 7093153766823960529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -447.7695, y: -53.618774}
+  m_AnchoredPosition: {x: -447.7584, y: -150.70422}
   m_SizeDelta: {x: 156.7329, y: 49.1702}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2762649321799092998
@@ -1231,6 +1230,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7131648528606436233}
+  - {fileID: 2304743565847672422}
   - {fileID: 7310937978311253230}
   - {fileID: 8446678201185549011}
   - {fileID: 804929968387511831}
@@ -1298,6 +1298,7 @@ MonoBehaviour:
   NextButton: {fileID: 3022352667320018522}
   fpc: {fileID: 0}
   raycaster: {fileID: 0}
+  Name: {fileID: 2367855415037150761}
 --- !u!1 &3471510570610711372
 GameObject:
   m_ObjectHideFlags: 0

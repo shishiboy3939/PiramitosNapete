@@ -13,7 +13,8 @@ public class Tutorialmanager : MonoBehaviour
     private int currentPage;
     [SerializeField] private GameObject NextButton;
     [SerializeField] FirstPersonController fpc;
-    [SerializeField] private GraphicRaycaster raycaster; // 未指定なら自身から取得
+    [SerializeField] private GraphicRaycaster raycaster;
+    [SerializeField] GameObject Name;
     private GraphicRaycaster _ray;
 
     private void Start()
@@ -28,6 +29,7 @@ public class Tutorialmanager : MonoBehaviour
         TutorialPage[currentPage].SetActive(true);
         GameManager.isPausing = true;
         SetEnabled(true);
+        Name.SetActive(true);
     }
     public void NextPage()
     {
@@ -68,6 +70,7 @@ public class Tutorialmanager : MonoBehaviour
     public void SetEnabled(bool on)
     {
         if (_ray) _ray.enabled = on;
+        Name.SetActive(false);
     }
     public void Reset()
     {
@@ -82,6 +85,7 @@ public class Tutorialmanager : MonoBehaviour
         currentPage = 0;
         _ray = raycaster ? raycaster : GetComponent<GraphicRaycaster>();
         if (_ray == null) _ray = gameObject.AddComponent<GraphicRaycaster>();
+        Name.SetActive(false);
     }
 
 }
