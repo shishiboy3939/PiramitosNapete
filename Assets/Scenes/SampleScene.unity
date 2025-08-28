@@ -2311,26 +2311,6 @@ PrefabInstance:
       propertyPath: raycaster
       value: 
       objectReference: {fileID: 926791742}
-    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
-      propertyPath: agents.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
-      propertyPath: 'agents.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1716138178}
-    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
-      propertyPath: 'agents.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
-      propertyPath: 'agents.Array.data[2]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 830590293862278478, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
-      propertyPath: 'agents.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3128076220509894740, guid: 71a5336a74f1745d5843d138fa78c692, type: 3}
       propertyPath: m_Name
       value: TutorialManager
