@@ -1,10 +1,11 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AnkhItem : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] GameObject spotLight;
+    [SerializeField] List<GameObject> magicCircles;
 
     [Header("減少量（例: 30）")]
     [SerializeField] float reduceAmount = 30f;
@@ -37,6 +38,10 @@ public class AnkhItem : MonoBehaviour
         // 追加: 元の値を保存
         if (_mat && _mat.HasProperty(FadeID))
             _baseFade = _mat.GetFloat(FadeID);
+        foreach (var magicCircle in magicCircles)
+        {
+        magicCircle.SetActive(false);        
+        }
     }
 
     void OnTriggerEnter(Collider col)
@@ -46,17 +51,17 @@ public class AnkhItem : MonoBehaviour
 
         // 0.5秒かけて reduceAmount だけ下げる
         FadeBy(-reduceAmount, fadeDuration);
-        GameManager.isWaiting=true;
+        GameManager.isWaiting = true;
         StartCoroutine(AnkhEmote());
+
+        SoundManager.Instance?.PlaySoundEffect(SoundManager.Instance.SE_GetAnk);
     }
 
     IEnumerator AnkhEmote()
     {
-        if (spotLight) spotLight.SetActive(true);
-        SoundManager.Instance?.PlaySoundEffect(SoundManager.Instance.SE_AppearKey);
-
+        magicCircles[GameManager.nowStage].SetActive(true);
         yield return new WaitForSeconds(1f);
-
+        SoundManager.Instance?.PlaySoundEffect(SoundManager.Instance.SE_Respawn);
         // …あなたのリスタート処理
         ViewManager.Instance.playerCapsule.SetActive(false);
         ViewManager.Instance.playerCapsule.transform.position =
@@ -65,13 +70,14 @@ public class AnkhItem : MonoBehaviour
             ViewManager.Instance.Stages[GameManager.nowStage].playerRotation;
         ViewManager.Instance.playerCapsule.SetActive(true);
         GameManager.elapsedTime = ViewManager.Instance.Stages[GameManager.nowStage].limitTime3D;
-
-        if (spotLight) spotLight.SetActive(false);
-
+        GameManager.isWaiting = false;
         RestoreToBaseFade(0);
         gameObject.SetActive(false);   
         yield return new WaitForSeconds(1f);
-        GameManager.isWaiting=false;
+        foreach (var magicCircle in magicCircles)
+        {
+        magicCircle.SetActive(false);        
+        }
         
     }
 
@@ -85,7 +91,7 @@ public class AnkhItem : MonoBehaviour
     }
 
     // 公開：元のフェード（Awake時点）へ戻す
-    public void RestoreToBaseFade(float duration = 2f)
+    public void RestoreToBaseFade(float duration = 0f)
     {
         _triggered = false;
         if (_mat == null || !_mat.HasProperty(FadeID)) return;

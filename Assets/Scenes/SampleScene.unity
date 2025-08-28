@@ -2442,6 +2442,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 188619146}
     - target: {fileID: 260696765628786095, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: magicCircle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 260696765628786095, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 94539556}
@@ -2449,6 +2453,22 @@ PrefabInstance:
       propertyPath: stageChanger
       value: 
       objectReference: {fileID: 1433027017}
+    - target: {fileID: 260696765628786095, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: magicCircles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 260696765628786095, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: 'magicCircles.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7094289184706988127}
+    - target: {fileID: 260696765628786095, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: 'magicCircles.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6557015702591108248}
+    - target: {fileID: 260696765628786095, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: 'magicCircles.Array.data[2]'
+      value: 
+      objectReference: {fileID: 9061051686948929251}
     - target: {fileID: 542410420986387631, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: targetCamera
       value: 
@@ -2592,6 +2612,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6913767075700193410, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
   m_PrefabInstance: {fileID: 6557015702591108245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6557015702591108248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1112426402546512705, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+  m_PrefabInstance: {fileID: 6557015702591108245}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7094289184706988126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2605,9 +2630,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 188619146}
     - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: magicCircle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: reduceAmount
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: magicCircles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: 'magicCircles.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7094289184706988127}
+    - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: 'magicCircles.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6557015702591108248}
+    - target: {fileID: 295982917270422271, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: 'magicCircles.Array.data[2]'
+      value: 
+      objectReference: {fileID: 9061051686948929251}
     - target: {fileID: 1480960762676397777, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
       value: 
@@ -2701,6 +2746,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+--- !u!1 &7094289184706988127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6308399429575689702, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+  m_PrefabInstance: {fileID: 7094289184706988126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7626097978769035595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2978,6 +3028,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 188619146}
     - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: magicCircle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 94539556}
@@ -2985,6 +3039,22 @@ PrefabInstance:
       propertyPath: stageChanger
       value: 
       objectReference: {fileID: 1433027017}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: magicCircles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: 'magicCircles.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7094289184706988127}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: 'magicCircles.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6557015702591108248}
+    - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: 'magicCircles.Array.data[2]'
+      value: 
+      objectReference: {fileID: 9061051686948929251}
     - target: {fileID: 3049988362557068003, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: m_Name
       value: MazeCubes99
@@ -3065,6 +3135,11 @@ MonoBehaviour:
 --- !u!1 &9061051686948929250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8652452274489540362, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+  m_PrefabInstance: {fileID: 9061051686948929247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9061051686948929251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8081747320892124597, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
   m_PrefabInstance: {fileID: 9061051686948929247}
   m_PrefabAsset: {fileID: 0}
 --- !u!195 &9061051686948929256 stripped
