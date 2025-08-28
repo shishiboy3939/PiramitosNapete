@@ -46,6 +46,7 @@ public class Tutorialmanager : MonoBehaviour
             StageChanger.Instance.tutorialOn2D = false;
             GameManager.isPausing = false;
             SetEnabled(false);
+            Name.SetActive(false);
         }
         if (currentPage < 17 && currentPage > 9)
         {
@@ -53,6 +54,7 @@ public class Tutorialmanager : MonoBehaviour
             StageChanger.Instance.tutorialOn3D = true;
             GameManager.isWaiting = true;
             SetEnabled(true);
+            Name.SetActive(true);
         }
         if (currentPage == 17)
         {
@@ -65,12 +67,12 @@ public class Tutorialmanager : MonoBehaviour
             fpc.ToggleAutoForward();
             SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             SetEnabled(false);
+            Name.SetActive(false);
         }
     }
     public void SetEnabled(bool on)
     {
         if (_ray) _ray.enabled = on;
-        Name.SetActive(false);
     }
     public void Reset()
     {
