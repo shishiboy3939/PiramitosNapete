@@ -15,7 +15,7 @@ public class ViewManager : MonoBehaviour
     [SerializeField] public GameObject camera2D;
     [SerializeField] public GameObject camera3D;
     [SerializeField] public List<GameObject> killCamera;
-    [SerializeField] public GameObject SpeedUp;
+    [SerializeField] public UnityEngine.UI.Image SpeedUp;
 
     [System.Serializable]
     public class StageInfo

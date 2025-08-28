@@ -27,23 +27,22 @@ public class SpeedUpItem : MonoBehaviour
     {
         if (col.gameObject.name == player.name)
         {
-            StartCoroutine(SpeedUp());
+            SpeedUp();
             gameObject.SetActive(false);
         }
     }
-    IEnumerator SpeedUp()
+    public void SpeedUp()
     {
         SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_SpeedUp);
         controller.isRunning = true;
         controller.timer = waitSeconds;
-        // UIフェード（Image のアルファを 2秒で halfAlpha に → 1秒で 0 に）
-        var imageGO = ViewManager.Instance.SpeedUp;
-        if (imageGO != null && imageGO.TryGetComponent<Image>(out var image))
-        {
-            yield return image.DOFade(halfAlpha, 1f).WaitForCompletion();
-            yield return image.DOFade(0f, 1f).WaitForCompletion();
-        }
-        yield break;
+        // UIフェード
+        var img = ViewManager.Instance.SpeedUp;
+        DG.Tweening.Sequence seq = DOTween.Sequence();
+
+        seq.Append(img.DOFade(0.3f, 1f))  // 1秒で α=0.5
+           .AppendInterval(2f)                   // 2秒待機
+           .Append(img.DOFade(0f, 1f));  // 1秒で α=0
     }
 
 }

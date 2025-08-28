@@ -330,7 +330,7 @@ MonoBehaviour:
   - {fileID: 1137044102}
   - {fileID: 1370120484}
   - {fileID: 2098065362}
-  SpeedUp: {fileID: 1862041411}
+  SpeedUp: {fileID: 1862041413}
 --- !u!4 &94539557
 Transform:
   m_ObjectHideFlags: 0
