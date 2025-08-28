@@ -3,7 +3,9 @@ using StarterAssets;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
+using DG.Tweening;
 public class StageChanger : MonoBehaviour
 {
     public static StageChanger Instance;
@@ -148,6 +150,9 @@ public class StageChanger : MonoBehaviour
         {
             a.SetActive(true);
         }
+        //SpeedUp透明化
+        var image =  ViewManager.Instance.SpeedUp.GetComponent<Image>();
+        image.DOFade(0, 0);
     }
 
     //線を全部消す

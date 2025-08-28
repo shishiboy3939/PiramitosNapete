@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8616685848737228371}
   isRunning: 0
-  timer: 0
+  timer: 5
 --- !u!1 &8616685848737228372
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 4
-  SprintSpeed: 6
+  SprintSpeed: 10
   RotationSpeed: 6
   SpeedChangeRate: 10
   JumpHeight: 1.2
