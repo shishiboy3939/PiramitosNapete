@@ -311,7 +311,7 @@ Material:
     - _FullAlphaDissolveFade: 0.5
     - _FullAlphaDissolveWidth: 0.5
     - _FullDistortionFade: 1
-    - _FullGlowDissolveFade: 0.5
+    - _FullGlowDissolveFade: 0.57
     - _FullGlowDissolveWidth: 0.3
     - _GaussianBlurFade: 1
     - _GaussianBlurOffset: 1
@@ -365,6 +365,7 @@ Material:
     - _PingPongGlowContrast: 1
     - _PingPongGlowFade: 1
     - _PingPongGlowFrequency: 3
+    - _PixelOutlineAlphaLimit: 0.5
     - _PixelOutlineFade: 1
     - _PixelOutlineOutlineOnlyToggle: 0
     - _PixelOutlineTextureToggle: 0
@@ -664,3 +665,4 @@ Material:
     - _WorldTilingOffset: {r: 0, g: 0, b: 0, a: 0}
     - _WorldTilingScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
