@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4461452358936902069}
   - component: {fileID: 1204269558623431609}
   - component: {fileID: 1769657371556354613}
+  - component: {fileID: 7153676311769060793}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -147,6 +148,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageChanger: {fileID: 0}
+  a: {fileID: 7153676311769060793}
+--- !u!225 &7153676311769060793
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429094267003086961}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9130904661833456677
 GameObject:
   m_ObjectHideFlags: 0

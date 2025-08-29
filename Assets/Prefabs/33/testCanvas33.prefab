@@ -1737,6 +1737,8 @@ MonoBehaviour:
   blockSize: 5
   blockPixel: 180
   map: {fileID: 2323669082848741037}
+  SEWaitTime: 0.5
+  strokeEnable: 1
 --- !u!222 &8871057933174976118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2514,6 +2516,14 @@ PrefabInstance:
     - target: {fileID: 1429094267003086961, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429094267003086961, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461452358936902069, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
