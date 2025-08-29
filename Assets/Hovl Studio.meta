@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Hovl Studio.meta
 guid: 0b31d124a34f94241b3b5fbaa8745367
 folderAsset: yes
+========
+guid: e0034dd13a2d8fc4ea81173f10f5da22
+>>>>>>>> 8-28-Revenge:Assets/Scenes/TsuneTestScene2.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

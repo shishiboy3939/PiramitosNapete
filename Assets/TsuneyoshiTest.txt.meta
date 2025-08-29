@@ -1,6 +1,12 @@
 fileFormatVersion: 2
-guid: 8abbc328d02899243b7d68f6577d779e
+<<<<<<<< HEAD:Assets/Images/2DMap/RockImages.meta
+guid: dcb9b6b4620b94ba5a549b8a1f87e709
+folderAsset: yes
+DefaultImporter:
+========
+guid: 51716e7374ee22b4fac6f1983ed53a7e
 TextScriptImporter:
+>>>>>>>> 8-28-Revenge:Assets/TsuneyoshiTest.txt.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

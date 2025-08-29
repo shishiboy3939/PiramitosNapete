@@ -80,6 +80,8 @@ public class StageChanger : MonoBehaviour
             viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
             viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
             viewManager.playerCapsule.SetActive(true);
+            //最初はプレイヤーがダッシュしないように
+            fpc.autoForward = false;
             //位置のリセットが必要なGameObjectの位置をリセット
             foreach (ResetObject r in viewManager.Stages[stage].resetObjects)
             {
@@ -97,7 +99,6 @@ public class StageChanger : MonoBehaviour
                 {
                     tutorialmanager.CallTutorial();
                     StopAllAgents();
-                    fpc.ToggleAutoForward();
                 }
                 else
                 {
