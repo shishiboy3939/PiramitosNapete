@@ -78,7 +78,7 @@ public class Tutorialmanager : MonoBehaviour
             GameManager.isWaiting = false;
             StageChanger.Instance.tutorialOn3D = false;
             StageChanger.Instance.ResumeAllAgents();
-            fpc.ToggleAutoForward();
+            fpc.autoForward = false;
             SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             SetEnabled(false);
         }
