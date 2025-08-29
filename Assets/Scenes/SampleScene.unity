@@ -300,7 +300,7 @@ MonoBehaviour:
     mazeCubes: {fileID: 3032310730093878729}
     playerPosition: {x: 8, y: 0.5, z: -5}
     playerRotation: {x: 0, y: -45, z: 0}
-    limitTime2D: 60
+    limitTime2D: 30
     limitTime3D: 60
     resetObjects:
     - {fileID: 54543553}
@@ -308,7 +308,7 @@ MonoBehaviour:
     mazeCubes: {fileID: 6557015702591108246}
     playerPosition: {x: 12, y: 0.5, z: -2}
     playerRotation: {x: 0, y: 0, z: 0}
-    limitTime2D: 60
+    limitTime2D: 30
     limitTime3D: 60
     resetObjects:
     - {fileID: 717462776}
@@ -316,7 +316,7 @@ MonoBehaviour:
     mazeCubes: {fileID: 1480194926704790408}
     playerPosition: {x: 27, y: 1, z: 33}
     playerRotation: {x: 0, y: 0, z: 0}
-    limitTime2D: 60
+    limitTime2D: 30
     limitTime3D: 60
     resetObjects:
     - {fileID: 9061051686948929249}

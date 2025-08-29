@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageChanger: {fileID: 0}
   a: {fileID: 7153676311769060793}
+  displayTime: 25
 --- !u!225 &7153676311769060793
 CanvasGroup:
   m_ObjectHideFlags: 0
