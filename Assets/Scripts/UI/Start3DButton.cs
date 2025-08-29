@@ -7,6 +7,7 @@ public class Start3DButton : MonoBehaviour
 {
     [SerializeField] StageChanger stageChanger;
     [SerializeField] CanvasGroup a;
+    [Tooltip("ボタンを表示する残り時間（秒）"), SerializeField] float displayTime = 15f;
     bool isActive = false;
     Image image;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,7 +35,7 @@ public class Start3DButton : MonoBehaviour
     //残り15秒になったらボタンをじわじわ表示
     void checkAlpha()
     {
-        if(GameManager.elapsedTime < 15 && !isActive)
+        if(GameManager.elapsedTime < displayTime && !isActive)
         {
             isActive = true;
             a.DOFade(endValue: 1f, duration: 1f);
