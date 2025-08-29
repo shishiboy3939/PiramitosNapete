@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.AI;
@@ -20,13 +20,31 @@ public class Tutorialmanager : MonoBehaviour
     {
         Reset();
     }
+
+    private void Update()
+    {
+        //チュートリアル画面で操作を禁止する
+        //StageChangerのChangeStages関数の最後にGameManager.isWaitingをfalseにする処理があり、
+        //それとの兼ね合いで応急処置として一旦こうしてる
+        if (currentPage < 9)
+        {
+            GameManager.isWaiting = true;
+        }
+
+        //3D画面で、3DチュートリアルがtrueのときGameManager.isWaitingをtrueに
+        //ここまで条件を増やさなくて良いと思うけど、どんなバグが起こるか分からないから一応
+        if (currentPage == 9 && GameManager.now2Dor3D == 1 && StageChanger.Instance.tutorialOn3D)
+        {
+            GameManager.isWaiting = true;
+        }
+    }
+
     public bool IsEnabled => _ray != null && _ray.enabled;
     public void CallTutorial()
     {
         TutorialPanel.DOFade(1f, 1f);
         NextButton.SetActive(true);
         TutorialPage[currentPage].SetActive(true);
-        GameManager.isPausing = true;
         SetEnabled(true);
     }
     public void NextPage()
@@ -42,7 +60,7 @@ public class Tutorialmanager : MonoBehaviour
             TutorialPanel.DOFade(0f, 1f);
             NextButton.SetActive(false);
             StageChanger.Instance.tutorialOn2D = false;
-            GameManager.isPausing = false;
+            GameManager.isWaiting = false;
             SetEnabled(false);
         }
         if (currentPage < 17 && currentPage > 9)

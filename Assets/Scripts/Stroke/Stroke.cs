@@ -20,11 +20,17 @@ public class Stroke : MonoBehaviour
     [Tooltip("3Dステージのブロックのサイズ"), SerializeField] private float blockSize = 4f;
     [Tooltip("2Dマップの1ブロックあたりのピクセル数"), SerializeField] private float blockPixel = 300f;
     [Tooltip("マップ画像のGameObject"), SerializeField] GameObject map;
+    [Tooltip("鉛筆の効果音を流す頻度（秒）"), SerializeField] private float SEWaitTime = 0.5f;
 
     private bool isDrawing = false;
     private float mouseX, mouseY;
     private float mapX, mapY, mapW, mapH;
     private int scrCenterW, scrCenterH;
+
+    private float SECountTime = 0;
+    private bool isSEPlaying = false;
+
+    public bool strokeEnable = true;
 
     //追加　LineRdenerer型のリスト宣言
     //List<LineRenderer> lineRenderers, lineRenderers3D;
@@ -45,7 +51,7 @@ public class Stroke : MonoBehaviour
     void Update()
     {
         //マウスが2Dマップ内にあるとき
-        if(CheckMousePosition())
+        if(!GameManager.isWaiting && CheckMousePosition())
         {
             //クリックされた瞬間
             if (Input.GetMouseButtonDown(0))
@@ -62,16 +68,32 @@ public class Stroke : MonoBehaviour
                 {
                     _addPositionDataToLineRendererList();
                     _addPositionDataToLineRendererList3D();
+                    //線を描いている間、効果音を鳴らし続ける
+                    if(!isSEPlaying)
+                    {
+                        isSEPlaying = true;
+                        SECountTime = 0;
+                        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Pencil);
+                    }
+                    SECountTime += Time.deltaTime;
+                    if (SECountTime > SEWaitTime)
+                    {
+                        isSEPlaying = false;
+                    }
                 }
             }
             else
             {
                 isDrawing = false;
+                isSEPlaying = false;
+                SECountTime = 0;
             }
         }
         else
         {
             isDrawing = false;
+            isSEPlaying = false;
+            SECountTime = 0;
         }
 
     }

@@ -709,6 +709,10 @@ PrefabInstance:
       value: SoundManager
       objectReference: {fileID: 0}
     - target: {fileID: 5016725873961082823, guid: 80da072e291262b4897617b6b3b762b7, type: 3}
+      propertyPath: SE_Pencil
+      value: 
+      objectReference: {fileID: 8300000, guid: fa8e1afe9cf12214a8aaf966157b1eaa, type: 3}
+    - target: {fileID: 5016725873961082823, guid: 80da072e291262b4897617b6b3b762b7, type: 3}
       propertyPath: 'FootStepSource.Array.data[0]'
       value: 
       objectReference: {fileID: 1716138179}
@@ -1627,6 +1631,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 6a5b1046b40ded44fabf8760418798a9, type: 3}
+      propertyPath: SEWaitTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647076114727541868, guid: 6a5b1046b40ded44fabf8760418798a9, type: 3}
       propertyPath: StrokeManager2D
       value: 
       objectReference: {fileID: 606890699}
@@ -2157,6 +2165,10 @@ PrefabInstance:
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 94539556}
+    - target: {fileID: 6647076114727541868, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
+      propertyPath: SEWaitTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
       propertyPath: StrokeManager2D
       value: 
@@ -2927,6 +2939,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
+      propertyPath: SEWaitTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: StrokeManager2D
       value: 
       objectReference: {fileID: 606890699}
@@ -3027,7 +3043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3049988362557068003, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3399253818375458569, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: player
