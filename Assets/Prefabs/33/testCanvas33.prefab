@@ -3157,6 +3157,8 @@ MonoBehaviour:
   blockSize: 5
   blockPixel: 180
   map: {fileID: 2323669082848741037}
+  SEWaitTime: 0.5
+  strokeEnable: 1
 --- !u!222 &8871057933174976118
 CanvasRenderer:
   m_ObjectHideFlags: 0
