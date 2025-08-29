@@ -33,10 +33,17 @@ public class UIItem : MonoBehaviour
     {
         itemImage.sprite = itemSprite;
         uiText.text = itemText;
+        //制限時間の減少を止める
+        //画面暗くして文字を読みやすくするとかしたいけど一旦これで
+        GameManager.isPausing = true;
     }
 
     public void test2()
     {
-        //uiText.text = "Exited";
+        //制限時間の減少を再開
+        //多分この書き方だとマウスを高速で動かすとバグる
+        //でも今はシンプルさを優先
+        GameManager.isPausing = false;
     }
+
 }
