@@ -8,10 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TextBox
-  m_Shader: {fileID: 4800000, guid: 0e4a02dcb58b4c64db9d6982b17214ef, type: 3}
+  m_Shader: {fileID: 4800000, guid: da8efd605fdd20949a21be6242000625, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ENABLEHOLOGRAM_ON
   - _SHADERFADING_NONE
   - _SHADERSPACE_UV
   - _TEXTURELAYER1SHEETTOGGLE_ON
@@ -97,7 +98,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 940d6b1ef6dc2ae4888ac8e8cb119c31, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -177,7 +178,7 @@ Material:
     - PixelSnap: 0
     - _AddColorContrast: 0.5
     - _AddColorContrastToggle: 0
-    - _AddColorFade: 1
+    - _AddColorFade: 0.06
     - _AddColorMaskToggle: 0
     - _AddHueBrightness: 2
     - _AddHueContrast: 0.5
@@ -202,9 +203,9 @@ Material:
     - _BurnFade: 1
     - _BurnInsideContrast: 2
     - _BurnInsideNoiseFactor: 0.2
-    - _BurnRadius: 5
+    - _BurnRadius: 4.98
     - _BurnSwirlFactor: 1
-    - _BurnWidth: 0.1
+    - _BurnWidth: 0.06
     - _CamouflageAnimationToggle: 0
     - _CamouflageContrast: 1
     - _CamouflageDensityA: 0.4
@@ -271,7 +272,7 @@ Material:
     - _EnableGaussianBlur: 0
     - _EnableGlitch: 0
     - _EnableHalftone: 0
-    - _EnableHologram: 0
+    - _EnableHologram: 1
     - _EnableHue: 0
     - _EnableInkSpread: 0
     - _EnableInnerOutline: 0
@@ -361,7 +362,7 @@ Material:
     - _HologramDistortionOffset: 0.5
     - _HologramDistortionScale: 10
     - _HologramDistortionSpeed: 2
-    - _HologramFade: 1
+    - _HologramFade: 0.75
     - _HologramLineFrequency: 500
     - _HologramLineGap: 3
     - _HologramLineSpeed: 0.01
@@ -576,7 +577,7 @@ Material:
     - _WorldTilingPixelsPerUnit: 100
     - _ZWrite: 1
     m_Colors:
-    - _AddColorColor: {r: 2.996078, g: 0, b: 0, a: 0}
+    - _AddColorColor: {r: 0.07315772, g: 0.11320757, b: 0.10311234, a: 0}
     - _AlphaTintColor: {r: 95.87451, g: 5.019608, b: 95.87451, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BlackTintColor: {r: 0, g: 0, b: 1, a: 0}
@@ -585,7 +586,7 @@ Material:
     - _BurnInsideColor: {r: 0.75, g: 0.5625, b: 0.525, a: 0}
     - _BurnInsideNoiseColor: {r: 3084.047, g: 257.0039, b: 0, a: 0}
     - _BurnInsideNoiseScale: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _BurnPosition: {r: 0, g: 5, b: 0, a: 0}
+    - _BurnPosition: {r: 10.7, g: 5, b: 0, a: 0}
     - _BurnSwirlNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _CamouflageBaseColor: {r: 0.7450981, g: 0.7254902, b: 0.5686274, a: 0}
     - _CamouflageColorA: {r: 0.62745106, g: 0.5882353, b: 0.43137258, a: 0}
@@ -637,7 +638,7 @@ Material:
     - _GlitchNoiseScale: {r: 0, g: 3, b: 0, a: 0}
     - _GlitchNoiseSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _HalftonePosition: {r: 0, g: 0, b: 0, a: 0}
-    - _HologramTint: {r: 0.3137255, g: 1.662745, b: 2.996078, a: 1}
+    - _HologramTint: {r: 2.3207545, g: 3.170255, b: 3.9999998, a: 1}
     - _InkSpreadColor: {r: 8.47419, g: 5.013525, b: 0.08873497, a: 0}
     - _InkSpreadNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
     - _InkSpreadPosition: {r: 0.5, g: -1, b: 0, a: 0}
@@ -662,7 +663,7 @@ Material:
     - _PingPongGlowTo: {r: 0.1882353, g: 0.1882353, b: 5.992157, a: 0}
     - _PixelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _PixelOutlineTextureSpeed: {r: 0.5, g: 0, b: 0, a: 0}
-    - _PoisonColor: {r: 0.3137255, g: 2.996078, b: 0.3137255, a: 0}
+    - _PoisonColor: {r: 0.21864855, g: 0.14578144, b: 0.3396227, a: 0}
     - _PoisonNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _PoisonNoiseSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _RainbowCenter: {r: 0, g: 0, b: 0, a: 0}
