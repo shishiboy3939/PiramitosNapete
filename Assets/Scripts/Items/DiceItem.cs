@@ -31,7 +31,7 @@ public class DiceItem : MonoBehaviour
         m_player.SetTrigger("DiceOpen");
         SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_breakDice);
         yield return new WaitForSeconds(1);
-        AddElapsedTime(addTime);
+        //AddElapsedTime(addTime);
         gameObject.SetActive(false);
         StageChanger.Instance.goalItem[GameManager.nowStage].SetActive(true); //ゴールを有効に
     }
