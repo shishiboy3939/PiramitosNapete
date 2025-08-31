@@ -362,11 +362,11 @@ Material:
     - _HologramDistortionOffset: 0.5
     - _HologramDistortionScale: 10
     - _HologramDistortionSpeed: 2
-    - _HologramFade: 1
+    - _HologramFade: 0.33
     - _HologramLineFrequency: 500
-    - _HologramLineGap: 3
+    - _HologramLineGap: 3.27
     - _HologramLineSpeed: 0.01
-    - _HologramMinAlpha: 0.2
+    - _HologramMinAlpha: 0.14
     - _Hue: 0
     - _IgnoreShadowsToggle: 0
     - _InkSpreadContrast: 2
