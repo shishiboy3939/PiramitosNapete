@@ -330,6 +330,7 @@ MonoBehaviour:
   - {fileID: 1137044102}
   - {fileID: 1370120484}
   - {fileID: 2098065362}
+  SpeedUp: {fileID: 0}
 --- !u!4 &94539557
 Transform:
   m_ObjectHideFlags: 0
@@ -1413,7 +1414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b63e32905beb949bc3c38b9334001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewManager: {fileID: 94539556}
   fpc: {fileID: 188619149}
   tutorialOn2D: 0
   tutorialOn3D: 0
@@ -1919,6 +1919,7 @@ MonoBehaviour:
   allowRestart: 1
   allowQuickTitle: 1
   stageChanger: {fileID: 1433027017}
+  agents: []
 --- !u!4 &1804077136
 Transform:
   m_ObjectHideFlags: 0
@@ -2038,7 +2039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2af9feaf7f9c9b489d298465ebbe534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewManager: {fileID: 94539556}
   stageChanger: {fileID: 1433027017}
   clearImage: {fileID: 388236147}
 --- !u!4 &2104347921
@@ -2757,6 +2757,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1305309684620196077, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
+      propertyPath: m_RendererIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7000336438505141632, guid: 5dedcb34b6bdbc948906fa43b678f674, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
