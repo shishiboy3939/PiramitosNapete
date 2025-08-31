@@ -362,7 +362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!328 &98772261
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -1447,6 +1447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1314252977}
+  clearImage: {fileID: 388236147}
   endingView: {fileID: 1558938746}
 --- !u!1 &1370120484 stripped
 GameObject:
@@ -2363,7 +2364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5079940866051021149, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5574530481794610109, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
       propertyPath: m_hasFontAssetChanged
