@@ -50,7 +50,7 @@ public class StageChanger : MonoBehaviour
         ViewManager.Instance.InitializeStages();
         if (dim == 0)
         {
-                foreach (var g in goalItem)
+            foreach (var g in goalItem)
             {
                 g.SetActive(false);
             }

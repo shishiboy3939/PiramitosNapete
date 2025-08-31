@@ -1,17 +1,20 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using MK.Toon;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.AI;
-using DG.Tweening;
+using UnityEngine.UI;
 
 public class ClearOrOverManager : MonoBehaviour
 {
     [SerializeField] StageChanger stageChanger;
     [SerializeField] GameObject clearImage;
+    [Tooltip("シーン遷移のトランジションの時間"), SerializeField] float fadeTime = 2f;
     public static ClearOrOverManager Instance;
     private int _stage = 0;
     private int _2Dor3D = 0;
     private bool clearStarted = false;
+    public bool fading = false;
     private void Awake()
     {
         if (Instance == null)
@@ -47,7 +50,7 @@ public class ClearOrOverManager : MonoBehaviour
                 if (GameManager.elapsedTime <= 0)
                 {
                     //制限時間を超えたら3Dステージへ移動
-                    stageChanger.ChangeStages(GameManager.nowStage, 1);
+                    StartCoroutine(ChangeStageTransition(GameManager.nowStage, 1));
                 }
             }
             else
@@ -70,12 +73,7 @@ public class ClearOrOverManager : MonoBehaviour
     public void StageClear()
     {
         //クリア演出のコルーチンを実行
-        if (!clearStarted)
-        {
-            StartCoroutine(ClearEffect());
-            clearStarted = true;
-        }
-
+        StartCoroutine(ClearEffect());
     }
 
     public void GameOver()
@@ -84,31 +82,50 @@ public class ClearOrOverManager : MonoBehaviour
         stageChanger.ChangeStages(GameManager.nowStage, 0);
     }
 
+    //クリア時の演出
+    //ChangeStageTransitionとそんなに変わらない
+    //もし今後クリア時の演出を変えたければここを変更
     public IEnumerator ClearEffect()
     {
-        //クリア画像表示
-        GameManager.isWaiting = true;
-        yield return new WaitForSeconds(1);
-        var image = clearImage.GetComponent<Image>();
-        image.DOFade(1, 2);
-        yield return new WaitForSeconds(2);
-
-        //次のステージの2D画面に進む
-        if (GameManager.nowStage == 2)
+        if (!clearStarted)
         {
-            VideoManager.Instance.EndingPlay();
-            _stage = 0;
+            clearStarted = true;
+            //クリア画像表示
+            GameManager.isWaiting = true;
+            yield return new WaitForSeconds(1);
+            var image = clearImage.GetComponent<Image>();
+            image.DOFade(1, fadeTime);
+            yield return new WaitForSeconds(fadeTime);
+
+            //次のステージの2D画面に進む
+            if (GameManager.nowStage == 2)
+            {
+                //エンディング再生でフェードインするバグが起きるかも
+                //多分そんなに致命的ではないけど一応TODO
+                VideoManager.Instance.EndingPlay();
+                _stage = 0;
+            }
+            else
+            {
+                _stage = GameManager.nowStage + 1;
+            }
+            _2Dor3D = 0;
+            stageChanger.ChangeStages(_stage, _2Dor3D);
+
+            //フェードイン
+            image.DOFade(0, fadeTime);
+            //↓これも死ねや案件
+            //yield return new WaitForSeconds(fadeTime);
+
+            //初期化
+            clearStarted = false;
         }
         else
         {
-            _stage++;
+            yield break;
         }
-        _2Dor3D = 0;
-        stageChanger.ChangeStages(_stage, _2Dor3D);
-        //初期化
-        image.DOFade(0, 0);
-        clearStarted = false;
     }
+
     public IEnumerator BlackOut()
     {
         var image = clearImage.GetComponent<Image>();
@@ -119,6 +136,30 @@ public class ClearOrOverManager : MonoBehaviour
         image.DOFade(0, 2);
     }
 
-    
-    
+    //フェードアウト、フェードインを加えたシーン遷移処理
+    public IEnumerator ChangeStageTransition(int stage, int dim)
+    {
+        if(!fading)
+        {
+            GameManager.isWaiting = true;
+            fading = true;
+            //フェードアウト
+            var image = clearImage.GetComponent<Image>();
+            image.DOFade(0f, 0f);
+            image.DOFade(1f, fadeTime);
+            yield return new WaitForSeconds(fadeTime);
+            //ステージ移動
+            stageChanger.ChangeStages(stage, dim);
+            //フェードイン
+            image.DOFade(0f, fadeTime);
+            //↓これ書くと何故かコルーチンが動かなくなる
+            //死ねや
+            //yield return new WaitForSeconds(fadeTime);
+            fading = false;
+        }
+        else
+        {
+            yield break;
+        }
+    }
 }

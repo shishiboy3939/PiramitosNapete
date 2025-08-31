@@ -20,8 +20,13 @@ public class TitleScreen : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //最初のステージへ
-            stageChanger.ChangeStages(0, 0);
+            if(!ClearOrOverManager.Instance.fading)
+            {
+                //タイトル画面をクリックしたらダイスの効果音を流す（一旦）
+                SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_breakDice);
+            }
+            //最初の画面に移動
+            StartCoroutine(ClearOrOverManager.Instance.ChangeStageTransition(0, 0));
         }
     }
 
