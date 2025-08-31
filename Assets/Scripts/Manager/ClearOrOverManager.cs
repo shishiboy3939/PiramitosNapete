@@ -6,7 +6,6 @@ using DG.Tweening;
 
 public class ClearOrOverManager : MonoBehaviour
 {
-    [SerializeField] ViewManager viewManager;
     [SerializeField] StageChanger stageChanger;
     [SerializeField] GameObject clearImage;
     public static ClearOrOverManager Instance;

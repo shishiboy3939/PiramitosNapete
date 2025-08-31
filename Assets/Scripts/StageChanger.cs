@@ -9,7 +9,6 @@ using DG.Tweening;
 public class StageChanger : MonoBehaviour
 {
     public static StageChanger Instance;
-    [SerializeField] ViewManager viewManager;
     [SerializeField] FirstPersonController fpc;
     public bool tutorialOn2D;
     public bool tutorialOn3D;
@@ -48,7 +47,7 @@ public class StageChanger : MonoBehaviour
     /// <param name="dim">2Dか3Dか（0だと2D、1だと3D）</param>
     public void ChangeStages(int stage, int dim)
     {
-        viewManager.InitializeStages();
+        ViewManager.Instance.InitializeStages();
         if (dim == 0)
         {
                 foreach (var g in goalItem)
@@ -56,12 +55,12 @@ public class StageChanger : MonoBehaviour
                 g.SetActive(false);
             }
             //2Dのとき
-            viewManager.Stages[stage].mazeCanvas.SetActive(true);
+            ViewManager.Instance.Stages[stage].mazeCanvas.SetActive(true);
             //線を全部消す
             DestroyLines();
-            viewManager.StrokeManager2D.gameObject.SetActive(true);
-            viewManager.camera2D.SetActive(true);
-            GameManager.elapsedTime = viewManager.Stages[stage].limitTime2D;
+            ViewManager.Instance.StrokeManager2D.gameObject.SetActive(true);
+            ViewManager.Instance.camera2D.SetActive(true);
+            GameManager.elapsedTime = ViewManager.Instance.Stages[stage].limitTime2D;
             SoundManager.Instance.PlayBgm(SoundManager.Instance.MapBGM);
             if (tutorialOn2D)
             {
@@ -72,25 +71,25 @@ public class StageChanger : MonoBehaviour
         else if (dim == 1)
         {
             //3Dのとき
-            viewManager.Stages[stage].mazeCubes.SetActive(true);
+            ViewManager.Instance.Stages[stage].mazeCubes.SetActive(true);
             //3Dステージの線をステージ標高に沿った高さに
             //標高を測りたいオブジェクトにはGroundタグを付けて！！！
-            viewManager.StrokeManager3D.SetupStrokeHeight(viewManager, stage);
+            ViewManager.Instance.StrokeManager3D.SetupStrokeHeight(ViewManager.Instance, stage);
             //プレイヤーを指定座標に配置
-            viewManager.playerCapsule.transform.position = viewManager.Stages[stage].playerPosition;
-            viewManager.playerCapsule.transform.localEulerAngles = viewManager.Stages[stage].playerRotation;
-            viewManager.playerCapsule.SetActive(true);
+            ViewManager.Instance.playerCapsule.transform.position = ViewManager.Instance.Stages[stage].playerPosition;
+            ViewManager.Instance.playerCapsule.transform.localEulerAngles = ViewManager.Instance.Stages[stage].playerRotation;
+            ViewManager.Instance.playerCapsule.SetActive(true);
             //最初はプレイヤーがダッシュしないように
             fpc.autoForward = false;
             //位置のリセットが必要なGameObjectの位置をリセット
-            foreach (ResetObject r in viewManager.Stages[stage].resetObjects)
+            foreach (ResetObject r in ViewManager.Instance.Stages[stage].resetObjects)
             {
                 r.ResetPosition();
                 r.gameObject.SetActive(true);
             }
-            viewManager.StrokeManager3D.gameObject.SetActive(true);
-            viewManager.camera3D.SetActive(true);
-            GameManager.elapsedTime = viewManager.Stages[stage].limitTime3D;
+            ViewManager.Instance.StrokeManager3D.gameObject.SetActive(true);
+            ViewManager.Instance.camera3D.SetActive(true);
+            GameManager.elapsedTime = ViewManager.Instance.Stages[stage].limitTime3D;
             fpc.Grounded = true;
             if (GameManager.nowStage == 0)
             {
@@ -131,11 +130,11 @@ public class StageChanger : MonoBehaviour
     /// </summary>
     public void GotoTitle()
     {
-        viewManager.InitializeStages();
+        ViewManager.Instance.InitializeStages();
         //線を全部消す
         DestroyLines();
-        viewManager.titleScreen.SetActive(true);
-        viewManager.camera2D.SetActive(true);
+        ViewManager.Instance.titleScreen.SetActive(true);
+        ViewManager.Instance.camera2D.SetActive(true);
         GameManager.elapsedTime = 0;
         GameManager.nowStage = 0;
         GameManager.now2Dor3D = 0;
@@ -159,16 +158,16 @@ public class StageChanger : MonoBehaviour
     //線を全部消す
     void DestroyLines()
     {
-        foreach (Transform n in viewManager.StrokeManager2D.transform)
+        foreach (Transform n in ViewManager.Instance.StrokeManager2D.transform)
         {
             Destroy(n.gameObject);
         }
-        viewManager.StrokeManager2D.lineRenderers2D = new List<LineRenderer>();
-        foreach (Transform n in viewManager.StrokeManager3D.transform)
+       ViewManager.Instance.StrokeManager2D.lineRenderers2D = new List<LineRenderer>();
+        foreach (Transform n in ViewManager.Instance.StrokeManager3D.transform)
         {
             Destroy(n.gameObject);
         }
-        viewManager.StrokeManager3D.lineRenderers3D = new List<LineRenderer>();
+        ViewManager.Instance.StrokeManager3D.lineRenderers3D = new List<LineRenderer>();
     }
         public void StopAllAgents()
     {

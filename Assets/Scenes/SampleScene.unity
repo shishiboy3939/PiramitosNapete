@@ -1482,7 +1482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b63e32905beb949bc3c38b9334001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewManager: {fileID: 94539556}
   fpc: {fileID: 188619149}
   tutorialOn2D: 0
   tutorialOn3D: 0
@@ -2222,7 +2221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2af9feaf7f9c9b489d298465ebbe534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewManager: {fileID: 94539556}
   stageChanger: {fileID: 1433027017}
   clearImage: {fileID: 388236147}
 --- !u!4 &2104347921
@@ -2597,6 +2595,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 51062071517555092, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1750347108}
+    - target: {fileID: 51062071517555092, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 260696765628786095, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: player
       value: 
@@ -2685,6 +2691,10 @@ PrefabInstance:
       propertyPath: clearOrOverManager
       value: 
       objectReference: {fileID: 2104347920}
+    - target: {fileID: 2982426895473889197, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: viewManager
+      value: 
+      objectReference: {fileID: 94539556}
     - target: {fileID: 3267816680939015182, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2821,6 +2831,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1511071102}
+    - target: {fileID: 1488632016267004567, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: c85a072d1a81a4287be5cdcd95a09b8e, type: 2}
     - target: {fileID: 2149644746177441949, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2864,7 +2878,7 @@ PrefabInstance:
     - target: {fileID: 4071198573978359843, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 98793198}
+      objectReference: {fileID: 1750347108}
     - target: {fileID: 4071198573978359843, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -2897,6 +2911,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 188619146}
+    - target: {fileID: 7839377257046771099, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: viewManager
+      value: 
+      objectReference: {fileID: 94539556}
     - target: {fileID: 8158975765151909873, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: viewManager
       value: 
@@ -3108,6 +3126,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2234477513607345320, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
+      propertyPath: viewManager
+      value: 
+      objectReference: {fileID: 94539556}
     - target: {fileID: 2358042253627068755, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: viewManager
       value: 
@@ -3211,6 +3233,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2287223399673830236, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1750347108}
+    - target: {fileID: 2287223399673830236, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2629859558398042663, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: player
       value: 
@@ -3271,6 +3301,10 @@ PrefabInstance:
       propertyPath: clearOrOverManager
       value: 
       objectReference: {fileID: 2104347920}
+    - target: {fileID: 5705590098529761103, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+      propertyPath: viewManager
+      value: 
+      objectReference: {fileID: 94539556}
     - target: {fileID: 5914632682601193553, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
       propertyPath: player
       value: 
