@@ -144,6 +144,7 @@ public class Stroke : MonoBehaviour
         //太さの初期化
         StrokeManager2D.lineRenderers2D.Last().startWidth = lineWidth;
         StrokeManager2D.lineRenderers2D.Last().endWidth = lineWidth;
+        StrokeManager2D.lineRenderers2D.Last().textureMode = LineTextureMode.Tile;
     }
 
     void _initRenderers3D()
@@ -157,6 +158,7 @@ public class Stroke : MonoBehaviour
         //太さの初期化
         StrokeManager3D.lineRenderers3D.Last().startWidth = lineWidth*10;
         StrokeManager3D.lineRenderers3D.Last().endWidth = lineWidth*10;
+        StrokeManager3D.lineRenderers3D.Last().textureMode = LineTextureMode.Tile;
     }
 
     void _addPositionDataToLineRendererList()

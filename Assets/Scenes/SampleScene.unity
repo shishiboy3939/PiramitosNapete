@@ -1708,6 +1708,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 6a5b1046b40ded44fabf8760418798a9, type: 3}
+      propertyPath: lineMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b131a22f0cceb6a4fbe6451794e721fc, type: 2}
+    - target: {fileID: 6647076114727541868, guid: 6a5b1046b40ded44fabf8760418798a9, type: 3}
       propertyPath: StrokeManager2D
       value: 
       objectReference: {fileID: 606890699}
@@ -2359,7 +2363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5079940866051021149, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5574530481794610109, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -2369,6 +2373,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 116.23001
       objectReference: {fileID: 0}
+    - target: {fileID: 6647076114727541868, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
+      propertyPath: lineMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b131a22f0cceb6a4fbe6451794e721fc, type: 2}
     - target: {fileID: 6647076114727541868, guid: fc34ee4833b567148848aa7e7103a23e, type: 3}
       propertyPath: StrokeManager2D
       value: 
@@ -2994,7 +3002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303788614323813487, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7190027224702191128, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
@@ -3255,6 +3263,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
+      propertyPath: lineMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b131a22f0cceb6a4fbe6451794e721fc, type: 2}
     - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: StrokeManager2D
       value: 
