@@ -184,10 +184,11 @@ MonoBehaviour:
   SE_GetAnk: {fileID: 8300000, guid: 2a50111cd7bd348e9911c959f8d5045b, type: 3}
   SE_Respawn: {fileID: 8300000, guid: 8423652ef6ec7b34c8a1830bffc9cf44, type: 3}
   SE_SpeedUp: {fileID: 8300000, guid: 383a8463b847d2a4082f1ad55b3322c8, type: 3}
+  Ending: {fileID: 8300000, guid: c4ac8455e3bd39448922006ed38db014, type: 3}
   TitleBGM: {fileID: 8300000, guid: 2ffefe26cf4a3f646bdb40fcbb38a3bc, type: 3}
-  Stage01BGM: {fileID: 8300000, guid: 1e0edab4709614766acbe7924b2ed521, type: 3}
-  Stage02BGM: {fileID: 8300000, guid: e37a6a47b590d4abcab5c23be3e445d1, type: 3}
-  Stage03BGM: {fileID: 8300000, guid: fa648ece8384c4f289e5e8d5518da30b, type: 3}
+  Stage01BGM: {fileID: 8300000, guid: 4e96537a25ad91648acd7dea68536619, type: 3}
+  Stage02BGM: {fileID: 8300000, guid: 02d2dc4e6aa887949b333169b8ffdd12, type: 3}
+  Stage03BGM: {fileID: 8300000, guid: cb867112afd2cbd4b8b67d763422c1a0, type: 3}
   SE_GameStart: {fileID: 8300000, guid: 58f0b48db2b31469093cd720229e23de, type: 3}
   MapBGM: {fileID: 8300000, guid: 39659a0972bea444c8dd50f3c87dd034, type: 3}
   BgmSource: {fileID: 5872933162331619286}

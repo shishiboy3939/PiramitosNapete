@@ -38,6 +38,7 @@ public class VideoManager : MonoBehaviour
         endingView.SetActive(true);
         videoPlayer.Play();
         image.DOFade(0, 1);
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.Ending);
     }
 
     void OnVideoEnd(VideoPlayer vp)
