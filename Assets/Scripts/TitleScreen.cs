@@ -23,7 +23,7 @@ public class TitleScreen : MonoBehaviour
             if(!ClearOrOverManager.Instance.fading)
             {
                 //タイトル画面をクリックしたらダイスの効果音を流す（一旦）
-                SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_breakDice);
+                SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_GameStart);
             }
             //最初の画面に移動
             StartCoroutine(ClearOrOverManager.Instance.ChangeStageTransition(0, 0));
