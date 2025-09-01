@@ -64,16 +64,16 @@ public class Stroke : MonoBehaviour
             //クリック中（ストローク中）
             if (Input.GetMouseButton(0))
             {
-                if(isDrawing)
+                if (isDrawing)
                 {
                     _addPositionDataToLineRendererList();
                     _addPositionDataToLineRendererList3D();
                     //線を描いている間、効果音を鳴らし続ける
-                    if(!isSEPlaying)
+                    if (!isSEPlaying)
                     {
                         isSEPlaying = true;
                         SECountTime = 0;
-                        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Pencil);
+                        SoundManager.Instance.PlayPencilSound(SoundManager.Instance.SE_Pencil);
                     }
                     SECountTime += Time.deltaTime;
                     if (SECountTime > SEWaitTime)
@@ -87,6 +87,7 @@ public class Stroke : MonoBehaviour
                 isDrawing = false;
                 isSEPlaying = false;
                 SECountTime = 0;
+                SoundManager.Instance.StopPencilSound();
             }
         }
         else

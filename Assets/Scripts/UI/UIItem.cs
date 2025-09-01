@@ -36,6 +36,8 @@ public class UIItem : MonoBehaviour
         //制限時間の減少を止める
         //画面暗くして文字を読みやすくするとかしたいけど一旦これで
         GameManager.isPausing = true;
+        SoundManager.Instance.PauseLongSE(SoundManager.Instance.LongSE_Clock);
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_ChangeIcon);
     }
 
     public void test2()
@@ -44,6 +46,8 @@ public class UIItem : MonoBehaviour
         //多分この書き方だとマウスを高速で動かすとバグる
         //でも今はシンプルさを優先
         GameManager.isPausing = false;
+        SoundManager.Instance.ResumeLongSE();
+        
     }
 
 }

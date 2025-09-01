@@ -66,6 +66,11 @@ public class StageChanger : MonoBehaviour
             {
                 tutorialmanager.CallTutorial();
             }
+            if (!tutorialOn2D)
+            {
+                SoundManager.Instance.PlayLongSE(SoundManager.Instance.LongSE_Clock);
+                Debug.Log("タイマー音呼べてる");
+            }
             SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Appear2DMap);
         }
         else if (dim == 1)
@@ -91,6 +96,7 @@ public class StageChanger : MonoBehaviour
             ViewManager.Instance.camera3D.SetActive(true);
             GameManager.elapsedTime = ViewManager.Instance.Stages[stage].limitTime3D;
             fpc.Grounded = true;
+            SoundManager.Instance.StopLongSE();
             if (GameManager.nowStage == 0)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage01BGM);

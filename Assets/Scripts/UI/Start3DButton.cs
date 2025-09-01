@@ -25,6 +25,7 @@ public class Start3DButton : MonoBehaviour
     //ボタンが押されたらすぐ3D画面へ
     public void Start3DGame()
     {
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Into_UnLock);
         //ボタンが出現したらボタンとしての機能を開始
         if (a.alpha >= 0.9f)
         {
@@ -38,6 +39,7 @@ public class Start3DButton : MonoBehaviour
     {
         if(GameManager.elapsedTime < displayTime && !isActive)
         {
+            SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Into_PopIn);
             isActive = true;
             a.DOFade(endValue: 1f, duration: 1f);
         }

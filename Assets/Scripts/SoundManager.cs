@@ -12,6 +12,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip SE_GetAnk;
     [SerializeField] public AudioClip SE_Respawn;
     [SerializeField] public AudioClip SE_SpeedUp;
+    [SerializeField] public AudioClip SE_Into_PopIn;
+    [SerializeField] public AudioClip SE_Into_UnLock;
+    [SerializeField] public AudioClip SE_ChangeIcon;
+    [SerializeField] public AudioClip LongSE_Clock;
     [SerializeField] public AudioClip Ending;
     [SerializeField] public AudioClip TitleBGM;
     [SerializeField] public AudioClip Stage01BGM;
@@ -19,7 +23,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip Stage03BGM;
     [SerializeField] public AudioClip SE_GameStart;
     [SerializeField] public AudioClip MapBGM;
-    [SerializeField] public AudioSource BgmSource, SeSource;
+    [SerializeField] public AudioSource BgmSource, SeSource, LongSESorce, PencilSESorce;
     [SerializeField] public List<AudioSource> FootStepSource;
     private void Awake()
     {
@@ -55,4 +59,31 @@ public class SoundManager : MonoBehaviour
     {
         FootStepSource[GameManager.nowStage].Stop();
     }
+    public void PlayLongSE(AudioClip longSE)
+    {
+        LongSESorce.clip = longSE;
+        LongSESorce.Play();
+    }
+    public void PauseLongSE(AudioClip longSE)
+    {
+        LongSESorce.clip = longSE;
+        LongSESorce.Pause();
+    }
+    public void ResumeLongSE()
+    {
+        LongSESorce.UnPause();
+    }
+    public void StopLongSE()
+    {
+        LongSESorce.Stop();
+    }
+    public void PlayPencilSound(AudioClip pencilSE)
+    {
+        PencilSESorce.PlayOneShot(pencilSE);
+    }
+    public void StopPencilSound()
+    {
+        PencilSESorce.Stop();
+    }
+
 }

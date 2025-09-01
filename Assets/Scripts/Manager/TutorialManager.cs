@@ -65,6 +65,7 @@ public class Tutorialmanager : MonoBehaviour
             GameManager.isWaiting = false;
             SetEnabled(false);
             Name.SetActive(false);
+            SoundManager.Instance.PlayLongSE(SoundManager.Instance.LongSE_Clock);
         }
         if (currentPage < 17 && currentPage > 9)
         {
