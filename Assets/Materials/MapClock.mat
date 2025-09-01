@@ -357,14 +357,14 @@ Material:
     - _HalftoneFadeWidth: 1.5
     - _HalftoneInvert: 0
     - _HalftoneTiling: 4
-    - _HologramContrast: 1
+    - _HologramContrast: 5.07
     - _HologramDistortionDensity: 0.5
-    - _HologramDistortionOffset: 0.5
+    - _HologramDistortionOffset: 0.4
     - _HologramDistortionScale: 10
-    - _HologramDistortionSpeed: 2
-    - _HologramFade: 0.33
-    - _HologramLineFrequency: 500
-    - _HologramLineGap: 2.88
+    - _HologramDistortionSpeed: 1.47
+    - _HologramFade: 0.71
+    - _HologramLineFrequency: 501.62
+    - _HologramLineGap: 3.43
     - _HologramLineSpeed: 0.01
     - _HologramMinAlpha: 0.98
     - _Hue: 0
@@ -638,7 +638,7 @@ Material:
     - _GlitchNoiseScale: {r: 0, g: 3, b: 0, a: 0}
     - _GlitchNoiseSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _HalftonePosition: {r: 0, g: 0, b: 0, a: 0}
-    - _HologramTint: {r: 0.6040851, g: 0.7075472, b: 0.6877401, a: 1}
+    - _HologramTint: {r: 0.31305623, g: 0.6320754, b: 0.57072556, a: 1}
     - _InkSpreadColor: {r: 8.47419, g: 5.013525, b: 0.08873497, a: 0}
     - _InkSpreadNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
     - _InkSpreadPosition: {r: 0.5, g: -1, b: 0, a: 0}

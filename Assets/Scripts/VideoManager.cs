@@ -37,7 +37,6 @@ public class VideoManager : MonoBehaviour
         image.DOFade(1, 0);
         endingView.SetActive(true);
         videoPlayer.Play();
-        SoundManager.Instance.StopBgm();
         image.DOFade(0, 1);
     }
 

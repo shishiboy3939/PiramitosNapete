@@ -985,11 +985,11 @@ MonoBehaviour:
   paletteCustomName: 
   paletteCustomInit: 0
   bleedOn:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   crtMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   bleedAmount:
     m_OverrideState: 1
     m_Value: 1
@@ -1034,7 +1034,7 @@ MonoBehaviour:
     m_Value: 1
   tapeNoiseAmt:
     m_OverrideState: 1
-    m_Value: 0.283
+    m_Value: 0.202
   tapeNoiseSpeed:
     m_OverrideState: 1
     m_Value: 1
