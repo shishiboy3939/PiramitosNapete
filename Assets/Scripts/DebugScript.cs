@@ -23,7 +23,6 @@ public class DebugScript : MonoBehaviour
         checkPause();
         checkRestart();
         checkQuickTitle();
-        stopNavAgent();
     }
 
     void checkPause()
@@ -51,17 +50,6 @@ public class DebugScript : MonoBehaviour
         {
             //Tキーの入力でタイトル画面へ
             stageChanger.GotoTitle();
-        }
-
-    }
-    void stopNavAgent()
-    {
-        if (Input.GetKeyDown(KeyCode.N) && allowQuickTitle)
-        {
-            foreach (var agent in agents)
-            {
-                if (agent != null)agent.isStopped = true;
-            }
         }
 
     }
