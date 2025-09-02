@@ -1350,10 +1350,11 @@ MonoBehaviour:
   allItem:
   - {fileID: 487146681}
   - {fileID: 1003653040}
+  - {fileID: 1995499207}
   - {fileID: 6557015702591108247}
   - {fileID: 9061051686948929250}
-  - {fileID: 1995499207}
   - {fileID: 1704744566}
+  - {fileID: 6557015702591108249}
   - {fileID: 861432242}
 --- !u!4 &1433027018
 Transform:
@@ -2529,6 +2530,14 @@ PrefabInstance:
       propertyPath: 'magicCircles.Array.data[2]'
       value: 
       objectReference: {fileID: 9061051686948929251}
+    - target: {fileID: 403291563789117939, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 188619146}
+    - target: {fileID: 403291563789117939, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1511071102}
     - target: {fileID: 542410420986387631, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: targetCamera
       value: 
@@ -2673,6 +2682,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1511071102}
+    - target: {fileID: 8058143821017882677, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 1750347108}
     - target: {fileID: 8338702460960573874, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
       propertyPath: viewManager
       value: 
@@ -2703,6 +2716,11 @@ GameObject:
 --- !u!1 &6557015702591108248 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1112426402546512705, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+  m_PrefabInstance: {fileID: 6557015702591108245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6557015702591108249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4172659568054441314, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
   m_PrefabInstance: {fileID: 6557015702591108245}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7094289184706988126
