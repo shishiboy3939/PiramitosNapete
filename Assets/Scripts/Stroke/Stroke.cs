@@ -91,6 +91,13 @@ public class Stroke : MonoBehaviour
                 isSEPlaying = false;
                 SECountTime = 0;
                 SoundManager.Instance.StopPencilSound();
+                //線をある程度描いて、線が途切れたらチュートリアルを進める
+                if (tutorialmanager.tutorialStroke && tutorialmanager.tutorialStrokeLength > 200)
+                {
+                    tutorialmanager.tutorialStroke = false;
+                    tutorialmanager.tutorialStrokeLength = 0;
+                    tutorialmanager.FinishTutorialStroke();
+                }
             }
         }
         else
@@ -99,11 +106,12 @@ public class Stroke : MonoBehaviour
             isSEPlaying = false;
             SECountTime = 0;
             SoundManager.Instance.StopPencilSound();
-            if(tutorialmanager.tutorialStroke && tutorialmanager.tutorialStrokeLength > 100)
+            //線をある程度描いて、線が途切れたらチュートリアルを進める
+            if(tutorialmanager.tutorialStroke && tutorialmanager.tutorialStrokeLength > 200)
             {
                 tutorialmanager.tutorialStroke = false;
                 tutorialmanager.tutorialStrokeLength = 0;
-                tutorialmanager.CheckTutorialStroke();
+                tutorialmanager.FinishTutorialStroke();
             }
         }
 

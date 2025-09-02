@@ -110,8 +110,8 @@ public class Tutorialmanager : MonoBehaviour
             GameManager.isPausing = false;
             GameManager.isWaiting = false;
             StageChanger.Instance.tutorialOn3D = false;
+            fpc.autoForward = true;
             StageChanger.Instance.ResumeAllAgents();
-            fpc.autoForward = false;
             SoundManager.Instance.FootStepPlay(SoundManager.Instance.SE_FootStep);
             SetEnabled(false);
             Name.SetActive(false);
@@ -119,7 +119,7 @@ public class Tutorialmanager : MonoBehaviour
     }
 
     //線のチュートリアルの終わりを検知
-    public void CheckTutorialStroke()
+    public void FinishTutorialStroke()
     {
         /*if (currentPage == 6)
         {
