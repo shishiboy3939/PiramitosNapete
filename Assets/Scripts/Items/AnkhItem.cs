@@ -5,7 +5,6 @@ using UnityEngine;
 public class AnkhItem : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] List<GameObject> magicCircles;
 
     [Header("減少量（例: 30）")]
     [SerializeField] float reduceAmount = 30f;
@@ -38,10 +37,6 @@ public class AnkhItem : MonoBehaviour
         // 追加: 元の値を保存
         if (_mat && _mat.HasProperty(FadeID))
             _baseFade = _mat.GetFloat(FadeID);
-        foreach (var magicCircle in magicCircles)
-        {
-        magicCircle.SetActive(false);        
-        }
     }
 
     void OnTriggerEnter(Collider col)
@@ -59,7 +54,6 @@ public class AnkhItem : MonoBehaviour
 
     IEnumerator AnkhEmote()
     {
-        magicCircles[GameManager.nowStage].SetActive(true);
         yield return new WaitForSeconds(1f);
         SoundManager.Instance?.PlaySoundEffect(SoundManager.Instance.SE_Respawn);
         // …あなたのリスタート処理
@@ -73,12 +67,7 @@ public class AnkhItem : MonoBehaviour
         GameManager.isWaiting = false;
         RestoreToBaseFade(0);
         gameObject.SetActive(false);   
-        yield return new WaitForSeconds(1f);
-        foreach (var magicCircle in magicCircles)
-        {
-        magicCircle.SetActive(false);        
-        }
-        
+        yield return new WaitForSeconds(1f);        
     }
 
     // 任意の差分だけ増減（delta）を duration 秒で

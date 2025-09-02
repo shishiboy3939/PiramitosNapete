@@ -66,7 +66,8 @@ public class StageChanger : MonoBehaviour
             {
                 tutorialmanager.CallTutorial();
             }
-            if (!tutorialOn2D)
+
+            if (!tutorialOn2D && GameManager.nowStage <=1)
             {
                 SoundManager.Instance.PlayLongSE(SoundManager.Instance.LongSE_Clock);
                 Debug.Log("タイマー音呼べてる");
@@ -97,6 +98,7 @@ public class StageChanger : MonoBehaviour
             GameManager.elapsedTime = ViewManager.Instance.Stages[stage].limitTime3D;
             fpc.Grounded = true;
             SoundManager.Instance.StopLongSE();
+            SoundManager.Instance.StopPencilSound();
             if (GameManager.nowStage == 0)
             {
                 SoundManager.Instance.PlayBgm(SoundManager.Instance.Stage01BGM);
@@ -157,8 +159,9 @@ public class StageChanger : MonoBehaviour
             a.SetActive(true);
         }
         //SpeedUp透明化
-        var image =  ViewManager.Instance.SpeedUp.GetComponent<Image>();
+        var image = ViewManager.Instance.SpeedUp.GetComponent<Image>();
         image.DOFade(0, 0);
+        SoundManager.Instance.StopLongSE();
     }
 
     //線を全部消す

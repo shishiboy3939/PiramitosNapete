@@ -102,10 +102,9 @@ public class ClearOrOverManager : MonoBehaviour
             {
                 //エンディング再生でフェードインするバグが起きるかも
                 //多分そんなに致命的ではないけど一応TODO
-                image.DOFade(1, 1);
+                image.DOFade(1, 0);
                 VideoManager.Instance.EndingPlay();
                 _stage = 0;
-                SoundManager.Instance.StopLongSE();
             }
             else
             {

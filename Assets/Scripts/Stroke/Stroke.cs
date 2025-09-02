@@ -51,7 +51,7 @@ public class Stroke : MonoBehaviour
     void Update()
     {
         //マウスが2Dマップ内にあるとき
-        if(!GameManager.isWaiting && CheckMousePosition())
+        if (!GameManager.isWaiting && CheckMousePosition())
         {
             //クリックされた瞬間
             if (Input.GetMouseButtonDown(0))
@@ -95,6 +95,7 @@ public class Stroke : MonoBehaviour
             isDrawing = false;
             isSEPlaying = false;
             SECountTime = 0;
+            SoundManager.Instance.StopPencilSound();
         }
 
     }
