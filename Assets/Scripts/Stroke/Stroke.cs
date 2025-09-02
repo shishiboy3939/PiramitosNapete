@@ -22,6 +22,8 @@ public class Stroke : MonoBehaviour
     [Tooltip("マップ画像のGameObject"), SerializeField] GameObject map;
     [Tooltip("鉛筆の効果音を流す頻度（秒）"), SerializeField] private float SEWaitTime = 0.5f;
 
+    [Tooltip("ヒエラルキー上のTutorialmanager"), SerializeField] Tutorialmanager tutorialmanager;
+
     private bool isDrawing = false;
     private float mouseX, mouseY;
     private float mapX, mapY, mapW, mapH;
@@ -51,7 +53,7 @@ public class Stroke : MonoBehaviour
     void Update()
     {
         //マウスが2Dマップ内にあるとき
-        if (!GameManager.isWaiting && CheckMousePosition())
+        if (CheckMousePosition() && (!GameManager.isWaiting || tutorialmanager.tutorialStroke))
         {
             //クリックされた瞬間
             if (Input.GetMouseButtonDown(0))
@@ -80,6 +82,7 @@ public class Stroke : MonoBehaviour
                     {
                         isSEPlaying = false;
                     }
+                    tutorialmanager.tutorialStrokeLength++;
                 }
             }
             else
@@ -96,6 +99,12 @@ public class Stroke : MonoBehaviour
             isSEPlaying = false;
             SECountTime = 0;
             SoundManager.Instance.StopPencilSound();
+            if(tutorialmanager.tutorialStroke && tutorialmanager.tutorialStrokeLength > 100)
+            {
+                tutorialmanager.tutorialStroke = false;
+                tutorialmanager.tutorialStrokeLength = 0;
+                tutorialmanager.CheckTutorialStroke();
+            }
         }
 
     }

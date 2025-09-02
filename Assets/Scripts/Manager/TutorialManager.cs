@@ -16,6 +16,8 @@ public class Tutorialmanager : MonoBehaviour
     [SerializeField] private GraphicRaycaster raycaster;
     [SerializeField] GameObject Name;
     private GraphicRaycaster _ray;
+    public bool tutorialStroke;
+    public int tutorialStrokeLength;
 
     private void Start()
     {
@@ -27,14 +29,14 @@ public class Tutorialmanager : MonoBehaviour
         //チュートリアル画面で操作を禁止する
         //StageChangerのChangeStages関数の最後にGameManager.isWaitingをfalseにする処理があり、
         //それとの兼ね合いで応急処置として一旦こうしてる
-        if (currentPage < 9)
+        if (currentPage < 10)
         {
             GameManager.isWaiting = true;
         }
 
         //3D画面で、3DチュートリアルがtrueのときGameManager.isWaitingをtrueに
         //ここまで条件を増やさなくて良いと思うけど、どんなバグが起こるか分からないから一応
-        if (currentPage == 9 && GameManager.now2Dor3D == 1 && StageChanger.Instance.tutorialOn3D)
+        if (currentPage == 10 && GameManager.now2Dor3D == 1 && StageChanger.Instance.tutorialOn3D)
         {
             GameManager.isWaiting = true;
         }
@@ -51,13 +53,39 @@ public class Tutorialmanager : MonoBehaviour
     }
     public void NextPage()
     {
-        TutorialPage[currentPage].SetActive(false);
-        currentPage++;
-        if (currentPage < 9)
+        if(currentPage != 6 || (currentPage == 6 && !tutorialStroke))
+        {
+            TutorialPage[currentPage].SetActive(false);
+            currentPage++;
+        }
+
+        if (currentPage < 6)
         {
             TutorialPage[currentPage].SetActive(true);
         }
-        if (currentPage == 9)
+        if (currentPage == 6)
+        {
+            //線のチュートリアル
+            TutorialPanel.DOFade(0f, 1f);
+            NextButton.SetActive(false);
+            SetEnabled(false);
+            Name.SetActive(false);
+            tutorialStroke = true;
+        }
+        if (currentPage == 7)
+        {
+            //線のチュートリアル終了
+            TutorialPanel.DOFade(1f, 1f);
+            NextButton.SetActive(true);
+            TutorialPage[currentPage].SetActive(true);
+            SetEnabled(true);
+            Name.SetActive(true);
+        }
+        if (currentPage > 7 && currentPage < 10)
+        {
+            TutorialPage[currentPage].SetActive(true);
+        }
+        if (currentPage == 10)
         {
             TutorialPanel.DOFade(0f, 1f);
             NextButton.SetActive(false);
@@ -67,7 +95,7 @@ public class Tutorialmanager : MonoBehaviour
             Name.SetActive(false);
             SoundManager.Instance.PlayLongSE(SoundManager.Instance.LongSE_Clock);
         }
-        if (currentPage < 17 && currentPage > 9)
+        if (currentPage < 18 && currentPage > 10)
         {
             TutorialPage[currentPage].SetActive(true);
             StageChanger.Instance.tutorialOn3D = true;
@@ -75,7 +103,7 @@ public class Tutorialmanager : MonoBehaviour
             SetEnabled(true);
             Name.SetActive(true);
         }
-        if (currentPage == 17)
+        if (currentPage == 18)
         {
             TutorialPanel.DOFade(0f, 1f);
             NextButton.SetActive(false);
@@ -89,6 +117,18 @@ public class Tutorialmanager : MonoBehaviour
             Name.SetActive(false);
         }
     }
+
+    //線のチュートリアルの終わりを検知
+    public void CheckTutorialStroke()
+    {
+        /*if (currentPage == 6)
+        {
+            tutorialStroke = false;
+            NextPage();
+        }*/
+        NextPage();
+    }
+
     public void SetEnabled(bool on)
     {
         if (_ray) _ray.enabled = on;
@@ -97,6 +137,8 @@ public class Tutorialmanager : MonoBehaviour
     {
         StageChanger.Instance.tutorialOn2D = true;
         StageChanger.Instance.tutorialOn3D = true;
+        tutorialStroke = false;
+        tutorialStrokeLength = 0;
         foreach (GameObject r in TutorialPage)
         {
             r.SetActive(false);
