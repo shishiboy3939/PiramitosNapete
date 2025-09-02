@@ -320,6 +320,8 @@ MonoBehaviour:
     limitTime3D: 60
     resetObjects:
     - {fileID: 9061051686948929249}
+    - {fileID: 717462776}
+    - {fileID: 54543553}
   playerCapsule: {fileID: 188619146}
   titleScreen: {fileID: 8279800080553146426}
   StrokeManager2D: {fileID: 606890699}
@@ -2839,6 +2841,10 @@ PrefabInstance:
       propertyPath: 'magicCircles.Array.data[2]'
       value: 
       objectReference: {fileID: 9061051686948929251}
+    - target: {fileID: 525274177103430835, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 188619148}
     - target: {fileID: 1480960762676397777, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
       propertyPath: player
       value: 

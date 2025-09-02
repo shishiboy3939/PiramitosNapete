@@ -25,12 +25,12 @@ public class Start3DButton : MonoBehaviour
     //ボタンが押されたらすぐ3D画面へ
     public void Start3DGame()
     {
-        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Into_UnLock);
         //ボタンが出現したらボタンとしての機能を開始
         if (a.alpha >= 0.9f)
         {
             StartCoroutine(ClearOrOverManager.Instance.ChangeStageTransition(GameManager.nowStage, 1));
             Debug.Log(ClearOrOverManager.Instance.fading);
+            SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Into_UnLock);
         }
     }
 

@@ -309,7 +309,7 @@ MonoBehaviour:
   SE_SceneMovie: {fileID: 8300000, guid: 8140f07ac995a49189c7170f49fce710, type: 3}
   SE_FootStep: {fileID: 8300000, guid: e06a0c6a7f3eb4b4c856fbdab31d4058, type: 3}
   SE_EatSoul: {fileID: 8300000, guid: 5cebce68f0d0bfc48ae003fa3f10583a, type: 3}
-  SE_breakDice: {fileID: 8300000, guid: 590962a06d99e4d1bbfcf0dabb626cf9, type: 3}
+  SE_breakDice: {fileID: 8300000, guid: 58f0b48db2b31469093cd720229e23de, type: 3}
   SE_Appear2DMap: {fileID: 8300000, guid: a4b05afe206eb8243989ec657aa2c3d3, type: 3}
   SE_Pencil: {fileID: 8300000, guid: 7ab519ecc6f69474db0b73fd19aef848, type: 3}
   SE_GetAnk: {fileID: 8300000, guid: 2a50111cd7bd348e9911c959f8d5045b, type: 3}
