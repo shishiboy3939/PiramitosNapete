@@ -168,7 +168,7 @@ namespace StarterAssets
 			{
 				if (!isWaiting)
 				{
-					Vector3 horizontal = autoForward ? transform.forward : Vector3.zero;
+					Vector3 horizontal = transform.forward;
 					float s = isSprinting ? SprintSpeed : MoveSpeed;
 					_controller.Move(horizontal.normalized * (s * Time.deltaTime)
 									+ new Vector3(0f, _verticalVelocity, 0f) * Time.deltaTime);
@@ -176,7 +176,7 @@ namespace StarterAssets
 				}
 			}
 		}
-		public void ToggleAutoForward() => autoForward = !autoForward;
+		//public void ToggleAutoForward() => autoForward = !autoForward;
 
 
         private void JumpAndGravity()

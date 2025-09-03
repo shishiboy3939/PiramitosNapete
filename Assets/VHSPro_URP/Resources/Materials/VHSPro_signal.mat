@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - VHS_COLOR
   - VHS_DITHER
-  - VHS_JITTER_V_ON
   - VHS_LINENOISE_ON
   - VHS_PALETTE
   - VHS_TAPENOISE_ON

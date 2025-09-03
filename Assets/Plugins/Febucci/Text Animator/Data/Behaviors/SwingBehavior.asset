@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SwingBehavior
   m_EditorClassIdentifier: 
   tagID: swing
-  baseAmplitude: 22.74
-  baseFrequency: 3.65
-  baseWaveSize: 0.171
+  baseAmplitude: 7
+  baseFrequency: -4.86
+  baseWaveSize: 0

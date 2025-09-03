@@ -27,6 +27,7 @@ public class GoalItem : MonoBehaviour
             Debug.Log("ステージクリア");
             //敵のsetActiveをfalseに
             navMeshAgent.gameObject.SetActive(false);
+            navMeshAgentController.gameObject.SetActive(false);
             //クリア画面を呼び出し
             ClearOrOverManager.Instance.StageClear();
         }
