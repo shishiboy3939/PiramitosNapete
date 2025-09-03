@@ -48,9 +48,11 @@ namespace StarterAssets
 		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
 		public GameObject CinemachineCameraTarget;
 		[Tooltip("How far in degrees can you move the camera up")]
-		public float TopClamp = 90.0f;
+		public float TopClamp = 50.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
-		public float BottomClamp = -90.0f;
+		public float BottomClamp = -50.0f;
+		[SerializeField] private float verticalSensitivity = 0.5f; // 縦を弱める係数
+		[SerializeField] private float horizontalSensitivity = 1.0f;
 
 		public bool isSprinting = false;
         public bool isWaiting = false;
@@ -145,8 +147,8 @@ namespace StarterAssets
 					//Don't multiply mouse input by Time.deltaTime
 					float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-					_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-					_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+					_cinemachineTargetPitch += _input.look.y * RotationSpeed * verticalSensitivity * deltaTimeMultiplier;
+					_rotationVelocity        = _input.look.x * RotationSpeed * horizontalSensitivity * deltaTimeMultiplier;
 
 					// clamp our pitch rotation
 					_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);

@@ -125,7 +125,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215578589016642}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ac134f0084bb746328caed92f8e77a21, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -185,8 +185,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.8207547, g: 0.71490145, b: 0.6465379, a: 1}
-  m_Intensity: 500
-  m_Range: 10
+  m_Intensity: 700
+  m_Range: 30
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -323,15 +323,13 @@ GameObject:
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
-  - component: {fileID: 2063284951338791650}
-  - component: {fileID: 5251256338787255641}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8997996947095583982
 Transform:
   m_ObjectHideFlags: 0
@@ -403,8 +401,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   CinemachineCameraTarget: {fileID: 4135013735270702863}
-  TopClamp: 89
-  BottomClamp: -89
+  TopClamp: 45
+  BottomClamp: -45
+  verticalSensitivity: 0.5
+  horizontalSensitivity: 1
   isSprinting: 0
   isWaiting: 0
   autoForward: 1
@@ -542,28 +542,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2063284951338791650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3803153818ef048dc99afbb85b8f5c3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5251256338787255641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8788a618795a543dc92780fa2fda1b8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpc: {fileID: 8616685848737228371}
