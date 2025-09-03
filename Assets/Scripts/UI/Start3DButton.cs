@@ -37,11 +37,24 @@ public class Start3DButton : MonoBehaviour
     //残り15秒になったらボタンをじわじわ表示
     void checkAlpha()
     {
+        //isActiveを初期化
+        if (ViewManager.Instance.Stages[GameManager.nowStage].limitTime2D - GameManager.elapsedTime < 0.1f)
+        {
+            isActive = false;
+        }
+
         if(GameManager.elapsedTime < displayTime && !isActive)
         {
             SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Into_PopIn);
             isActive = true;
             a.DOFade(endValue: 1f, duration: 1f);
+        }
+        else
+        {
+            if (a.alpha != 0f && !isActive)
+            {
+                a.DOFade(endValue: 0f, duration: 0f);
+            }
         }
     }
 }
