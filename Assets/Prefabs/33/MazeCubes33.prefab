@@ -673,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6366087625578169421
 Transform:
   m_ObjectHideFlags: 0
@@ -1154,6 +1154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7478367644477115132}
   - component: {fileID: 525274177103430835}
+  - component: {fileID: 8855509139315793258}
   m_Layer: 0
   m_Name: NavmeshController
   m_TagString: Untagged
@@ -1170,7 +1171,7 @@ Transform:
   m_GameObject: {fileID: 7919389584823216736}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 289.9134, y: 823.2784, z: 34.49249}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1190,6 +1191,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6622711201256506477}
   target: {fileID: 0}
+--- !u!114 &8855509139315793258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919389584823216736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &8305888696332509528
 GameObject:
   m_ObjectHideFlags: 0

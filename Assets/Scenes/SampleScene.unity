@@ -303,30 +303,31 @@ MonoBehaviour:
   Stages:
   - mazeCanvas: {fileID: 1065765197}
     mazeCubes: {fileID: 3032310730093878729}
-    playerPosition: {x: 8, y: 0.5, z: -5}
-    playerRotation: {x: 0, y: -45, z: 0}
+    playerPosition: {x: 8, y: 0, z: -5}
+    playerRotation: {x: 0, y: -90, z: 0}
     limitTime2D: 30
     limitTime3D: 60
     resetObjects:
     - {fileID: 54543553}
+    - {fileID: 1841846777}
   - mazeCanvas: {fileID: 7698245545084709370}
     mazeCubes: {fileID: 6557015702591108246}
-    playerPosition: {x: 12, y: 0.5, z: -2}
+    playerPosition: {x: 12, y: 0, z: -2}
     playerRotation: {x: 0, y: 0, z: 0}
     limitTime2D: 30
     limitTime3D: 60
     resetObjects:
     - {fileID: 717462776}
+    - {fileID: 599773700}
   - mazeCanvas: {fileID: 413905966}
     mazeCubes: {fileID: 1480194926704790408}
-    playerPosition: {x: 27, y: 1, z: 33}
+    playerPosition: {x: 27, y: 0, z: 33}
     playerRotation: {x: 0, y: 0, z: 0}
     limitTime2D: 30
     limitTime3D: 60
     resetObjects:
     - {fileID: 9061051686948929249}
-    - {fileID: 717462776}
-    - {fileID: 54543553}
+    - {fileID: 1892266890}
   playerCapsule: {fileID: 188619146}
   titleScreen: {fileID: 8279800080553146426}
   StrokeManager2D: {fileID: 606890699}
@@ -781,6 +782,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3928299853277830601, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
   m_PrefabInstance: {fileID: 7094289184706988126}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &599773700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2045945036587418457, guid: 716b1428a74fddf42b1aa6d6c362f2d2, type: 3}
+  m_PrefabInstance: {fileID: 6557015702591108245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &606890697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1970,6 +1982,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841846777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8855509139315793258, guid: dd15f1d50f9a05948bbbaba7b7e2fa9a, type: 3}
+  m_PrefabInstance: {fileID: 7094289184706988126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1862041411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2091,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1892266890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 421983698067556746, guid: ae35ab1481c6337478c4862718f4a553, type: 3}
+  m_PrefabInstance: {fileID: 9061051686948929247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1919908452
 PrefabInstance:
   m_ObjectHideFlags: 0

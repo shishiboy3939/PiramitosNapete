@@ -2251,6 +2251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2617760959879187038}
   - component: {fileID: 4625464577161644239}
+  - component: {fileID: 2045945036587418457}
   m_Layer: 0
   m_Name: NavMeshAgentController
   m_TagString: Untagged
@@ -2267,7 +2268,7 @@ Transform:
   m_GameObject: {fileID: 6423296479291156193}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.993258, y: 1.754684, z: 1.1032438}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2287,6 +2288,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 8304416615023424370}
   target: {fileID: 0}
+--- !u!114 &2045945036587418457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423296479291156193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dccd13afdda8c45a43fcae7c0dcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &6462439356200455132
 GameObject:
   m_ObjectHideFlags: 0

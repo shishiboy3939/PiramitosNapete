@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -Push to Snake head-
+  m_text: -Push Snake head-
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32280c519772a456fb0a90a91f27652a, type: 2}
   m_sharedMaterial: {fileID: 8482820672767179249, guid: 32280c519772a456fb0a90a91f27652a, type: 2}
