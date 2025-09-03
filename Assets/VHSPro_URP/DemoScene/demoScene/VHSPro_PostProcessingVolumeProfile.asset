@@ -921,10 +921,10 @@ MonoBehaviour:
   g_extra: 0
   g_bypass: 0
   pixelOn:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   screenResPresetId:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 15
   screenWidth:
     m_OverrideState: 1
@@ -985,7 +985,7 @@ MonoBehaviour:
   paletteCustomName: 
   paletteCustomInit: 0
   bleedOn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   crtMode:
     m_OverrideState: 1
@@ -1063,7 +1063,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.9
   jitterVOn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   jitterVAmount:
     m_OverrideState: 1
