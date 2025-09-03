@@ -133,7 +133,6 @@ public class ClearOrOverManager : MonoBehaviour
         image.DOFade(1, 0);
         StageChanger.Instance.GotoTitle();
         yield return new WaitForSeconds(1);
-        SoundManager.Instance.PlayBgm(SoundManager.Instance.TitleBGM);
         image.DOFade(0, 2);
     }
 
