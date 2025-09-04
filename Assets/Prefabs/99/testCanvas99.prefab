@@ -15041,11 +15041,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 610.604
+      value: 801
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 164.0024
+      value: 242
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15057,7 +15057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15077,11 +15077,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 441.83075
+      value: 419
       objectReference: {fileID: 0}
     - target: {fileID: 1377527518854614501, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15098,6 +15098,10 @@ PrefabInstance:
     - target: {fileID: 1429094267003086961, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205837080185830248, guid: 80a1514e74e72694ca07638e9bd528a2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
