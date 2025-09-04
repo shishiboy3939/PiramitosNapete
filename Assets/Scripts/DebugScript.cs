@@ -27,7 +27,7 @@ public class DebugScript : MonoBehaviour
 
     void checkPause()
     {
-        if (Input.GetKeyDown(KeyCode.P) && allowPause)
+        if (Input.GetKey(KeyCode.Keypad4) | Input.GetKey(KeyCode.Alpha4) && allowPause)
         {
             //Pキーの入力でpauseを切り替え
             GameManager.isPausing = !GameManager.isPausing;
@@ -37,7 +37,7 @@ public class DebugScript : MonoBehaviour
 
     void checkRestart()
     {
-        if (Input.GetKeyDown(KeyCode.R) && allowRestart)
+        if (Input.GetKey(KeyCode.Keypad3) | Input.GetKey(KeyCode.Alpha3) && allowRestart)
         {
             //Rキーの入力でリセット
             stageChanger.ChangeStages(GameManager.nowStage, GameManager.now2Dor3D);
@@ -46,7 +46,7 @@ public class DebugScript : MonoBehaviour
 
     void checkQuickTitle()
     {
-        if (Input.GetKeyDown(KeyCode.T) && allowQuickTitle)
+        if (Input.GetKey(KeyCode.Keypad2) | Input.GetKey(KeyCode.Alpha2))
         {
             //Tキーの入力でタイトル画面へ
             stageChanger.GotoTitle();
