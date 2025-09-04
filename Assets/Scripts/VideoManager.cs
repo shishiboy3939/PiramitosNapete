@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VideoManager : MonoBehaviour
 {
     [SerializeField] private VideoPlayer videoPlayer;
-    [SerializeField] GameObject clearImage;
+    [SerializeField] public GameObject clearImage;
     public GameObject endingView;
     public static VideoManager Instance;
     [SerializeField] private Tutorialmanager tutorialmanager;
@@ -35,9 +35,11 @@ public class VideoManager : MonoBehaviour
     {
         //2D画面が一瞬映るのを防ぐ為に黒画面を一瞬映してる
         var image = clearImage.GetComponent<Image>();
+        image.DOFade(1, 0);
         endingView.SetActive(true);
         videoPlayer.Play();
         image.DOFade(0, 1);
+        Cursor.visible = false;
         SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.Ending);
         SoundManager.Instance.StopLongSE();
         tutorialmanager.SetEnabled(true);

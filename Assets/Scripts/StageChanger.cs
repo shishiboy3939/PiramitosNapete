@@ -67,12 +67,13 @@ public class StageChanger : MonoBehaviour
                 tutorialmanager.CallTutorial();
             }
 
-            if (!tutorialOn2D && GameManager.nowStage <=1)
+            if (!tutorialOn2D && GameManager.nowStage <= 1)
             {
                 SoundManager.Instance.PlayLongSE(SoundManager.Instance.LongSE_Clock);
                 Debug.Log("タイマー音呼べてる");
             }
             SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Appear2DMap);
+            Cursor.visible = true;
         }
         else if (dim == 1)
         {
@@ -126,6 +127,7 @@ public class StageChanger : MonoBehaviour
             {
                 i.SetActive(true);
             }
+            Cursor.visible = false;
 
         }
         GameManager.nowStage = stage;
@@ -162,6 +164,7 @@ public class StageChanger : MonoBehaviour
         var image = ViewManager.Instance.SpeedUp.GetComponent<Image>();
         image.DOFade(0, 0);
         SoundManager.Instance.StopLongSE();
+        Cursor.visible = false;
     }
 
     //線を全部消す
