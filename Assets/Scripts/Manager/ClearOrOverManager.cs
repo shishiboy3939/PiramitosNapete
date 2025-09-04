@@ -12,7 +12,6 @@ public class ClearOrOverManager : MonoBehaviour
     [Tooltip("シーン遷移のトランジションの時間"), SerializeField] float fadeTime = 2f;
     public static ClearOrOverManager Instance;
     private int _stage = 0;
-    private int _2Dor3D = 0;
     private bool clearStarted = false;
     public bool fading = false;
     private void Awake()
@@ -94,29 +93,33 @@ public class ClearOrOverManager : MonoBehaviour
             GameManager.isWaiting = true;
             yield return new WaitForSeconds(1);
             var image = clearImage.GetComponent<Image>();
+            //フェードアウト
             image.DOFade(1, fadeTime);
             yield return new WaitForSeconds(fadeTime);
 
-            //次のステージの2D画面に進む
             if (GameManager.nowStage == 2)
             {
-                //エンディング再生でフェードインするバグが起きるかも
-                //多分そんなに致命的ではないけど一応TODO
-                image.DOFade(1, 0);
+                //エンディンング動画再生
+                ViewManager.Instance.InitializeStages();
+                ViewManager.Instance.camera2D.SetActive(true);
+                GameManager.elapsedTime = 0;
+                GameManager.nowStage = 0;
+                GameManager.now2Dor3D = 0;
+                GameManager.isWaiting = true;
+                SoundManager.Instance.StopBgm();
+                SoundManager.Instance.StopLongSE();
                 VideoManager.Instance.EndingPlay();
-                _stage = 0;
             }
             else
             {
+                //次のステージの2D画面に進む
                 _stage = GameManager.nowStage + 1;
+                stageChanger.ChangeStages(_stage, 0);
+                //フェードイン
+                image.DOFade(0, fadeTime);
+                //↓これも死ねや案件
+                //yield return new WaitForSeconds(fadeTime);
             }
-            _2Dor3D = 0;
-            stageChanger.ChangeStages(_stage, _2Dor3D);
-
-            //フェードイン
-            image.DOFade(0, fadeTime);
-            //↓これも死ねや案件
-            //yield return new WaitForSeconds(fadeTime);
 
             //初期化
             clearStarted = false;

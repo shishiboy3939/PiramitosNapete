@@ -181,7 +181,7 @@ public class StageChanger : MonoBehaviour
         }
         ViewManager.Instance.StrokeManager3D.lineRenderers3D = new List<LineRenderer>();
     }
-        public void StopAllAgents()
+    public void StopAllAgents()
     {
         foreach (var a in agents)
         {
