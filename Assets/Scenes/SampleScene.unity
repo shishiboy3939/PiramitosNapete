@@ -1711,7 +1711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1692896483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,6 +1725,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorImage: {fileID: 2800000, guid: b0430d8c4e7069c4197d9c1a82d298c9, type: 3}
+  cursorImage2: {fileID: 2800000, guid: 2333f631e5eb91f4e94256f3d854702d, type: 3}
+  switchCursor: 0
 --- !u!4 &1692896484
 Transform:
   m_ObjectHideFlags: 0

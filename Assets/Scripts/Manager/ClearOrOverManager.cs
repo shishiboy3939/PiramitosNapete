@@ -100,6 +100,7 @@ public class ClearOrOverManager : MonoBehaviour
             if (GameManager.nowStage == 2)
             {
                 //エンディンング動画再生
+                //ここまで初期化する必要は無いと思うけど一応ね
                 ViewManager.Instance.InitializeStages();
                 ViewManager.Instance.camera2D.SetActive(true);
                 GameManager.elapsedTime = 0;
