@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Tutorialmanager : MonoBehaviour
 {
 
-    [SerializeField] private UnityEngine.UI.Image TutorialPanel;
+    [SerializeField] private UnityEngine.UI.Image TutorialPanel,NextButtonImage;
     [SerializeField] private List<GameObject> TutorialPage;
     private int currentPage;
     [SerializeField] private GameObject NextButton;
@@ -46,7 +46,9 @@ public class Tutorialmanager : MonoBehaviour
     public void CallTutorial()
     {
         TutorialPanel.DOFade(1f, 1f);
+        NextButtonImage.DOFade(1f, 1f);
         NextButton.SetActive(true);
+
         TutorialPage[currentPage].SetActive(true);
         SetEnabled(true);
         Name.SetActive(true);
@@ -67,6 +69,7 @@ public class Tutorialmanager : MonoBehaviour
         {
             //線のチュートリアル
             TutorialPanel.DOFade(0f, 1f);
+            NextButtonImage.DOFade(0f, 1f);
             NextButton.SetActive(false);
             SetEnabled(false);
             Name.SetActive(false);
@@ -76,6 +79,7 @@ public class Tutorialmanager : MonoBehaviour
         {
             //線のチュートリアル終了
             TutorialPanel.DOFade(1f, 1f);
+            NextButtonImage.DOFade(1f, 1f);
             NextButton.SetActive(true);
             TutorialPage[currentPage].SetActive(true);
             SetEnabled(true);
@@ -88,6 +92,7 @@ public class Tutorialmanager : MonoBehaviour
         if (currentPage == 8)
         {
             TutorialPanel.DOFade(0f, 1f);
+            NextButtonImage.DOFade(0f, 1f);
             NextButton.SetActive(false);
             StageChanger.Instance.tutorialOn2D = false;
             GameManager.isWaiting = false;
@@ -106,6 +111,7 @@ public class Tutorialmanager : MonoBehaviour
         if (currentPage == 11)
         {
             TutorialPanel.DOFade(0f, 1f);
+            NextButtonImage.DOFade(0f, 1f);
             NextButton.SetActive(false);
             GameManager.isPausing = false;
             GameManager.isWaiting = false;
@@ -145,6 +151,7 @@ public class Tutorialmanager : MonoBehaviour
         }
         NextButton.SetActive(false);
         TutorialPanel.DOFade(0f, 0f);
+        NextButtonImage.DOFade(0f, 0f);
         currentPage = 0;
         _ray = raycaster ? raycaster : GetComponent<GraphicRaycaster>();
         if (_ray == null) _ray = gameObject.AddComponent<GraphicRaycaster>();

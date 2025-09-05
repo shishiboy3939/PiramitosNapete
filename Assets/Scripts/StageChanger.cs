@@ -73,7 +73,7 @@ public class StageChanger : MonoBehaviour
                 Debug.Log("タイマー音呼べてる");
             }
             SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Appear2DMap);
-            Cursor.visible = true;
+            CursorManager.instance.SetCursor(CursorManager.CursorType.Finger);
         }
         else if (dim == 1)
         {
@@ -127,7 +127,8 @@ public class StageChanger : MonoBehaviour
             {
                 i.SetActive(true);
             }
-            Cursor.visible = false;
+            CursorManager.instance.SetCursor(CursorManager.CursorType.None);
+
 
         }
         GameManager.nowStage = stage;
@@ -164,7 +165,7 @@ public class StageChanger : MonoBehaviour
         var image = ViewManager.Instance.SpeedUp.GetComponent<Image>();
         image.DOFade(0, 0);
         SoundManager.Instance.StopLongSE();
-        Cursor.visible = false;
+        CursorManager.instance.SetCursor(CursorManager.CursorType.None);
     }
 
     //線を全部消す

@@ -11,6 +11,7 @@ public class VideoManager : MonoBehaviour
     public GameObject endingView;
     public static VideoManager Instance;
     [SerializeField] private Tutorialmanager tutorialmanager;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -38,7 +39,7 @@ public class VideoManager : MonoBehaviour
         endingView.SetActive(true);
         videoPlayer.Play();
         image.DOFade(0, 1);
-        Cursor.visible = false;
+        CursorManager.instance.SetCursor(CursorManager.CursorType.None);
         SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.Ending);
         SoundManager.Instance.StopLongSE();
         tutorialmanager.SetEnabled(true);
