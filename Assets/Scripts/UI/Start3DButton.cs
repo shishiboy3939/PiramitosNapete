@@ -14,6 +14,7 @@ public class Start3DButton : MonoBehaviour
     void Start()
     {
         image = GetComponent<Image>();
+        transform.localScale = Vector3.one;
     }
 
     // Update is called once per frame
@@ -47,12 +48,18 @@ public class Start3DButton : MonoBehaviour
         {
             SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_Into_PopIn);
             isActive = true;
-            a.DOFade(endValue: 1f, duration: 1f);
+            a.DOKill();
+            transform.DOKill();
+            a.alpha = 1f;
+            transform.localScale = Vector3.one * 1.2f;
+            transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutQuad);
         }
         else
         {
             if (a.alpha != 0f && !isActive)
             {
+                transform.DOKill();
+                transform.localScale = Vector3.one;
                 a.DOFade(endValue: 0f, duration: 0f);
             }
         }
