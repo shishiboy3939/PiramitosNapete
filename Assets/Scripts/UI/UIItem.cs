@@ -14,10 +14,21 @@ public class UIItem : MonoBehaviour
     [Tooltip("テキストを表示するgameObject"), SerializeField] private TextMeshProUGUI uiText;
     [Header("アイテム画像を表示するgameObject")]
     [Tooltip("アイテム画像を表示するgameObject"), SerializeField] private Image itemImage;
+    [Header("拡大縮小するオブジェクト")]
+    [Tooltip("未設定ならこのオブジェクト自身を使う"), SerializeField] private RectTransform scaleTarget;
+    Vector3 initialScale;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (scaleTarget == null)
+        {
+            scaleTarget = transform as RectTransform;
+        }
+
+        if (scaleTarget != null)
+        {
+            initialScale = scaleTarget.localScale;
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +42,10 @@ public class UIItem : MonoBehaviour
     //
     public void test()
     {
+        if (scaleTarget != null)
+        {
+            scaleTarget.localScale = initialScale * 1.2f;
+        }
         itemImage.sprite = itemSprite;
         uiText.text = itemText;
         //制限時間の減少を止める
@@ -42,6 +57,10 @@ public class UIItem : MonoBehaviour
 
     public void test2()
     {
+        if (scaleTarget != null)
+        {
+            scaleTarget.localScale = initialScale;
+        }
         //制限時間の減少を再開
         //多分この書き方だとマウスを高速で動かすとバグる
         //でも今はシンプルさを優先
