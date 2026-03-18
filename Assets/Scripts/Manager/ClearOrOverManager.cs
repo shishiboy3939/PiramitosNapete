@@ -121,7 +121,6 @@ public class ClearOrOverManager : MonoBehaviour
                 stageChanger.ChangeStages(_stage, 0);
                 //フェードイン
                 FadeClearImage(0f, fadeTime);
-                FadeClearText(0f, fadeTime);
                 //↓これも死ねや案件
                 //yield return new WaitForSeconds(fadeTime);
             }
@@ -178,7 +177,18 @@ public class ClearOrOverManager : MonoBehaviour
         {
             if (text != null)
             {
-                text.DOFade(alpha, duration);
+                text.DOKill();
+                text.rectTransform.DOKill();
+
+                text.rectTransform.localScale = Vector3.one;
+                var textColor = text.color;
+                textColor.a = alpha;
+                text.color = textColor;
+
+                Sequence seq = DOTween.Sequence();
+                seq.Append(text.rectTransform.DOScale(Vector3.one * 1.3f, 0.5f).SetEase(Ease.OutQuad));
+                seq.Append(text.rectTransform.DOScale(Vector3.one, 2f).SetEase(Ease.InOutQuad));
+                seq.Join(text.DOFade(0f, 2f).SetEase(Ease.InOutQuad));
             }
         }
     }
