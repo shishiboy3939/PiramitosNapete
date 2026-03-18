@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4312049404648399771}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -60,14 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 3cd5b7116d07f65499d57ee471d86c3c, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9372549, b: 0.84313726, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 365881244584e45b6b855db3dac5a6ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eceb02d75a5054831875d18c11f4c992, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c0c33ab51b51048a1b577f190c5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 0}
-  itemText: 
+  itemSprite: {fileID: 21300000, guid: fdb16b18e09a04b7f8a646bbf3b0242b, type: 3}
+  itemText: "\u3010\u30B9\u30CB\u30FC\u30AB\u30FC\u3011\n\r\n\u624B\u306B\u5165\u308C\u308B\u4E8B\u3067\u9B42(\u30D0\u30FC)\u306E\u79FB\u52D5\u901F\u5EA6\u3092\u4E00\u5B9A\u6642\u9593\u4E0A\u3052\u308B\u3002\r\n\r\nPiramitosNapete\u306B\u306F\u3001\u4EA1\u304F\u306A\u3063\u305F\u9B42\u3092\u5143\u306B\u73FE\u4EE3\u306E\u69D8\u3005\u306A\u8868\u8C61\u304C\u6DF7\u5165\u3057\u3066\u3044\u308B\u3002"
   uiText: {fileID: 0}
   itemImage: {fileID: 0}
 --- !u!114 &6924764440751702953

@@ -2061,10 +2061,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: testCanvas99
       objectReference: {fileID: 0}
-    - target: {fileID: 5079940866051021149, guid: 6a5b1046b40ded44fabf8760418798a9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 6a5b1046b40ded44fabf8760418798a9, type: 3}
       propertyPath: StrokeManager2D
       value: 
@@ -3564,10 +3560,6 @@ PrefabInstance:
     - target: {fileID: 5079940866051021149, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: m_Name
       value: testCanvas66
-      objectReference: {fileID: 0}
-    - target: {fileID: 5079940866051021149, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6647076114727541868, guid: 39d7f4a1b0885454d82e02ab73d4cb22, type: 3}
       propertyPath: StrokeManager2D
