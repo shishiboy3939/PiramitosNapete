@@ -9,6 +9,7 @@ public class Tutorialmanager : MonoBehaviour
 {
 
     [SerializeField] private UnityEngine.UI.Image TutorialPanel,NextButtonImage;
+    [SerializeField] private Image SetoEye;
     [SerializeField] private List<GameObject> TutorialPage;
     private int currentPage;
     [SerializeField] private GameObject NextButton;
@@ -18,6 +19,16 @@ public class Tutorialmanager : MonoBehaviour
     private GraphicRaycaster _ray;
     public bool tutorialStroke;
     public int tutorialStrokeLength;
+
+    private void Awake()
+    {
+        if (SetoEye != null)
+        {
+            var color = SetoEye.color;
+            color.a = 0f;
+            SetoEye.color = color;
+        }
+    }
 
     private void Start()
     {
@@ -55,6 +66,7 @@ public class Tutorialmanager : MonoBehaviour
     }
     public void NextPage()
     {
+        SetoEyeBlink();
         SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_TextBoxFlip);
         if(currentPage != 4 || (currentPage == 4 && !tutorialStroke))
         {
@@ -134,6 +146,20 @@ public class Tutorialmanager : MonoBehaviour
             NextPage();
         }*/
         NextPage();
+    }
+
+    public void SetoEyeBlink()
+    {
+        if (SetoEye == null) return;
+
+        SetoEye.DOKill();
+        var color = SetoEye.color;
+        color.a = 0f;
+        SetoEye.color = color;
+
+        Sequence seq = DOTween.Sequence();
+        seq.Append(SetoEye.DOFade(1f, 0.2f));
+        seq.Append(SetoEye.DOFade(0f, 1f));
     }
 
     public void SetEnabled(bool on)
