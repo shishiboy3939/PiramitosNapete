@@ -32,11 +32,6 @@ public class ClearOrOverManager : MonoBehaviour
         SetClearImageAlpha(0f);
         SetClearTextAlpha(0f);
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -105,6 +100,8 @@ public class ClearOrOverManager : MonoBehaviour
 
             if (GameManager.nowStage == 2)
             {
+                //Successの文字を消す
+                SetClearTextAlpha(0f);
                 //エンディンング動画再生
                 //ここまで初期化する必要は無いと思うけど一応ね
                 ViewManager.Instance.InitializeStages();
@@ -170,12 +167,12 @@ public class ClearOrOverManager : MonoBehaviour
         }
     }
 
-    void FadeClearImage(float alpha, float duration)
+    public void FadeClearImage(float alpha, float duration)
     {
         clearImage.GetComponent<Image>().DOFade(alpha, duration);
     }
 
-    void FadeClearText(float alpha, float duration)
+    public void FadeClearText(float alpha, float duration)
     {
         foreach (var text in clearTexts)
         {

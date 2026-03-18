@@ -29,7 +29,7 @@ public class DebugScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Keypad4) | Input.GetKey(KeyCode.Alpha4) && allowPause)
         {
-            //Pキーの入力でpauseを切り替え
+            //4キーの入力でpauseを切り替え
             GameManager.isPausing = !GameManager.isPausing;
         }
 
@@ -39,7 +39,7 @@ public class DebugScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Keypad3) | Input.GetKey(KeyCode.Alpha3) && allowRestart)
         {
-            //Rキーの入力でリセット
+            //3キーの入力でリセット
             stageChanger.ChangeStages(GameManager.nowStage, GameManager.now2Dor3D);
         }
     }
@@ -48,7 +48,7 @@ public class DebugScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Keypad2) | Input.GetKey(KeyCode.Alpha2))
         {
-            //Tキーの入力でタイトル画面へ
+            //2キーの入力でタイトル画面へ
             stageChanger.GotoTitle();
         }
 
