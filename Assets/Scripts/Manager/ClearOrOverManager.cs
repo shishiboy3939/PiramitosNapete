@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using MK.Toon;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class ClearOrOverManager : MonoBehaviour
     [SerializeField] GameObject clearImage;
     [Tooltip("シーン遷移のトランジションの時間"), SerializeField] float fadeTime = 2f;
     public static ClearOrOverManager Instance;
+    TMP_Text[] clearTexts;
     private int _stage = 0;
     private bool clearStarted = false;
     public bool fading = false;
@@ -25,6 +27,10 @@ public class ClearOrOverManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        clearTexts = clearImage.GetComponentsInChildren<TMP_Text>(true);
+        SetClearImageAlpha(0f);
+        SetClearTextAlpha(0f);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -91,10 +97,10 @@ public class ClearOrOverManager : MonoBehaviour
             clearStarted = true;
             //クリア画像表示
             GameManager.isWaiting = true;
+            FadeClearText(1f, 0f);
             yield return new WaitForSeconds(1);
-            var image = clearImage.GetComponent<Image>();
             //フェードアウト
-            image.DOFade(1, fadeTime);
+            FadeClearImage(1f, fadeTime);
             yield return new WaitForSeconds(fadeTime);
 
             if (GameManager.nowStage == 2)
@@ -117,7 +123,8 @@ public class ClearOrOverManager : MonoBehaviour
                 _stage = GameManager.nowStage + 1;
                 stageChanger.ChangeStages(_stage, 0);
                 //フェードイン
-                image.DOFade(0, fadeTime);
+                FadeClearImage(0f, fadeTime);
+                FadeClearText(0f, fadeTime);
                 //↓これも死ねや案件
                 //yield return new WaitForSeconds(fadeTime);
             }
@@ -133,11 +140,10 @@ public class ClearOrOverManager : MonoBehaviour
 
     public IEnumerator BlackOut()
     {
-        var image = clearImage.GetComponent<Image>();
-        image.DOFade(1, 0);
+        FadeClearImage(1f, 0f);
         StageChanger.Instance.GotoTitle();
         yield return new WaitForSeconds(1);
-        image.DOFade(0, 2);
+        FadeClearImage(0f, 2f);
     }
 
     //フェードアウト、フェードインを加えたシーン遷移処理
@@ -148,22 +154,54 @@ public class ClearOrOverManager : MonoBehaviour
             GameManager.isWaiting = true;
             fading = true;
             //フェードアウト
-            var image = clearImage.GetComponent<Image>();
-            image.DOFade(0f, 0f);
-            image.DOFade(1f, fadeTime);
+            FadeClearImage(1f, fadeTime);
             yield return new WaitForSeconds(fadeTime);
             //ステージ移動
             stageChanger.ChangeStages(stage, dim);
             //フェードイン
-            image.DOFade(0f, fadeTime);
+            FadeClearImage(0f, fadeTime);
             //↓これ書くと何故かコルーチンが動かなくなる
-            //死ねや
             //yield return new WaitForSeconds(fadeTime);
             fading = false;
         }
         else
         {
             yield break;
+        }
+    }
+
+    void FadeClearImage(float alpha, float duration)
+    {
+        clearImage.GetComponent<Image>().DOFade(alpha, duration);
+    }
+
+    void FadeClearText(float alpha, float duration)
+    {
+        foreach (var text in clearTexts)
+        {
+            if (text != null)
+            {
+                text.DOFade(alpha, duration);
+            }
+        }
+    }
+
+    void SetClearImageAlpha(float alpha)
+    {
+        var image = clearImage.GetComponent<Image>();
+        var imageColor = image.color;
+        imageColor.a = alpha;
+        image.color = imageColor;
+    }
+
+    void SetClearTextAlpha(float alpha)
+    {
+        foreach (var text in clearTexts)
+        {
+            if (text == null) continue;
+            var textColor = text.color;
+            textColor.a = alpha;
+            text.color = textColor;
         }
     }
 }
