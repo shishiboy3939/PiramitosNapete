@@ -325,6 +325,7 @@ MonoBehaviour:
   Stage02BGM: {fileID: 8300000, guid: 02d2dc4e6aa887949b333169b8ffdd12, type: 3}
   Stage03BGM: {fileID: 8300000, guid: cb867112afd2cbd4b8b67d763422c1a0, type: 3}
   SE_GameStart: {fileID: 8300000, guid: 58f0b48db2b31469093cd720229e23de, type: 3}
+  SE_TextBoxFlip: {fileID: 8300000, guid: 89bbc3bc8d60b42168de9faa520080cb, type: 3}
   MapBGM: {fileID: 8300000, guid: 39659a0972bea444c8dd50f3c87dd034, type: 3}
   BgmSource: {fileID: 5872933162331619286}
   SeSource: {fileID: 5332873187045054439}

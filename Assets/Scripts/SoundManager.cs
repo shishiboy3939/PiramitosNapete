@@ -22,6 +22,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip Stage02BGM;
     [SerializeField] public AudioClip Stage03BGM;
     [SerializeField] public AudioClip SE_GameStart;
+    [SerializeField] public AudioClip SE_TextBoxFlip;
     [SerializeField] public AudioClip MapBGM;
     [SerializeField] public AudioSource BgmSource, SeSource, LongSESorce, PencilSESorce;
     [SerializeField] public List<AudioSource> FootStepSource;

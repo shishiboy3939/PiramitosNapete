@@ -183,7 +183,7 @@ public class ClearOrOverManager : MonoBehaviour
         }
     }
 
-    void SetClearImageAlpha(float alpha)
+    public void SetClearImageAlpha(float alpha)
     {
         var image = clearImage.GetComponent<Image>();
         var imageColor = image.color;
@@ -191,7 +191,7 @@ public class ClearOrOverManager : MonoBehaviour
         image.color = imageColor;
     }
 
-    void SetClearTextAlpha(float alpha)
+    public void SetClearTextAlpha(float alpha)
     {
         foreach (var text in clearTexts)
         {

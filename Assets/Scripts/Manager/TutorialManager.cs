@@ -55,6 +55,7 @@ public class Tutorialmanager : MonoBehaviour
     }
     public void NextPage()
     {
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_TextBoxFlip);
         if(currentPage != 4 || (currentPage == 4 && !tutorialStroke))
         {
             TutorialPage[currentPage].SetActive(false);
