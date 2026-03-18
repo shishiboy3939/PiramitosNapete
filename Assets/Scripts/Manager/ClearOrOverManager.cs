@@ -9,6 +9,7 @@ public class ClearOrOverManager : MonoBehaviour
 {
     [SerializeField] private StageChanger stageChanger;
     [SerializeField] private GameObject clearImage;
+    [SerializeField] private TMP_Text firstStageTitle;
     [SerializeField] private List<TMP_Text> nextStages;
 
     [Tooltip("最後のステージ番号")]
@@ -49,6 +50,7 @@ public class ClearOrOverManager : MonoBehaviour
 
         SetClearImageAlpha(0f);
         SetClearTextAlpha(0f);
+        SetFirstStageTitleAlpha(0f);
         SetNextStageTextAlpha(0f);
     }
 
@@ -90,7 +92,9 @@ public class ClearOrOverManager : MonoBehaviour
 
     public void GameOver()
     {
-        stageChanger.ChangeStages(GameManager.nowStage, 0);
+        int stageIndex = GameManager.nowStage;
+        stageChanger.ChangeStages(stageIndex, 0);
+        StartCoroutine(PlayCurrentStageTitle(stageIndex));
     }
 
     public IEnumerator ClearEffect()
@@ -165,6 +169,8 @@ public class ClearOrOverManager : MonoBehaviour
             yield break;
         }
 
+        bool shouldPlayFirstStageTitle = stage == 0 && dim == 0 && ViewManager.Instance.titleScreen.activeSelf;
+
         GameManager.isWaiting = true;
         fading = true;
 
@@ -172,6 +178,11 @@ public class ClearOrOverManager : MonoBehaviour
         yield return new WaitForSeconds(fadeTime);
 
         stageChanger.ChangeStages(stage, dim);
+
+        if (shouldPlayFirstStageTitle)
+        {
+            StartCoroutine(PlayFirstStageTitle());
+        }
 
         FadeClearImage(0f, fadeTime);
 
@@ -234,6 +245,21 @@ public class ClearOrOverManager : MonoBehaviour
             textColor.a = alpha;
             text.color = textColor;
         }
+    }
+
+    public void SetFirstStageTitleAlpha(float alpha)
+    {
+        if (firstStageTitle == null)
+        {
+            return;
+        }
+
+        firstStageTitle.DOKill();
+        firstStageTitle.rectTransform.DOKill();
+
+        Color textColor = firstStageTitle.color;
+        textColor.a = alpha;
+        firstStageTitle.color = textColor;
     }
 
     public void SetNextStageTextAlpha(float alpha)
@@ -303,6 +329,69 @@ public class ClearOrOverManager : MonoBehaviour
         yield return seq.WaitForCompletion();
 
         textColor = text.color;
+        textColor.a = 0f;
+        text.color = textColor;
+    }
+
+    public IEnumerator PlayFirstStageTitle()
+    {
+        if (firstStageTitle == null)
+        {
+            yield break;
+        }
+
+        yield return StartCoroutine(PlayStageTitleText(firstStageTitle));
+    }
+
+    public IEnumerator PlayCurrentStageTitle(int stageIndex)
+    {
+        TMP_Text stageTitle = GetCurrentStageTitle(stageIndex);
+
+        if (stageTitle == null)
+        {
+            yield break;
+        }
+
+        yield return StartCoroutine(PlayStageTitleText(stageTitle));
+    }
+
+    private TMP_Text GetCurrentStageTitle(int stageIndex)
+    {
+        if (stageIndex == 0)
+        {
+            return firstStageTitle;
+        }
+
+        int titleIndex = stageIndex - 1;
+        if (nextStages == null || titleIndex < 0 || titleIndex >= nextStages.Count)
+        {
+            return null;
+        }
+
+        return nextStages[titleIndex];
+    }
+
+    private IEnumerator PlayStageTitleText(TMP_Text text)
+    {
+        if (text == null)
+        {
+            yield break;
+        }
+
+        SetFirstStageTitleAlpha(0f);
+        SetNextStageTextAlpha(0f);
+
+        text.DOKill();
+        text.rectTransform.DOKill();
+
+        Sequence seq = DOTween.Sequence();
+        seq.Append(text.DOFade(1f, nextStageFadeInDuration).SetEase(Ease.InOutQuad));
+        seq.AppendInterval(nextStageStayDuration);
+        seq.Append(text.DOFade(0f, nextStageFadeOutDuration).SetEase(Ease.InOutQuad));
+
+        yield return seq.WaitForCompletion();
+
+        Color textColor = text.color;
         textColor.a = 0f;
         text.color = textColor;
     }

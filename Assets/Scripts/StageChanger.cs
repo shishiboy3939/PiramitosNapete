@@ -142,6 +142,7 @@ public class StageChanger : MonoBehaviour
     public void GotoTitle()
     {
         ClearOrOverManager.Instance.SetClearTextAlpha(0f);
+        ClearOrOverManager.Instance.SetFirstStageTitleAlpha(0f);
         ViewManager.Instance.InitializeStages();
         //線を全部消す
         DestroyLines();
