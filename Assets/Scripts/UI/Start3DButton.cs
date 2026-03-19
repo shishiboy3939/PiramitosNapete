@@ -10,13 +10,24 @@ public class Start3DButton : MonoBehaviour
     [Tooltip("ボタンを表示する残り時間（秒）"), SerializeField] float displayTime = 15f;
     bool isActive = false;
     Image image;
+    [Tooltip("未設定ならこのオブジェクト自身を使う"), SerializeField] private RectTransform scaleTarget;
+    Vector3 initialScale;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         image = GetComponent<Image>();
         transform.localScale = Vector3.one;
-    }
 
+        if (scaleTarget == null)
+        {
+            scaleTarget = transform as RectTransform;
+        }
+
+        if (scaleTarget != null)
+        {
+            initialScale = scaleTarget.localScale;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -63,5 +74,15 @@ public class Start3DButton : MonoBehaviour
                 a.DOFade(endValue: 0f, duration: 0f);
             }
         }
+    }
+    public void Selecting()
+    {
+        SoundManager.Instance.PlaySoundEffect(SoundManager.Instance.SE_ChangeIcon);
+        scaleTarget.localScale = initialScale * 1.1f;
+    }
+
+    public void UnSelect()
+    {
+        scaleTarget.localScale = initialScale * 1.0f;
     }
 }
